@@ -1,0 +1,27 @@
+// views/login.jade
+html5
+    head
+        title Node Authentication - Forgot Password
+        link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+        // load bootstrap css
+        link(rel='stylesheet', href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css')
+        // load fontawesome
+        style.
+            body        { padding-top:80px; }
+    body
+        .container
+            .col-sm-6.col-sm-offset-3
+
+                if message.length > 0
+                    .alert.alert-danger
+                        div #{message}
+                form(method='POST')
+                    legend Reset Password
+                    .form-group
+                        label(for='password') New Password
+                        input.form-control(type='password', name='password', value='', placeholder='New password', autofocus=true)
+                    .form-group
+                        label(for='confirm') Confirm Password
+                        input.form-control(type='password', name='confirm', value='', placeholder='Confirm password')
+                    .form-group
+                        button.btn.btn-warning.btn-lg(type='submit') Update Password

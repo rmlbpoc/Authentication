@@ -1,0 +1,84 @@
+html5
+    head
+        title Node Authentication - Profile
+        link(rel='stylesheet', href='http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css')
+        link(rel='stylesheet', href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css')
+        style.
+            body        { padding-top:80px; word-wrap:break-word; }
+    body
+        .container
+            .page-header.text-center
+                h1
+                    span.fa.fa-anchor
+                    |  Profile Page
+                a.btn.btn-default.btn-sm(href='/logout') Logout
+            .row
+                // LOCAL INFORMATION
+                .col-sm-6
+                    .well
+                        h3
+                            span.fa.fa-user
+                            |  Local
+                        p
+                            strong id
+                            | : #{user._id}
+                            br
+                            strong email
+                            | : #{user.local.email}
+                            br
+                            strong password
+                            | : #{user.local.password}
+                // FACEBOOK INFORMATION
+                .col-sm-6
+                    .well
+                        h3.text-primary
+                            span.fa.fa-facebook
+                            |  Facebook
+                        p
+                            strong id
+                            | : #{user.facebook.id}
+                            br
+                            strong token
+                            | : #{user.facebook.token}
+                            br
+                            strong email
+                            | : #{user.facebook.email}
+                            br
+                            strong name
+                            | : #{user.facebook.name}
+                // TWITTER INFORMATION
+                .col-sm-6
+                    .well
+                        h3.text-info
+                            span.fa.fa-twitter
+                            |  Twitter
+                        p
+                            strong id
+                            | : #{user.twitter.id}
+                            br
+                            strong token
+                            | : #{user.twitter.token}
+                            br
+                            strong username
+                            | : #{user.twitter.username}
+                            br
+                            strong displayName
+                            | : #{user.twitter.displayName}
+                // GOOGLE INFORMATION
+                .col-sm-6
+                    .well
+                        h3.text-danger
+                            span.fa.fa-google-plus
+                            |  Google
+                        p
+                            strong id
+                            | : #{user.google.id}
+                            br
+                            strong token
+                            | : #{user.google.token}
+                            br
+                            strong email
+                            | : #{user.google.email}
+                            br
+                            strong name
+                            | : #{user.google.name}
