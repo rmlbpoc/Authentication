@@ -119,7 +119,7 @@ module.exports = function(app,passport){
                         req.flash('info', 'Password reset token is invalid or has expired.');
                         res.redirect('back')
                     }
-                    user.local.password = req.body.password;
+                    user.local.password = user.generateHash(req.body.password);
                     user.local.resetPasswordExpires =null;
                     user.local.resetPasswordToken = null;
 
