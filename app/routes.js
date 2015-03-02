@@ -58,10 +58,11 @@ module.exports = function(app,passport){
                         req.flash('info','No account with that email address exists');
                         return res.redirect('/forgot');
                     }
-                    user.resetPasswordToken = token;
-                    user.resetPasswordExpires = Date.now() + 3600000;
-
+                    user.local.resetPasswordToken = token;
+                    user.local.resetPasswordExpires = Date.now() + 3600000;
+                    console.log('user',user);
                     user.save(function(err){
+                        console.log('calling save');
                         done(err,token,user);
                     })
                 })
@@ -99,12 +100,14 @@ module.exports = function(app,passport){
     //RESET PASSWORD PAGE ====================
     //========================================
     app.get('/reset/:token',function(req,res,next){
+        console.log('calling reset with token ', req.params.token);
         User.findOne({'local.resetPasswordToken':req.params.token,'local.resetPasswordExpires':{$gt:Date.now()}},function(err,user){
             if(!user){
 
                 req.flash('info', 'Password reset token is invalid or has expired.');
                 res.redirect('/forgot')
             }
+            res.render('reset.jade');
         })
     });
     app.post('/reset/:token',function(req,res,next){
@@ -116,9 +119,9 @@ module.exports = function(app,passport){
                         req.flash('info', 'Password reset token is invalid or has expired.');
                         res.redirect('back')
                     }
-                    user.password = req.body.password;
-                    user.resetPasswordExpires =null;
-                    user.resetPasswordToken = null;
+                    user.local.password = req.body.password;
+                    user.local.resetPasswordExpires =null;
+                    user.local.resetPasswordToken = null;
 
                     user.save(function(err) {
                         req.logIn(user, function(err) {
