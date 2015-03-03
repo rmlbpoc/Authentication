@@ -10,6 +10,7 @@ module.exports = function(app,passport){
     //========================================
     app.get('/',function(req,res){
         console.log('calling home');
+        console.log('ENV = ' + app.get('env'));
         res.render('index.jade');
     });
 
