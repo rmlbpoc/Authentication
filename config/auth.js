@@ -32,14 +32,14 @@ var openIdAuth = {
         },
 
         'twitterAuth': {
-            'consumerKey': '46H2Ku0cU6lZmBJNinJnnl0IL',
-            'consumerSecret': 'heNYEEP4p1W80pl1nRdzgJfz7Dm4j5hU7DWm7l6i5ZOn0lB634',
+            'consumerKey': 'gjS6iEvpA9h5RoqgBqqFPyh5e',
+            'consumerSecret': 'Y8sLzxsrmvpeqBj22A76OOBYFM8IDqGKD4XAR8FlD1RahSxkQE',
             'callbackURL': 'https://rmlbfunproject.herokuapp.com/auth/twitter/callback'
         },
 
         'googleAuth': {
-            'clientID': '164112971586-1si12tlvjpr2lbahq0416af0190rrqa8.apps.googleusercontent.com',
-            'clientSecret': 'e6mY7SlNpBskHGO2dLmquceH',
+            'clientID': '804893419219-q8sr2h35jtpl398teu1kg9m2ubg1mktt.apps.googleusercontent.com',
+            'clientSecret': '9Q71Z7q8BBFsElTwgYVzV6cW',
             'callbackURL': 'https://rmlbfunproject.herokuapp.com/auth/google/callback'
         }
     },
@@ -52,14 +52,14 @@ var openIdAuth = {
         },
 
         'twitterAuth': {
-            'consumerKey': '46H2Ku0cU6lZmBJNinJnnl0IL',
-            'consumerSecret': 'heNYEEP4p1W80pl1nRdzgJfz7Dm4j5hU7DWm7l6i5ZOn0lB634',
+            'consumerKey': 'ktgbyPp9mZg4q4liOT6pvZ6LL',
+            'consumerSecret': 'c1qOQVcCJHs0QDweyviwOf7jzDETykyCdFBcrItbKd0L117ugW',
             'callbackURL': 'http://localhost:3000/auth/twitter/callback'
         },
 
         'googleAuth': {
-            'clientID': '164112971586-1si12tlvjpr2lbahq0416af0190rrqa8.apps.googleusercontent.com',
-            'clientSecret': 'e6mY7SlNpBskHGO2dLmquceH',
+            'clientID': '291365835393-k5ctu5a5rfo1roj6vkuukbeoogpbujrb.apps.googleusercontent.com',
+            'clientSecret': 'HeZVef7X1lmb_LYW8J15rwJx',
             'callbackURL': 'http://127.0.0.1:3000/auth/google/callback'
         }
     }
