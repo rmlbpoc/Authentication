@@ -10,9 +10,10 @@ var User = require('../app/models/user.js');
 // load the auth variables
 var configAuth = require('./auth');
 
-// expose this function to our app using module.exports
-module.exports = function(passport) {
 
+// expose this function to our app using module.exports
+module.exports = function(passport,app) {
+    var config = new configAuth(app.get('env'));
     // =========================================================================
     // passport session setup ==================================================
     // =========================================================================
@@ -103,12 +104,13 @@ module.exports = function(passport) {
     // =========================================================================
     passport.use('facebook',new FacebookStrategy({
         // pull in our app id and secret from our auth.js file
-        clientID        : configAuth.facebookAuth.clientID,
-        clientSecret    : configAuth.facebookAuth.clientSecret,
-        callbackURL     : configAuth.facebookAuth.callbackURL
+        clientID        : config.getFacebookAuth().clientID,
+        clientSecret    : config.getFacebookAuth().clientSecret,
+        callbackURL     : config.getFacebookAuth().callbackURL
     },
         // facebook will send back the token and profile
         function(token, refreshToken, profile, done) {
+            console.log(profile);
             // asynchronous
             process.nextTick(function() {
 
@@ -147,9 +149,9 @@ module.exports = function(passport) {
     // =========================================================================
     passport.use(new TwitterStrategy({
 
-            consumerKey     : configAuth.twitterAuth.consumerKey,
-            consumerSecret  : configAuth.twitterAuth.consumerSecret,
-            callbackURL     : configAuth.twitterAuth.callbackURL
+            consumerKey     : config.getTwitterAuth().consumerKey,
+            consumerSecret  : config.getTwitterAuth().consumerSecret,
+            callbackURL     : config.getTwitterAuth().callbackURL
 
         },
         function(token, tokenSecret, profile, done) {
@@ -201,9 +203,9 @@ module.exports = function(passport) {
     // =========================================================================
     passport.use(new GoogleStrategy({
 
-            clientID        : configAuth.googleAuth.clientID,
-            clientSecret    : configAuth.googleAuth.clientSecret,
-            callbackURL     : configAuth.googleAuth.callbackURL,
+            clientID        : config.getGoogleAuth().clientID,
+            clientSecret    : config.getGoogleAuth().clientSecret,
+            callbackURL     : config.getGoogleAuth().callbackURL
 
         },
         function(token, refreshToken, profile, done) {
