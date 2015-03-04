@@ -5,6 +5,10 @@ var nodemailer = require('nodemailer');
 var User = require('../app/models/user.js');
 
 module.exports = function(app,passport){
+
+    app.get('/layoutNew',function(req,res){
+        res.render('layoutNew.jade');
+    })
     //========================================
     //HOME PAGE (with login links ============
     //========================================
