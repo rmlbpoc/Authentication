@@ -1,28 +1,29 @@
-extends layout
+extends layoutNew
 block content
-        .container
-            .col-sm-6.col-sm-offset-3
-                h1
-                    span.fa.fa-sign-in
-                    |  Signup
-                // show any messages that come back with authentication
-                if message.length>0
-                    .alert.alert-danger
-                        div #{message}
-                // LOGIN FORM
-                form(action='/signup', method='post')
-                    .form-group
-                        label Email
-                        input.form-control(type='text', name='email')
-                    .form-group
-                        label Password
-                        input.form-control(type='password', name='password')
-                    button.btn.btn-warning.btn-lg(type='submit') Signup
-                hr
-                p
-                    | Already have an account?
-                    a(href='/login') &nbsp;Login
-                p
-                    | Or go
-                    a(href='/') &nbsp;home
-                    | .
+    .container
+        .row
+            .jumbotron(style="margin-bottom:500px;")
+                .span8
+                    .col-sm-6
+                        h1
+                            span
+                .span4
+                    .col-sm-6(style="padding-top:100px;")
+                        div(style="padding:20px; background:white; opacity:0.75;")
+                            h1
+                                span
+                                |  Signup
+
+                            // show any messages that come back with authentication
+                            if message.length > 0
+                                .alert.alert-danger
+                                    div #{message}
+                            // SIGNUP FORM
+                            form(action='/signup', method='post')
+                                .form-group
+                                    label Email
+                                    input.form-control(type='text', name='email')
+                                .form-group
+                                    label Password
+                                    input.form-control(type='password', name='password')
+                                button.btn.btn-warning.btn-lg(type='submit') Signup
