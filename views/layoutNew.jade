@@ -13,6 +13,7 @@ head
     link(href='stylesheets/bootstrap.css', rel='stylesheet')
     link(href='stylesheets/bootstrap-responsive.css', rel='stylesheet')
     link(href='stylesheets/style.css', rel='stylesheet')
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css')
 
 
     // HTML5 shim, for IE6-8 support of HTML5 elements
@@ -58,6 +59,8 @@ body
                         li
                             a(href='#contact') Contact
                         // Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns
+                    ul.nav.pull-right
+
                         li.dropdown
                             a.dropdown-toggle(href='#', data-toggle='dropdown')
                                 | Login
@@ -65,7 +68,7 @@ body
 
                             ul.dropdown-menu
                                 li
-                                    div(style="padding:17px;")
+                                    div(style="padding-left:17px; padding-top:17px;padding-right:17px;")
                                         // LOGIN FORM
                                         form(action='/login', method='post')
                                             .form-group
@@ -80,17 +83,17 @@ body
                                 li.nav-header Or Login using:
 
                                 li
-                                    div(style="padding-left:17px; padding-top=5px;")
+                                    div(style="padding-left:17px; padding-bottom:5px;")
                                         a.btn.btn-primary(href='/auth/facebook')
                                             span.fa.fa-facebook
                                             |  Facebook
                                 li
-                                    div(style="padding-left:17px; padding-top=5px;")
+                                    div(style="padding-left:17px; padding-bottom:5px;")
                                         a.btn.btn-info(href='/auth/twitter')
                                             span.fa.fa-Twitter
                                             |  Twitter
                                 li
-                                    div(style="padding-left:17px; padding-top=5px;")
+                                    div(style="padding-left:17px; padding-bottom:5px;")
                                         a.btn.btn-danger(href='/auth/google')
                                             span.fa.fa-google-plus
                                             |  Google
