@@ -5,16 +5,16 @@ module.exports = function(grunt){
     require('jit-grunt')(grunt, {
         express: 'grunt-express-server',
         useminPrepare: 'grunt-usemin',
-        ngtemplates: 'grunt-angular-templates',
-        cdnify: 'grunt-google-cdn',
-        protractor: 'grunt-protractor-runner',
-        injector: 'grunt-asset-injector',
+        //ngtemplates: 'grunt-angular-templates',
+        //cdnify: 'grunt-google-cdn',
+        //protractor: 'grunt-protractor-runner',
+        //injector: 'grunt-asset-injector',
         buildcontrol: 'grunt-build-control',
-        ngconstant: 'grunt-ng-constant',
+        //ngconstant: 'grunt-ng-constant',
         rsync: 'grunt-rsync',
         gitinfo: 'grunt-gitinfo',
-        replace: 'grunt-text-replace',
-        maven: 'grunt-maven-tasks'
+        replace: 'grunt-text-replace'
+        //maven: 'grunt-maven-tasks'
     });
 
     // Time how long tasks take. Can help when optimizing build times
@@ -107,7 +107,40 @@ module.exports = function(grunt){
                     done();
                 }
             }
+        },
+        express: {
+            options: {
+                port: 3000
+            },
+            dev: {
+                options: {
+                    script: 'server/bin/www',
+                    serverreload: true
+                }
+            },
+            prod: {
+                options: {
+                    script: 'server/bin/www'
+                }
+            }
+        },
+        open: {
+            server: {
+                url: 'http://localhost:<%= express.options.port %>'
+            }
+        },
+        watch: {
+
+            express: {
+                files:  [ '**/*.js' ],
+                tasks:  [ 'express:dev' ],
+                options: {
+                    spawn: false
+                }
+            }
         }
+
+
     });
 
     // Load the plugin that provides the "uglify" task.
@@ -124,4 +157,14 @@ module.exports = function(grunt){
     grunt.registerTask('config', function(target){
         return grunt.task.run(['file-creator:' + target])
     });
+
+    grunt.registerTask('serve',function(target){
+
+        return grunt.task.run([
+            'file-creator:' + target ,
+            'express:dev' ,
+            'open',
+            'watch'
+        ])
+    })
 };
