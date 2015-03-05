@@ -1,5 +1,4 @@
 var express = require('express');
-
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -13,30 +12,32 @@ var flash = require('express-flash');
 var morgan = require('morgan');
 var configDB = require('./config/database.js');
 
-
-
 var app = express();
-
-// configuration ===============================================================
 
 // Set default node environment to development
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
-// view engine setup
+//=================== CONFIGURATION ==============================================
+
+// =======  view engine
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+// ======= database
 mongoose.connect(configDB.url); // connect to our database
+
+// ======= Passport Authentication
 require('./config/passport')(passport,app); // pass passport for configuration
-//require('./config/auth')(app); // pass app for auth configuration
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
+
+// ======= app middleware
 app.use(morgan('dev'));
 //app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false })); //read information from htm forms
 app.use(cookieParser()); //read cookies - needed for auth
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../client/public')));
 app.use(session(
     {
         secret:'thisismysecretmessage',
@@ -44,7 +45,7 @@ app.use(session(
         resave: true}))
 ;
 
-//passport config
+// ======= passport config
 app.use(passport.initialize());
 app.use(passport.session()); //persistent login sesisons
 app.use(flash()); //use connect-flash for flash messages stored in session
@@ -59,7 +60,7 @@ app.use(function(req, res, next) {
     next(err);
 });
 
-// error handlers
+// ================= ERROR HANDLERS ================
 
 // development error handler
 // will print stacktrace

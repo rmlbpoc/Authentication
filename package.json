@@ -31,5 +31,8 @@
     "passport-local": "^1.0.0",
     "passport-twitter": "^1.0.2",
     "serve-favicon": "~2.2.0"
+  },
+  "devDependencies": {
+    "grunt-file-creator": "^0.1.2"
   }
 }

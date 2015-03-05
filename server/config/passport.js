@@ -8,12 +8,13 @@ var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var User = require('../app/models/user.js');
 
 // load the auth variables
-var configAuth = require('./auth');
+//var configAuth = require('./auth');
+var authData = require('./authConfig.json');
 
 
 // expose this function to our app using module.exports
 module.exports = function(passport,app) {
-    var config = new configAuth(app.get('env'));
+    //var config = new configAuth(app.get('env'));
     // =========================================================================
     // passport session setup ==================================================
     // =========================================================================
@@ -104,9 +105,9 @@ module.exports = function(passport,app) {
     // =========================================================================
     passport.use('facebook',new FacebookStrategy({
         // pull in our app id and secret from our auth.js file
-        clientID        : config.getFacebookAuth().clientID,
-        clientSecret    : config.getFacebookAuth().clientSecret,
-        callbackURL     : config.getFacebookAuth().callbackURL
+        clientID        : authData.openIdAuth.facebookAuth.clientID,
+        clientSecret    : authData.openIdAuth.facebookAuth.clientSecret,
+        callbackURL     : authData.openIdAuth.facebookAuth.callbackURL
     },
         // facebook will send back the token and profile
         function(token, refreshToken, profile, done) {
@@ -149,9 +150,9 @@ module.exports = function(passport,app) {
     // =========================================================================
     passport.use(new TwitterStrategy({
 
-            consumerKey     : config.getTwitterAuth().consumerKey,
-            consumerSecret  : config.getTwitterAuth().consumerSecret,
-            callbackURL     : config.getTwitterAuth().callbackURL
+            consumerKey     : authData.openIdAuth.twitterAuth.consumerKey,
+            consumerSecret  : authData.openIdAuth.twitterAuth.consumerSecret,
+            callbackURL     : authData.openIdAuth.twitterAuth.callbackURL
 
         },
         function(token, tokenSecret, profile, done) {
@@ -203,9 +204,9 @@ module.exports = function(passport,app) {
     // =========================================================================
     passport.use(new GoogleStrategy({
 
-            clientID        : config.getGoogleAuth().clientID,
-            clientSecret    : config.getGoogleAuth().clientSecret,
-            callbackURL     : config.getGoogleAuth().callbackURL
+            clientID        : authData.openIdAuth.googleAuth.clientID,
+            clientSecret    : authData.openIdAuth.googleAuth.clientSecret,
+            callbackURL     : authData.openIdAuth.googleAuth.callbackURL
 
         },
         function(token, refreshToken, profile, done) {
