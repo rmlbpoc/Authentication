@@ -62,7 +62,7 @@ body
                     ul.nav.pull-right
 
                         li.dropdown
-                            a.dropdown-toggle(href='#', data-toggle='dropdown')
+                            a.dropdown-toggle(href='#', data-toggle='dropdown' data-hover="dropdown" data-delay="500" data-close-others="false")
                                 | Login
                                 b.caret
 
@@ -141,30 +141,35 @@ body
 
       //Le javascript
       //==================================================
-    // Placed at the end of the document so the pages load faster
-    script(src='./javascripts/lib/jquery-1.9.1.min.js')
+    //// Placed at the end of the document so the pages load faster
 
-    //script(src='../javascripts/lib/bootstrap.min.js')
-    script(src='./javascripts/lib/bootstrap-transitions.js')
+    script(src='./bower_components/jquery/dist/jquery.min.js')
+
+    script(src='./bower_components/bootstrap/dist/js/bootstrap.min.js')
+    //script(src='./bower_components/bootstrap3-dialog/dist/js/bootstrap-dialog.min.js')
+    script(src='./bower_components/bootstrap-carousel-swipe/carousel-swipe.js')
+    script(src='./bower_components/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js')
+
+    //script(src='./javascripts/lib/bootstrap-transitions.js')
     //script(src='/cmsv3/skins/bootstrap/docs/assets/js/bootstrap-alert.js')
-    script(src='./javascripts/lib/bootstrap-modal.js')
-    script(src='./javascripts/lib/bootstrap-dropdown.js')
+    //script(src='./javascripts/lib/bootstrap-modal.js')
+    //script(src='./javascripts/lib/bootstrap-dropdown.js')
 
-    script(src='../javascripts/lib/bootstrap-scrollspy.js')
+    //script(src='../javascripts/lib/bootstrap-scrollspy.js')
     //
-    script(src='../javascripts/lib/bootstrap-tab.js')
+    //script(src='../javascripts/lib/bootstrap-tab.js')
     //
     //script(src='../javascripts/lib/bootstrap-tooltip.js')
     //
-    script(src='../javascripts/lib/bootstrap-popover.js')
+    //script(src='../javascripts/lib/bootstrap-popover.js')
     //
     //script(src='../javascripts/lib/bootstrap-button.js')
     //
-    script(src='../javascripts/lib/bootstrap-collapse.js')
+    //script(src='../javascripts/lib/bootstrap-collapse.js')
     //
-    script(src='../javascripts/lib/bootstrap-carousel.js')
+    //script(src='../javascripts/lib/bootstrap-carousel.js')
     //
-    script(src='../javascripts/lib/bootstrap-typeahead.js')
+    //script(src='../javascripts/lib/bootstrap-typeahead.js')
 
     script.
         !function ($) {

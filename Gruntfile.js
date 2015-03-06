@@ -46,6 +46,70 @@ module.exports = function(grunt){
             client: require('./bower.json').appPath || 'client',
             dist: 'dist'
         },
+
+        // Empties folders to start fresh
+        clean: {
+            dist: {
+                files: [{
+                    dot: true,
+                    src: [
+                        '.tmp',
+                        '<%= yeoman.dist %>/*',
+                        '!<%= yeoman.dist %>/.git*',
+                        '!<%= yeoman.dist %>/.openshift',
+                        '!<%= yeoman.dist %>/Procfile'
+                    ]
+                }]
+            },
+            server: '.tmp'
+        },
+
+        // Run some tasks in parallel to speed up the build process
+        concurrent: {
+            server: [
+                // 'sass',
+            ],
+            test: [
+                // 'sass',
+            ],
+            debug: {
+                tasks: [
+                    'nodemon',
+                    'node-inspector'
+                ],
+                options: {
+                    logConcurrentOutput: true
+                }
+            },
+            dist: [
+                // 'sass',
+                'imagemin',
+                'svgmin'
+            ]
+        },
+
+        // The following *-min tasks produce minified files in the dist folder
+        imagemin: {
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= yeoman.client %>/img',
+                    src: '{,*/}*.{png,jpg,jpeg,gif}',
+                    dest: '<%= yeoman.dist %>/public/img'
+                }]
+            }
+        },
+
+        svgmin: {
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= yeoman.client %>/img',
+                    src: '{,*/}*.svg',
+                    dest: '<%= yeoman.dist %>/public/img'
+                }]
+            }
+        },
         uglify: {
             options:{
                 banner:"/*! <%= pkg.name %> <%= grunt.template.today('yyyy-mm-dd') %>*/\n"
@@ -60,7 +124,6 @@ module.exports = function(grunt){
                 'commits': [ 'log', '-5', '--no-merges', '--pretty=format:%s | %ad | %an | %h' ]
             }
         },
-
 
         "file-creator": {//use this to generate the authConfig file at runtime
             "development": {
@@ -87,7 +150,7 @@ module.exports = function(grunt){
                 }
             },
             "qat2": {
-                "server/config/authConfig.json": function(fs, fd, done) {
+                "<%= yeoman.dist %>/server/config/authConfig.json": function(fs, fd, done) {
                     var openIdAuth = {
                         openIdAuth: {
                             'facebookAuth': {
@@ -110,7 +173,7 @@ module.exports = function(grunt){
                 }
             },
             "production": {
-                "server/config/authConfig.json": function(fs, fd, done) {
+                "<%= yeoman.dist %>/server/config/authConfig.json": function(fs, fd, done) {
                     var openIdAuth = {
                         openIdAuth: {
                             'facebookAuth': {
