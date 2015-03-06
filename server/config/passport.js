@@ -15,9 +15,12 @@ var authData = require('./authConfig.json');
 // expose this function to our app using module.exports
 module.exports = function(passport,app) {
     //var config = new configAuth(app.get('env'));
-    // =========================================================================
-    // passport session setup ==================================================
-    // =========================================================================
+
+    /*
+     |--------------------------------------------------------------------------
+     |                      PASSPORT SESSION SETUP
+     |--------------------------------------------------------------------------
+     */
     // required for persistent login sessions
     // passport needs ability to serialize and unserialize users out of session
 
@@ -33,9 +36,12 @@ module.exports = function(passport,app) {
         });
     });
 
-    // =========================================================================
-    // LOCAL SIGNUP ============================================================
-    // =========================================================================
+    /*
+     |--------------------------------------------------------------------------
+     |                      LOCAL SIGNUP
+     |--------------------------------------------------------------------------
+     */
+
     // we are using named strategies since we have one for login and one for signup
     // by default, if there was no name, it would just be called 'local'
     passport.use('local-signup', new LocalStrategy({
@@ -73,9 +79,12 @@ module.exports = function(passport,app) {
         });
     }));
 
-    // =========================================================================
-    // LOCAL LOGIN ============================================================
-    // =========================================================================
+    /*
+     |--------------------------------------------------------------------------
+     |                      LOCAL LOGIN
+     |--------------------------------------------------------------------------
+     */
+
     // we are using named strategies since we have one for login and one for signup
     // by default, if there was no name, it would just be called 'local'
     passport.use('local-login',new LocalStrategy({
@@ -100,9 +109,11 @@ module.exports = function(passport,app) {
         }
     ));
 
-    // =========================================================================
-    // FACEBOOK LOGIN ============================================================
-    // =========================================================================
+    /*
+     |--------------------------------------------------------------------------
+     |                      FACEBOOK LOGIN
+     |--------------------------------------------------------------------------
+     */
     passport.use('facebook',new FacebookStrategy({
         // pull in our app id and secret from our auth.js file
         clientID        : authData.openIdAuth.facebookAuth.clientID,
@@ -145,9 +156,11 @@ module.exports = function(passport,app) {
         }
     ));
 
-    // =========================================================================
-    // TWITTER =================================================================
-    // =========================================================================
+    /*
+     |--------------------------------------------------------------------------
+     |                      TWITTER LOGIN
+     |--------------------------------------------------------------------------
+     */
     passport.use(new TwitterStrategy({
 
             consumerKey     : authData.openIdAuth.twitterAuth.consumerKey,
@@ -169,8 +182,6 @@ module.exports = function(passport,app) {
                         console.log(err);
                         return done(err);
                     }
-
-
 
                     // if the user is found then log them in
                     if (user) {
@@ -199,9 +210,11 @@ module.exports = function(passport,app) {
         }
     ));
 
-    // =========================================================================
-    // GOOGLE ==================================================================
-    // =========================================================================
+    /*
+     |--------------------------------------------------------------------------
+     |                      GOOGLE LOGIN
+     |--------------------------------------------------------------------------
+     */
     passport.use(new GoogleStrategy({
 
             clientID        : authData.openIdAuth.googleAuth.clientID,

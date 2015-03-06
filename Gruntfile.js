@@ -20,11 +20,32 @@ module.exports = function(grunt){
     // Time how long tasks take. Can help when optimizing build times
     require('time-grunt')(grunt);
 
+    // Build information functions
+    var gitinfo = grunt.config('gitinfo');
+    function generateBuildInfo(extended) {
+        var current = gitinfo.local.branch.current;
+        var info = {
+            version: '<%= pkg.version %>',
+            timestamp: (new Date()).toString()
+            // branch: current.name,
+            // recent: gitinfo.commits.split("\n")
+        };
+        if (extended) {
+            info.branch = current.name;
+            info.recent = gitinfo.commits.split("\n");
+        }
+
+        return JSON.stringify(info, null, 4);
+    }
+
     grunt.initConfig({
 
-
         pkg:grunt.file.readJSON('package.json'),
-
+        yeoman: {
+            // configurable paths
+            client: require('./bower.json').appPath || 'client',
+            dist: 'dist'
+        },
         uglify: {
             options:{
                 banner:"/*! <%= pkg.name %> <%= grunt.template.today('yyyy-mm-dd') %>*/\n"
@@ -34,7 +55,14 @@ module.exports = function(grunt){
                 dest: 'build/<%= pkg.name %>.min.js'
             }
         },
-        "file-creator": {
+        gitinfo: {
+            commands: {
+                'commits': [ 'log', '-5', '--no-merges', '--pretty=format:%s | %ad | %an | %h' ]
+            }
+        },
+
+
+        "file-creator": {//use this to generate the authConfig file at runtime
             "development": {
                 "server/config/authConfig.json": function(fs, fd, done) {
                     var openIdAuth = {
@@ -110,7 +138,7 @@ module.exports = function(grunt){
         },
         express: {
             options: {
-                port: 3000
+                port: process.env.PORT || 3000
             },
             dev: {
                 options: {
@@ -132,15 +160,13 @@ module.exports = function(grunt){
         watch: {
 
             express: {
-                files:  [ '**/*.js' ],
+                files:  [ 'server/**/*.{js,json}' ],
                 tasks:  [ 'express:dev' ],
                 options: {
                     spawn: false
                 }
             }
         }
-
-
     });
 
     // Load the plugin that provides the "uglify" task.
@@ -166,5 +192,12 @@ module.exports = function(grunt){
             'open',
             'watch'
         ])
-    })
+    });
+
+    grunt.registerTask('printgit', function() {
+        grunt.task.requires('gitinfo');
+        grunt.log.writeln('gitinfo: ' + JSON.stringify(grunt.config('gitinfo')));
+    });
+
+    grunt.registerTask('testgit', ['gitinfo', 'printgit']);
 };
