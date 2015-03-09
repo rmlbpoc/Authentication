@@ -4,7 +4,6 @@ node_modules
 .idea
 dist
 /server/config/local.env.js
-client/app/config.js
 coverage
 *.zip
 *.log
