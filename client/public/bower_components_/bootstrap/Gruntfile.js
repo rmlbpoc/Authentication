@@ -278,7 +278,7 @@ module.exports = function (grunt) {
 
     copy: {
       fonts: {
-        src: 'fonts/*',
+        src: 'font/*',
         dest: 'dist/'
       },
       docs: {

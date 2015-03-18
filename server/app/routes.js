@@ -8,7 +8,10 @@ module.exports = function(app,passport){
 
     app.get('/layoutNew',function(req,res){
         res.render('layoutNew.jade');
-    })
+    });
+    app.get('/layout_',function(req,res){
+        res.render('layout_.jade');
+    });
     //========================================
     //HOME PAGE (with login links ============
     //========================================
@@ -22,10 +25,10 @@ module.exports = function(app,passport){
     //LOGIN PAGE =============================
     //========================================
     //render the login page and pass any flash data if it exists
-    app.get('/login',function(req,res){
+    app.get('/login_',function(req,res){
         var msg = req.flash('loginMessage');
         console.log('calling login page - '+ msg);
-        res.render('login.jade', { message: msg});
+        res.render('login_.jade', { message: msg});
     });
 
     //process login
@@ -35,6 +38,12 @@ module.exports = function(app,passport){
         failureFlash : true // allow flash messages
     }));
 
+
+    app.get('/login_',function(req,res){
+        var msg = req.flash('loginMessage');
+        console.log('calling login_ page - '+ msg);
+        res.render('login_.jade', { message: msg});
+    });
     //========================================
     //FORGOT PASS=============================
     //========================================

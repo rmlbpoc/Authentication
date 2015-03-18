@@ -1,0 +1,121 @@
+extends layout_
+block content
+    .container-fluid
+        section(id="login" ng-controller="visHomeController" ng-init="init()").row.title-row
+            .fill-screen.stellar-bg(data-stellar-background-ratio='0.2', style='background-image: url("./images/SCG_main.jpg")')
+                .loginPanel.loginPanel-responsive
+                    aside.col-sm-6.col-sm-height
+                        h4.range-title
+                            b Login with
+                        .range-list
+                            div
+                                a.btn.btn-primary(href='/auth/facebook')
+                                    span.fa.fa-facebook  Log In with Facebook
+                            div
+                                a.btn.btn-info(href='/auth/twitter')
+                                    span.fa.fa-Twitter  Log In with Twitter
+                            div
+                                a.btn.btn-danger(href='/auth/google')
+                                    span.fa.fa-google-plus  Log In with Google
+                    aside.scol-sm-6.col-sm-height
+                        h4.range-title
+                            b Login
+                        .range-list(ng-show="!showForgot")
+                            form(action='/login', method='post')
+                                .form-group(style='display:inline-block;')
+                                    input.form-control(type='text', name='email', placeholder='email address')
+                                br
+                                .form-group(style='display:inline-block;')
+                                    input.form-control(type='password', name='password', placeholder='password')
+                            div
+                                .formgroup.button.btn.btn-primary(type='submit' style='display:inline-block;') Login
+                            a.btn.btn-link(ng-click="showForgot=!showForgot")  Forgot Password?
+
+                        div(ng-show="showForgot")
+                            form.forgot-password(action='/forgot', method='post')
+                                .form-group(style='display:inline-block;')
+                                    input.form-control(type='text', name='email', autofocus placeholder='email address')
+                            div
+                                .formgroup.button.btn.btn-primary(type='submit' style='display:inline-block;') Reset Password
+                            a.btn.btn-link(ng-click="showForgot=!showForgot")  Back to login
+                .down-button
+                    a.btn(href='#mcgVis')
+                        i.fa.fa-arrow-circle-down.fa-4x
+        section#mcgVis.row.text-banner
+            h1 Visit the MCG
+            p
+                | Wembley Stadium, Camp Nou, Yankee Stadium and Madison Square Garden are considered among the greatest sporting arenas in the world, but for history, pure drama and emotion, it’s hard to look past the Melbourne Cricket Ground (MCG).
+        section.row
+            #carousel.carousel.slide(data-ride='carousel')
+                // Indicators
+                ol.carousel-indicators
+                    li.active(data-target='#carousel', data-slide-to='0')
+                    li(data-target='#carousel', data-slide-to='1')
+                    li(data-target='#carousel', data-slide-to='2')
+                // Wrapper for slides
+                .carousel-inner(role='listbox')
+                    .item.active
+                        .carousel-caption
+                            h3 CA Grounds
+                            p list of grounds in australia
+                        img(src='./images/MCG_main.jpg', alt='Scale Mountain')
+                    .item
+                        .carousel-caption
+                            h3 Sydney Cricket ground
+                            p Home of Bradman and Trumper
+                        img(src='./images/SCG_main.jpg', alt='Mountain')
+                    .item
+                        .carousel-caption
+                            h3 The WACA
+                            p Home of pace and bounce
+                        img(src='./images/WACA_main.jpg', alt='Rockies')
+                    .item
+                        .carousel-caption
+                            h3 Adelaide Oval
+                            p South Australia
+                        img(src='./images/Adelaide_main.png', alt='Rockies')
+                    .item
+                        .carousel-caption
+                            h3 The GABBA
+                            p Home of AB and some tough cookies
+                        img(src='./images/GABBA_main.jpg', alt='Rockies')
+                // Controls
+                a.left.carousel-control(href='#carousel', role='button', data-slide='prev')
+                    span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+                    span.sr-only Previous
+                a.right.carousel-control(href='#carousel', role='button', data-slide='next')
+                    span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+                    span.sr-only Next
+        section#scg.row
+            .fill-screen.fixed-attachment(style='background-image: url("./images/SCG_main.jpg")')
+        section.activity-section.text-banner.content-filler
+            h1 Visit the SCG
+            p#nswg
+                | Situated in Moore Park in the city's east, the Sydney Cricket Ground is one of the world's most famous cricketing venues. For a stadium in a major centre, it has a relatively limited capacity (a little over 40,000) but this has the direct benefit of ensuring that spectators are close to the action from virtually any point in the ground. Its limited capacity is, in fact, essentially the result of the extension over recent years of seating to most parts of a stadium now devoid of its long famous hill and instead dominated by the Brewongle, Churchill, O'Reilly, Noble and Doug Walters Stands. The green-roofed Ladies pavilion remains, still one of cricket's most famous landmarks.
+            .activity-element.col-md-4.wow.fadeInLeft
+                img(src='./images/SCG_bradman.jpg')
+                h4 Don Bradman
+                p
+            .activity-element.col-md-4.wow.fadeInDown
+                img(src='./images/SCG_trumper.jpg')
+                h4 Victor Trumper
+                p
+            .activity-element.col-md-4.wow.fadeInRight
+                img(src='./images/SCG_benaud.jpg')
+                h4 Richie Benaud
+                p
+        section.row
+            h2 Nano Gallery
+            #nanoGallery3
+                a(href='./images/MCG_big.jpg', data-ngthumb='./images/MCG_big.jpg') MCG
+                a(href='./images/SCG_main.jpg', data-ngthumb='./images/SCG_main.jpg') SCG
+                a(href='./images/WACA_main.jpg', data-ngthumb='./images/WACA_main.jpg') WACA
+                a(href='./images/Adelaide_main.png', data-ngthumb='./images/Adelaide_main.png') Oval
+                a(href='./images/GABBA_main.jpg', data-ngthumb='./images/GABBA_main.jpg') GABBA
+        section#waca.row
+            .fill-screen.fixed-attachment(style='background-image: url("./images/WACA_main.jpg")')
+        section.text-banner.content-filler
+            h1 Welcome to WACA
+            p The home of pace, bounce and the Fremantle Doctor
+    footer.container-fluid
+        h1 Footer
