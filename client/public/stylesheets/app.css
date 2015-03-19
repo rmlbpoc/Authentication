@@ -126,6 +126,9 @@ aside{
     max-width: 140px;
     max-height: 60px;
 }
+.range-list span{
+    font-weight: 800;
+}
 .range-title {
     color : #ffffff;
 }
@@ -292,13 +295,28 @@ article p{
     -webkit-transform: translate(-50%,-50%);
 }
 .loginPanel>aside{
-    border: 1px solid #000000;
     background-color: rgba(0, 0, 0, 0.85);
     height: 360px;
 }
+@media (min-width: 768px) {
+    .loginPanel>aside:first-child{
+        border-right: 3px groove rgba(224, 180, 153, 0.75);
+    }
+}
+
+@media (max-width: 768px) {
+    .loginPanel>aside:first-child{
+        border-bottom: 3px groove rgba(224, 180, 153, 0.75);
+    }
+}
+
 .loginPanel>aside>div{
     padding: 0px 0px;
 }
 .forgot-password{
     padding-top: 30px;
+}
+.login-button{
+    width:150px;
+    font-weight: 800;
 }

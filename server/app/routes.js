@@ -16,19 +16,27 @@ module.exports = function(app,passport){
     //HOME PAGE (with login links ============
     //========================================
     app.get('/',function(req,res){
-        console.log('calling home');
-        console.log('ENV = ' + app.get('env'));
-        res.render('index.jade');
+        if(req.isAuthenticated()){
+            res.render('profile.jade',{
+                user:req.user // get the user out of session and pass to template
+            })
+        }else{
+            console.log('calling home');
+            console.log('ENV = ' + app.get('env'));
+            var msg = req.flash('loginMessage');
+            res.render('index_.jade', { message: msg});
+        }
+
     });
 
     //========================================
     //LOGIN PAGE =============================
     //========================================
     //render the login page and pass any flash data if it exists
-    app.get('/login_',function(req,res){
+    app.get('/login',function(req,res){
         var msg = req.flash('loginMessage');
         console.log('calling login page - '+ msg);
-        res.render('login_.jade', { message: msg});
+        res.render('index_.jade', { message: msg});
     });
 
     //process login
@@ -42,7 +50,7 @@ module.exports = function(app,passport){
     app.get('/login_',function(req,res){
         var msg = req.flash('loginMessage');
         console.log('calling login_ page - '+ msg);
-        res.render('login_.jade', { message: msg});
+        res.render('index_.jade', { message: msg});
     });
     //========================================
     //FORGOT PASS=============================
