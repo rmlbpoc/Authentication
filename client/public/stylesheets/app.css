@@ -107,7 +107,7 @@ header,footer{
 aside{
     background-color: rgba(8, 53, 73, 0.43);
     text-align: center;
-    padding: 40px 30px;
+    padding: 20px 30px;
 
 }
 .range-list{
@@ -275,7 +275,7 @@ article p{
     }
 }
 
-.range-list div{
+.range-list-div{
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -296,7 +296,7 @@ article p{
 }
 .loginPanel>aside{
     background-color: rgba(0, 0, 0, 0.85);
-    height: 360px;
+    height: 265px;
 }
 @media (min-width: 768px) {
     .loginPanel>aside:first-child{
@@ -318,5 +318,9 @@ article p{
 }
 .login-button{
     width:150px;
+    font-weight: 800;
+}
+.login-button-ext{
+    width:170px;
     font-weight: 800;
 }
