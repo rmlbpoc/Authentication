@@ -14,7 +14,11 @@ $(function(){
             scrollTop: $($(this).attr('href')).offset().top -110
         },1500,'easeInOutExpo');
         event.preventDefault();
-    })
+    });
+
+    //$("#signupLink").click(function() {
+    //    $("#login" ).hide( );
+    //});
 
     //parallax scrolling with stellar.js
     $(window).stellar();

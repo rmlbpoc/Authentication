@@ -282,7 +282,6 @@ article p{
 
 .loginPanel-responsive{
     margin:0px auto;
-
     box-shadow: rgba(0,0,0,0.5) 10px 10px 10px;
 }
 .loginPanel{
@@ -298,16 +297,32 @@ article p{
     background-color: rgba(0, 0, 0, 0.85);
     height: 265px;
 }
+.signup-panel >aside{
+    padding: 20px 50px;
+}
+.signup-bot{
+    background-color: rgba(0, 0, 0, 1);
+    height: 45px;
+    text-align: center;
+    font-size: 29px;
+    border-top: 1px ridge rgba(224, 180, 153, 0.75);
+}
+.signup-bot p{
+    font-size: 18px;
+    font-weight: 800;
+}
+
 @media (min-width: 768px) {
     .loginPanel>aside:first-child{
-        border-right: 3px groove rgba(224, 180, 153, 0.75);
+        border-right: 2px groove rgba(224, 180, 153, 0.75);
     }
 }
 
 @media (max-width: 768px) {
     .loginPanel>aside:first-child{
-        border-bottom: 3px groove rgba(224, 180, 153, 0.75);
+        border-bottom: 2px groove rgba(224, 180, 153, 0.75);
     }
+
 }
 
 .loginPanel>aside>div{
@@ -325,5 +340,11 @@ article p{
     font-weight: 800;
 }
 .login-links{
-    font-weight: 700;
+    font-weight: 800;
+}
+
+@media (max-width: 768px) {
+    .down-button{
+        display: none;
+    }
 }

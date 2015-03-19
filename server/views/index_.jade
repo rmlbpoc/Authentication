@@ -3,7 +3,7 @@ block content
     .container-fluid
         section(id="login" ng-controller="visHomeController" ng-init="init()").row.title-row
             .fill-screen.stellar-bg(data-stellar-background-ratio='0.2', style='background-image: url("./images/ChandiniChowk_020.jpg")')
-                .loginPanel.loginPanel-responsive(ng-show="!showSignup")
+                .loginPanel#login.loginPanel-responsive(ng-show="!showSignup")
                     aside.col-sm-6.col-sm-height
                         h4.range-title
                             b Login with
@@ -40,30 +40,38 @@ block content
                                 .formgroup.button.btn.btn-primary.login-button(type='submit' style='display:inline-block;') Reset Password
                             a.btn.btn-link(ng-click="showForgot=!showForgot")
                                 p.login-links Back to login
-                .loginPanel.loginPanel-responsive(ng-show="showSignup")
+                    .signup-bot
+                        a.btn#signupLink.btn-link(ng-click="showSignup=!showSignup")
+                            p Create an account
+                .loginPanel#signup.loginPanel-responsive.signup-panel(ng-show="showSignup")
                     aside.scol-sm-12.col-sm-height
                         h4.range-title
                             b Signup
-                        .range-list(ng-show="!showForgot")
-                            .range-list-div.form(action='/login', method='post')
+                            // show any messages that come back with authentication
+                        if message.length > 0
+                            .alert.alert-danger
+                                div #{message}
+                        // SIGNUP FORM
+                        .range-list
+                            .range-list-div.form(action='/signup', method='post')
+                                .form-group(style='display:inline-block;')
+                                    input.form-control(type='text', name='fname', autofocus, placeholder='first name')
+                                br
+                                .form-group(style='display:inline-block;')
+                                    input.form-control(type='text', name='lname', placeholder='last name')
+                                br
                                 .form-group(style='display:inline-block;')
                                     input.form-control(type='text', name='email', placeholder='email address')
                                 br
                                 .form-group(style='display:inline-block;')
                                     input.form-control(type='password', name='password', placeholder='password')
-                            div
-                                .formgroup.button.btn.btn-primary.login-button(type='submit' style='display:inline-block;') Login
-                            a.btn.btn-link(ng-click="showForgot=!showForgot")
-                                p.login-links Forgot Password?
-
-                        div(ng-show="showForgot")
-                            form.forgot-password(action='/forgot', method='post')
+                                br
                                 .form-group(style='display:inline-block;')
-                                    input.form-control(type='text', name='email', autofocus placeholder='email address')
+                                    input.form-control(type='password', name='confpassword', placeholder='verify password')
                             div
-                                .formgroup.button.btn.btn-primary.login-button(type='submit' style='display:inline-block;') Reset Password
-                            a.btn.btn-link(ng-click="showForgot=!showForgot")
-                                p.login-links Back to login
+                                .formgroup.button.btn.btn-primary.login-button(type='submit' style='display:inline-block;') Signup
+                            a.btn#signupLink.btn-link(ng-click="showSignup=!showSignup")
+                                p Back to login
                 .down-button
                     a.btn(href='#chCowk')
                         i.fa.fa-arrow-circle-down.fa-4x
