@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0ad46b56-dd5b-4760-ac8a-bce0f357ba71" name="Default" comment="big changes:&#10;updated layout - new file - layout_.jade&#10;new login form&#10;new vis home page&#10;new nav&#10;added angular">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/public/images/Adelaide_logo.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/public/images/Adelaide_main.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/public/images/CA_Logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/public/images/CA_Logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/public/images/CA_Logo_small.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/public/images/GABBA_logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/public/images/GABBA_main.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/public/images/MCG_big.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/public/images/MCG_big_dark.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/public/images/MCG_logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/public/images/MCG_main.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/public/images/MCG_main_dark.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/public/images/SCG_benaud.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/public/images/SCG_bradman.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/public/images/SCG_logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/public/images/SCG_main.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/public/images/SCG_mcgrath.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/public/images/SCG_trumper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/public/images/WACA_logo.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/public/images/WACA_main.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/public/images/WC2015_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/public/images/WC2015_logo.png" afterPath="" />
+    <list default="true" id="0ad46b56-dd5b-4760-ac8a-bce0f357ba71" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="NodeAuthentication.iws" />
@@ -661,7 +639,19 @@
       <option name="project" value="LOCAL" />
       <updated>1426734578484</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="removed cricket images">
+      <created>1426734898949</created>
+      <option name="number" value="00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1426734898949</updated>
+    </task>
+    <task id="LOCAL-00037" summary="removed cricket images">
+      <created>1426735019633</created>
+      <option name="number" value="00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1426735019633</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -689,7 +679,7 @@
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32551724" sideWeight="0.49964765" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32551724" sideWeight="0.49964765" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32827586" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32596686" sideWeight="0.5003524" order="8" side_tool="true" content_ui="tabs" />
@@ -700,7 +690,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24947146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24947146" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24947146" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21793103" sideWeight="0.49964765" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -747,18 +737,14 @@
     <MESSAGE value="updated images and cleaned up cricket references" />
     <MESSAGE value="updated images" />
     <MESSAGE value="added signup panel" />
-    <option name="LAST_COMMIT_MESSAGE" value="added signup panel" />
+    <MESSAGE value="removed cricket images" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed cricket images" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/public/images/pic4.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/public/images/pic3.jpeg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1128,6 +1114,11 @@
           <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/public/images/ChandiniChowk_050.JPG">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/views/index_.jade">
