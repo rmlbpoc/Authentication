@@ -321,6 +321,9 @@ article p{
     font-weight: 800;
 }
 .login-button-ext{
-    width:170px;
+    width:195px;
     font-weight: 800;
+}
+.login-links{
+    font-weight: 700;
 }

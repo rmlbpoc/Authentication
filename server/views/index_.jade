@@ -3,7 +3,7 @@ block content
     .container-fluid
         section(id="login" ng-controller="visHomeController" ng-init="init()").row.title-row
             .fill-screen.stellar-bg(data-stellar-background-ratio='0.2', style='background-image: url("./images/ChandiniChowk_020.jpg")')
-                .loginPanel.loginPanel-responsive
+                .loginPanel.loginPanel-responsive(ng-show="!showSignup")
                     aside.col-sm-6.col-sm-height
                         h4.range-title
                             b Login with
@@ -23,13 +23,38 @@ block content
                         .range-list(ng-show="!showForgot")
                             .range-list-div.form(action='/login', method='post')
                                 .form-group(style='display:inline-block;')
+                                    input.form-control(type='text', name='email', autofocus,placeholder='email address')
+                                br
+                                .form-group(style='display:inline-block;')
+                                    input.form-control(type='password', name='password', placeholder='password')
+                            div
+                                .formgroup.button.btn.btn-primary.login-button(type='submit' style='display:inline-block;') Login
+                            a.btn.btn-link(ng-click="showForgot=!showForgot")
+                                p.login-links Forgot Password?
+
+                        div(ng-show="showForgot")
+                            form.forgot-password(action='/forgot', method='post')
+                                .form-group(style='display:inline-block;')
+                                    input.form-control(type='text', name='email', autofocus, placeholder='email address')
+                            div
+                                .formgroup.button.btn.btn-primary.login-button(type='submit' style='display:inline-block;') Reset Password
+                            a.btn.btn-link(ng-click="showForgot=!showForgot")
+                                p.login-links Back to login
+                .loginPanel.loginPanel-responsive(ng-show="showSignup")
+                    aside.scol-sm-12.col-sm-height
+                        h4.range-title
+                            b Signup
+                        .range-list(ng-show="!showForgot")
+                            .range-list-div.form(action='/login', method='post')
+                                .form-group(style='display:inline-block;')
                                     input.form-control(type='text', name='email', placeholder='email address')
                                 br
                                 .form-group(style='display:inline-block;')
                                     input.form-control(type='password', name='password', placeholder='password')
                             div
                                 .formgroup.button.btn.btn-primary.login-button(type='submit' style='display:inline-block;') Login
-                            a.btn.btn-link(ng-click="showForgot=!showForgot")  Forgot Password?
+                            a.btn.btn-link(ng-click="showForgot=!showForgot")
+                                p.login-links Forgot Password?
 
                         div(ng-show="showForgot")
                             form.forgot-password(action='/forgot', method='post')
@@ -37,7 +62,8 @@ block content
                                     input.form-control(type='text', name='email', autofocus placeholder='email address')
                             div
                                 .formgroup.button.btn.btn-primary.login-button(type='submit' style='display:inline-block;') Reset Password
-                            a.btn.btn-link(ng-click="showForgot=!showForgot")  Back to login
+                            a.btn.btn-link(ng-click="showForgot=!showForgot")
+                                p.login-links Back to login
                 .down-button
                     a.btn(href='#chCowk')
                         i.fa.fa-arrow-circle-down.fa-4x
