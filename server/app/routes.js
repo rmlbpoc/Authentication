@@ -189,7 +189,7 @@ module.exports = function(app,passport){
                     'This is a confirmation that the password for your account ' + user.local.email + ' has just been changed.\n'
                 };
                 smtpTransport.sendMail(mailOptions, function(err) {
-                    req.flash('info', 'Success! Your password has been changed.');
+                    //req.flash('info', 'Success! Your password has been changed.');
                     done(err);
                 });
             }

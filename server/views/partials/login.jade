@@ -41,6 +41,9 @@
                     input.form-control(type='text', name='email', autofocus, placeholder='email address' ng-model="user.email")
             div
                 button.formgroup.btn.btn-primary.login-button(ng-click="forgot()" style='display:inline-block;') Reset Password
+
+            span.val-error-msg(ng-bind="message")
+            br
             a.btn.btn-link(ng-click="showForgot=!showForgot")
                 p.login-links Back to login
     .signup-bot
