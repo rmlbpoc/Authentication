@@ -35,6 +35,23 @@ visHome.factory('adminService',function($http,$log,$rootScope){
                 .then(function(response){
                     return response.data;
                 })
+        },
+        forgot:function(user){
+            console.log('calling login service - ',user);
+            return $http({
+                method : 'POST',
+                url : '/forgot',
+                data : user
+            })
+                .success(function(data,status,headers,config){
+                    console.log(data);
+                })
+                .error(function(){
+                    //
+                })
+                .then(function(response){
+                    return response.data;
+                })
         }
     };
 

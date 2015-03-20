@@ -76,11 +76,11 @@ module.exports = function(app,passport){
     //FORGOT PASS=============================
     //========================================
     //render the forgot password page
-    app.get('/forgot',function(req,res){
-        console.log('calling forgot page');
-        var msg= req.flash('info');
-        res.render('forgot.jade',{message:msg});
-    });
+    //app.get('/forgot',function(req,res){
+    //    console.log('calling forgot page');
+    //    var msg= req.flash('info');
+    //    res.render('forgot.jade',{message:msg});
+    //});
 
     ////process forgot passowrd
     app.post('/forgot',function(req, res, next){
@@ -97,8 +97,8 @@ module.exports = function(app,passport){
                 User.findOne({'local.email':req.body.email},function(err,user){
                     if(!user){
                         console.log('user not found');
-                        req.flash('info','No account with that email address exists');
-                        return res.redirect('/forgot');
+                        //req.flash('info','No account with that email address exists');
+                        return res.send({message:"No account with that email address exists"});
                     }
                     user.local.resetPasswordToken = token;
                     user.local.resetPasswordExpires = Date.now() + 3600000;
@@ -128,13 +128,14 @@ module.exports = function(app,passport){
                     'If you did not request this, please ignore this email and your password will remain unchanged.\n'
                 };
                 smtpTransport.sendMail(mailOptions, function(err) {
-                    req.flash('info', 'An e-mail has been sent to ' + user.local.email + ' with further instructions.');
-                    done(err, 'done');
+                    //req.flash('info', 'An e-mail has been sent to ' + user.local.email + ' with further instructions.');
+                    res.send({message:'An e-mail has been sent to ' + user.local.email + ' with further instructions.'});
+                    //done(err, 'done');
                 });
             }
         ],function(err) {
             if (err) return next(err);
-            res.redirect('/forgot');
+            res.redirect('/');
         })
     });
 

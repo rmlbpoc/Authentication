@@ -35,4 +35,15 @@ visHome.controller('visHomeController',function($scope,$log,adminService){
             }
         })
     }
+
+    $scope.forgot = function(){
+        console.log('calling login with : ', $scope.user);
+        adminService.forgot($scope.user).then(function(data){
+            //console.log(data);
+            $scope.message = data;
+            if(data.redirect){
+                window.location = data.redirect
+            }
+        })
+    }
 });

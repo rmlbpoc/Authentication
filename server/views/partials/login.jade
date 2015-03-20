@@ -36,11 +36,11 @@
                 p.login-links Forgot Password?
 
         div(ng-show="showForgot")
-            form.forgot-password(action='/forgot', method='post')
+            form.forgot-password
                 .form-group(style='display:inline-block;')
-                    input.form-control(type='text', name='email', autofocus, placeholder='email address')
+                    input.form-control(type='text', name='email', autofocus, placeholder='email address' ng-model="user.email")
             div
-                .formgroup.button.btn.btn-primary.login-button(type='submit' style='display:inline-block;') Reset Password
+                button.formgroup.btn.btn-primary.login-button(ng-click="forgot()" style='display:inline-block;') Reset Password
             a.btn.btn-link(ng-click="showForgot=!showForgot")
                 p.login-links Back to login
     .signup-bot
