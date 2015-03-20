@@ -3,7 +3,9 @@ block content
     .container-fluid
         section(id="login" ng-controller="visHomeController" ng-init="init()").row.title-row
             .fill-screen.stellar-bg(data-stellar-background-ratio='0.2', style='background-image: url("./images/ChandiniChowk_020.jpg")')
+
                 .loginPanel#login.loginPanel-responsive(ng-show="!showSignup")
+
                     aside.col-sm-6.col-sm-height
                         h4.range-title
                             b Login with
@@ -20,15 +22,22 @@ block content
                     aside.scol-sm-6.col-sm-height
                         h4.range-title
                             b Login
+                        //if message.length>0
+                        //    .alert.alert-danger
+                        //        div #{message}
+                        // LOGIN FORM
                         .range-list(ng-show="!showForgot")
-                            .range-list-div.form(action='/login', method='post')
+                            form.range-list-div
                                 .form-group(style='display:inline-block;')
-                                    input.form-control(type='text', name='email', autofocus,placeholder='email address')
+                                    input.form-control(type='text', name='email', autofocus,placeholder='email address' ng-model="user.email")
                                 br
                                 .form-group(style='display:inline-block;')
-                                    input.form-control(type='password', name='password', placeholder='password')
-                            div
-                                .formgroup.button.btn.btn-primary.login-button(type='submit' style='display:inline-block;') Login
+                                    input.form-control(type='password', name='password', placeholder='password' ng-model="user.password")
+                                br
+                                button.formgroup.btn.btn-primary.login-button(ng-click="login()" style='display:inline-block;') Login
+
+                            span.val-error-msg(ng-bind="message")
+                            br
                             a.btn.btn-link(ng-click="showForgot=!showForgot")
                                 p.login-links Forgot Password?
 
@@ -48,31 +57,36 @@ block content
                         h4.range-title
                             b Signup
                             // show any messages that come back with authentication
-                        if message.length > 0
-                            .alert.alert-danger
-                                div #{message}
+                        //if signupMessage.length > 0
+                        //    .alert.alert-danger
+                                div #{signupMessage}
                         // SIGNUP FORM
+
                         .range-list
-                            .range-list-div.form(action='/signup', method='post')
+                            form.range-list-div
                                 .form-group(style='display:inline-block;')
-                                    input.form-control(type='text', name='fname', autofocus, placeholder='first name')
+                                    input.form-control(type='text', name='fname', autofocus, placeholder='first name' ng-model="user.firstName")
                                 br
                                 .form-group(style='display:inline-block;')
-                                    input.form-control(type='text', name='lname', placeholder='last name')
+                                    input.form-control(type='text', name='lname', placeholder='last name' ng-model="user.lastName")
                                 br
                                 .form-group(style='display:inline-block;')
-                                    input.form-control(type='text', name='email', placeholder='email address')
+                                    input.form-control(type='text', name='email', placeholder='email address' ng-model="user.email")
                                 br
                                 .form-group(style='display:inline-block;')
-                                    input.form-control(type='password', name='password', placeholder='password')
+                                    input.form-control(type='password', name='password', placeholder='password' ng-model="user.password")
                                 br
                                 .form-group(style='display:inline-block;')
-                                    input.form-control(type='password', name='confpassword', placeholder='verify password')
-                            div
-                                .formgroup.button.btn.btn-primary.login-button(type='submit' style='display:inline-block;') Signup
+                                    input.form-control(type='password', name='confpassword', placeholder='verify password' )
+                                br
+                                button.btn.btn-primary.login-button(ng-click="signupUser()" style='display:inline-block;') Signup
+
+                            span.val-error-msg(ng-bind="message")
+                            br
                             a.btn#signupLink.btn-link(ng-click="showSignup=!showSignup")
                                 p Back to login
                 .down-button
+
                     a.btn(href='#chCowk')
                         i.fa.fa-arrow-circle-down.fa-4x
         section#chCowk.row.text-banner

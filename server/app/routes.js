@@ -17,14 +17,16 @@ module.exports = function(app,passport){
     //========================================
     app.get('/',function(req,res){
         if(req.isAuthenticated()){
+            console.log('user is authenticated');
             res.render('profile.jade',{
                 user:req.user // get the user out of session and pass to template
             })
         }else{
             console.log('calling home');
             console.log('ENV = ' + app.get('env'));
-            var msg = req.flash('loginMessage');
-            res.render('index_.jade', { message: msg});
+            var msg = req.flash('message') ; //.length>0?req.flash('message'):"test message";
+            console.log(msg);
+            res.render('index_.jade', { mesg: msg});
         }
 
     });
@@ -33,25 +35,43 @@ module.exports = function(app,passport){
     //LOGIN PAGE =============================
     //========================================
     //render the login page and pass any flash data if it exists
-    app.get('/login',function(req,res){
-        var msg = req.flash('loginMessage');
-        console.log('calling login page - '+ msg);
-        res.render('index_.jade', { message: msg});
+    //app.get('/login',function(req,res){
+    //    var msg = req.flash('loginMessage');
+    //    console.log('calling login page - '+ msg);
+    //    res.render('index_.jade', { message: msg});
+    //});
+
+
+    //process the signup form using custom callback with passport
+    app.post('/login',function(req,res,next){
+        console.log('calling passport authenticate');
+        passport.authenticate('local-login',function(err,user,info){
+            //console.log("err : " + err);
+            //console.log("user : " + user);
+            //console.log("info : " + info);
+            //console.log('inside custom callback');
+            if (err) {
+                console.log("Error: " + err);
+                return next(err);
+            }
+            if (!user) {
+                console.log(info);
+                return res.send(info.message);
+            }
+            req.logIn(user, function(err) {
+                //console.log(user);
+                if (err) { return next(err); }
+                res.send({redirect:'/profile'});
+            });
+        })(req, res, next);
     });
 
-    //process login
-    app.post('/login', passport.authenticate('local-login', {
-        successRedirect : '/profile', // redirect to the secure profile section
-        failureRedirect : '/login', // redirect back to the login page if there is an error
-        failureFlash : true // allow flash messages
-    }));
 
-
-    app.get('/login_',function(req,res){
-        var msg = req.flash('loginMessage');
-        console.log('calling login_ page - '+ msg);
-        res.render('index_.jade', { message: msg});
-    });
+    //app.get('/login_',function(req,res){
+    //    var msg = req.flash('loginMessage');
+    //    console.log('calling login_ page - '+ msg);
+    //    res.render('index_.jade', { message: msg});
+    //});
     //========================================
     //FORGOT PASS=============================
     //========================================
@@ -180,18 +200,43 @@ module.exports = function(app,passport){
     //SIGNUP PAGE ============================
     //========================================
     //render signup page and pass any signup flash data if it exists
-    app.get('/signup',function(req,res){
-        var msg = req.flash('signupMessage');
-        console.log(msg);
-        res.render('signup.jade',{message:msg});
+    //app.get('/signup',function(req,res){
+    //    var msg = req.flash('signupMessage');
+    //    console.log(msg);
+    //    res.render('signup.jade',{message:msg});
+    //});
+
+    //process the signup form using custom callback with passport
+    app.post('/signup',function(req,res,next){
+        console.log('calling passport authenticate');
+        passport.authenticate('local-signup',function(err,user,info){
+            //console.log("err : " + err);
+            //console.log("user : " + user);
+            //console.log("info : " + info);
+            //console.log('inside custom callback');
+            if (err) {
+                console.log("Error: " + err);
+                return next(err);
+            }
+            if (!user) {
+                console.log(info);
+                return res.send(info.message);
+            }
+            req.logIn(user, function(err) {
+                //console.log(user);
+                if (err) { return next(err); }
+                res.send({redirect:'/profile'});
+            });
+        })(req, res, next);
     });
 
-    // process the signup form
-    app.post('/signup', passport.authenticate('local-signup', {
-        successRedirect : '/profile', // redirect to the secure profile section
-        failureRedirect : '/signup', // redirect back to the signup page if there is an error
-        failureFlash : true // allow flash messages
-    }));
+    //app.post('/signup', passport.authenticate('local-signup', {
+    //    successRedirect : '/profile', // redirect to the secure profile section
+    //    failureRedirect : '/', // redirect back to the signup page if there is an error
+    //    failureFlash : true // allow flash messages
+    //}));
+
+
 
     //========================================
     //PROFILE PAGE ===========================
@@ -267,6 +312,7 @@ module.exports = function(app,passport){
             console.log('auth success');
             next();
         }else{
+            console.log('not authorized');
             res.redirect('/');
         }
     }

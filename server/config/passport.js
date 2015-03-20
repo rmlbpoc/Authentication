@@ -53,16 +53,24 @@ module.exports = function(passport,app) {
         // asynchronous
         // User.findOne wont fire unless data is sent back
         process.nextTick(function(){
+            var usr = req.body;
+            console.log('inside passport local signup: ',usr);
             // find a user whose email is the same as the forms email
             // we are checking to see if the user trying to login already exists
-            User.findOne({'local.email':email},function(err,user){
+            User.findOne({'local.email':usr.email},function(err,user){
                 if(err)
+                    //console.log(err);
                     return done(err);
+                    //res.send("error while signing up user");
                 // check to see if theres already a user with that email
                 if(user){
-                    return done(null,false,req.flash('signupMessage','That email is already taken'));
+                    console.log("email is already taken");
+                    return done(null,false,{'message':'That email is already taken'});
+
+                    //return res.send('That email is already taken')
                 }else{
                     // if there is no user with that email, create the user
+                    console.log("creating new user");
                     var newUser = new User();
                     newUser.local.email = email;
                     newUser.local.password = newUser.generateHash(password);
@@ -72,6 +80,7 @@ module.exports = function(passport,app) {
                         if (err)
                             throw err;
                         return done(null, newUser);
+
                     });
                 }
 
@@ -93,16 +102,19 @@ module.exports = function(passport,app) {
         passwordField : 'password',
         passReqToCallback : true // allows us to pass back the entire request to the callback
     },function(req,email,password,done){
-            User.findOne({'local.email':email},function(err,user){
+            var usr = req.body;
+            console.log('inside passport local login: ',usr);
+            User.findOne({'local.email':usr.email},function(err,user){
                 if(err)
                     return done(err);
                 if(!user){
                     console.log('no user found');
-                    return done(null,false,req.flash('loginMessage','No user found'));
+                    return done(null,false,{message:'No user found'});
                 }
 
-                if(!user.validPassword(password))
-                    return done(null,false,req.flash('loginMessage','Oops! Invalid password'));
+                if(!user.validPassword(usr.password))
+
+                    return done(null,false,{message:'Oops! Invalid password'});
 
                 return done(null,user);
             })

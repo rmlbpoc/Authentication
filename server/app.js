@@ -44,7 +44,7 @@ app.use(session(
         saveUninitialized: true,
         resave: true}))
 ;
-
+app.use(bodyParser.json());
 // ======= passport config
 app.use(passport.initialize());
 app.use(passport.session()); //persistent login sesisons

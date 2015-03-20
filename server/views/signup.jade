@@ -1,12 +1,9 @@
-extends layoutNew
+extends layout_
 block content
     .container
         .row
             .jumbotron(style="margin-bottom:500px;")
-                .span8
-                    .col-sm-6
-                        h1
-                            span
+                //
                 .span4
                     .col-sm-6(style="padding-top:100px;")
                         div(style="padding:20px; background:white; opacity:0.75;")
@@ -27,3 +24,25 @@ block content
                                     label Password
                                     input.form-control(type='password', name='password')
                                 button.btn.btn-warning.btn-lg(type='submit') Signup
+
+                .loginPanel#signup.loginPanel-responsive.signup-panel
+                    aside.scol-sm-12.col-sm-height
+                        h4.range-title
+                            b Signup
+                            // show any messages that come back with authentication
+                        if message.length > 0
+                            .alert.alert-danger
+                                div #{message}
+                        // SIGNUP FORM
+                        .range-list
+                            form(action='/signup', method='post').range-list-div
+
+                                .form-group(style='display:inline-block;')
+                                    input.form-control(type='text', name='email', placeholder='email address')
+                                br
+                                .form-group(style='display:inline-block;')
+                                    input.form-control(type='password', name='password', placeholder='password')
+                                br
+                                button.btn.btn-primary.login-button(type='submit' style='display:inline-block;') Signup
+                            a.btn#signupLink.btn-link(ng-click="showSignup=!showSignup")
+                                p Back to login

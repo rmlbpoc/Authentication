@@ -348,3 +348,7 @@ article p{
         display: none;
     }
 }
+.val-error-msg{
+    color:red;
+    font-weight: bolder ;
+}
