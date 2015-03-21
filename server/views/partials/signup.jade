@@ -1,4 +1,4 @@
-.loginPanel#signup.loginPanel-responsive.signup-panel(ng-show="showSignup")
+.loginPanel(id="signup" ng-controller="signupController" ng-init="init()").loginPanel-responsive.signup-panel
     aside.scol-sm-12.col-sm-height
         h4.range-title
             b Signup
@@ -29,5 +29,5 @@
 
             span.val-error-msg(ng-bind="message")
             br
-            a.btn#signupLink.btn-link(ng-click="showSignup=!showSignup")
+            a(ui-sref='login').btn#signupLink.btn-link
                 p Back to login

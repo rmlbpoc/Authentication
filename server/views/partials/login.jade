@@ -1,4 +1,4 @@
-.loginPanel#login.loginPanel-responsive(ng-show="!showSignup")
+.loginPanel(id="login" ng-controller="loginController" ng-init="init()").loginPanel-responsive
 
     aside.col-sm-6.col-sm-height
         h4.range-title
@@ -47,5 +47,5 @@
             a.btn.btn-link(ng-click="showForgot=!showForgot")
                 p.login-links Back to login
     .signup-bot
-        a.btn#signupLink.btn-link(ng-click="showSignup=!showSignup")
+        a(ui-sref='signup').btn#signupLink.btn-link
             p Create an account

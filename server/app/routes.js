@@ -6,6 +6,16 @@ var User = require('../app/models/user.js');
 
 module.exports = function(app,passport){
 
+    app.get('/testStates',function(req,res){
+        res.render('testStates.jade');
+    });
+
+    app.get('/partials/:filename', function(req,res){
+        var filename = req.params.filename;
+        if(!filename) return;  // might want to change this
+        res.render("partials/" + filename );
+    });
+
     app.get('/layoutNew',function(req,res){
         res.render('layoutNew.jade');
     });
