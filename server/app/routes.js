@@ -6,10 +6,7 @@ var User = require('../app/models/user.js');
 
 module.exports = function(app,passport){
 
-    app.get('/testStates',function(req,res){
-        res.render('testStates.jade');
-    });
-
+    //Handle templates from angular ui-router
     app.get('/partials/:filename', function(req,res){
         var filename = req.params.filename;
         if(!filename) return;  // might want to change this
