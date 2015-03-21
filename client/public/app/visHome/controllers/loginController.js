@@ -22,5 +22,16 @@ visHome.controller('loginController',['$scope','$log','adminService',function($s
                 window.location = data.redirect
             }
         })
+    };
+
+    $scope.forgot = function(){
+        console.log('calling login with : ', $scope.user);
+        adminService.forgot($scope.user).then(function(data){
+            //console.log(data);
+            $scope.message = data.message;
+            if(data.redirect){
+                window.location = data.redirect
+            }
+        })
     }
 }]);
