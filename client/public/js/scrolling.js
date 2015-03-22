@@ -9,13 +9,18 @@ $(function(){
     });
 
     //smooth scrolling
-    $('nav a,.down-button a').bind('click',function(){
+    $('#gallery').bind('click',function(){
         $('html body').stop().animate({
-            scrollTop: $($(this).attr('href')).offset().top -110
+            scrollTop: $("#nano").offset().top
         },1500,'easeInOutExpo');
         event.preventDefault();
     });
 
+    $("#login,#signup").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#top").offset().top
+        }, 1000);
+    });
     //$("#signupLink").click(function() {
     //    $("#login" ).hide( );
     //});

@@ -22,7 +22,7 @@ visHome.config(['$stateProvider','$routeProvider',function($stateProvider,$route
             templateUrl: 'partials/signup.jade'
         })
 
-}])
+}]);
 visHome.run(['$state', function ($state) {
     $state.transitionTo('home');
-}])
+}]);
