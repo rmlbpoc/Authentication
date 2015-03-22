@@ -16,8 +16,8 @@ module.exports = function(app,passport){
     app.get('/layoutNew',function(req,res){
         res.render('layoutNew.jade');
     });
-    app.get('/layout_',function(req,res){
-        res.render('layout_.jade');
+    app.get('/layoutVis',function(req,res){
+        res.render('layoutVis.jade');
     });
     //========================================
     //HOME PAGE (with login links ============
