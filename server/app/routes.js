@@ -211,7 +211,7 @@ module.exports = function(app,passport){
     //app.get('/signup',function(req,res){
     //    var msg = req.flash('signupMessage');
     //    console.log(msg);
-    //    res.render('signup.jade',{message:msg});
+    //    res.render('signup_old.jade',{message:msg});
     //});
 
     //process the signup form using custom callback with passport

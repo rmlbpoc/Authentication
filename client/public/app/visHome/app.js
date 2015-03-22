@@ -9,19 +9,22 @@ visHome.config(['$stateProvider','$routeProvider',function($stateProvider,$route
         // HOME STATES AND NESTED VIEWS ========================================
         .state('home', {
             url: '/',
-            templateUrl: 'partials/login'
+            templateUrl: '../partials/login'
         })
 
         // nested list with custom controller
         .state('login', {
             url: '/login',
-            templateUrl: 'partials/login.jade'
+            templateUrl: '../partials/login.jade'
         })
         .state('signup', {
             url: '/signup',
-            templateUrl: 'partials/signup.jade'
+            templateUrl: '../partials/signup.jade'
         })
-
+        .state('forgot', {
+            url: '/forgot',
+            templateUrl: '../partials/forgot.jade'
+        })
 }]);
 visHome.run(['$state', function ($state) {
     $state.transitionTo('home');

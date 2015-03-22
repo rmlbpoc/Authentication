@@ -1,8 +1,6 @@
-visHome.controller('loginController',['$scope','$log','adminService',function($scope,$log,adminService){
+visHome.controller('forgotController',['$scope','$log','adminService',function($scope,$log,adminService){
     $scope.init = function(){
-        console.log('login controller initialised');
-        //$scope.showForgot = false;
-        //$scope.showSignup = false;
+        console.log('forgot controller initialized');
 
         $scope.user = {
             firstName :"",
@@ -13,15 +11,14 @@ visHome.controller('loginController',['$scope','$log','adminService',function($s
         $scope.message = "";
     };
 
-    $scope.login = function(){
+    $scope.forgot = function(){
         console.log('calling login with : ', $scope.user);
-        adminService.login($scope.user).then(function(data){
+        adminService.forgot($scope.user).then(function(data){
             //console.log(data);
-            $scope.message = data;
+            $scope.message = data.message;
             if(data.redirect){
                 window.location = data.redirect
             }
         })
-    };
-
+    }
 }]);

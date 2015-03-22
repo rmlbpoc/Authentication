@@ -1,0 +1,17 @@
+.loginPanel(ng-controller="forgotController" ng-init="init()").loginPanel-responsive
+    include providerLogin
+    aside.scol-sm-6.col-sm-height
+        h4.range-title
+            b Forgot Password?
+        div
+            form.forgot-password
+                .form-group(style='display:inline-block;')
+                    input.form-control(type='text', name='email', autofocus, placeholder='email address' ng-model="user.email")
+            div
+                button.formgroup.btn.btn-primary.login-button(ng-click="forgot()" style='display:inline-block;') Reset Password
+
+            span.val-error-msg(ng-bind="message")
+            br
+            a(ui-sref='login').btn.btn-link
+                p.login-links Back to login
+    include signupBot

@@ -16,7 +16,7 @@ $(function(){
         event.preventDefault();
     });
 
-    $("#login,#signup").click(function() {
+    $("#login,#signup,#home").click(function() {
         $('html, body').animate({
             scrollTop: $("#top").offset().top
         }, 1000);
