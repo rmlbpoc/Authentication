@@ -25,7 +25,7 @@ module.exports = function(app,passport){
     app.get('/',function(req,res){
         if(req.isAuthenticated()){
             console.log('user is authenticated');
-            res.render('profile.jade',{
+            res.render('indexSubs.jade',{
                 user:req.user // get the user out of session and pass to template
             })
         }else{
@@ -68,7 +68,7 @@ module.exports = function(app,passport){
             req.logIn(user, function(err) {
                 //console.log(user);
                 if (err) { return next(err); }
-                res.send({redirect:'/profile'});
+                res.send({redirect:'/'});
             });
         })(req, res, next);
     });
