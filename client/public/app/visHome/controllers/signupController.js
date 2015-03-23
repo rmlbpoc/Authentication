@@ -13,6 +13,10 @@ visHome.controller('signupController',['$scope','$log','adminService',function($
         $scope.message = "";
     };
 
+    $scope.setForm = function (form) {
+        $scope.myForm = form;
+    };
+
     $scope.signupUser = function(){
         console.log($scope.user);
         adminService.signupUser($scope.user).then(function(data){
@@ -24,4 +28,4 @@ visHome.controller('signupController',['$scope','$log','adminService',function($
         })
     };
 
-}])
+}]);
