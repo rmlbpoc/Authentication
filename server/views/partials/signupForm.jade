@@ -23,9 +23,7 @@ aside.scol-sm-12.col-sm-height
             .form-group(style='display:inline-block;')
                 input.form-control(type='password', name='password', oninvalid="setCustomValidity(' ')" required="" pattern='^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.{8,}).*$' placeholder='password' ng-model="user.password")
                 .val-error-msg(ng-if="showValErrors && Signupform.password.$invalid" )
-                    h4 Your password must be 8 characters long
-
-                    h4 and contain at least one number
+                    h4 Your password must be 8 characters long and contain at least one number
 
             br
             .form-group(style='display:inline-block;')

@@ -353,10 +353,15 @@ article p{
     }
 }
 
+.val-error-msg{
+    width: 250px;
+}
 .val-error-msg > h4 {
     text-align: left;
     font-size:12px;
     padding-bottom: 0px;
+    padding-top: 5px;
     margin: 0px;
     color: rgba(255, 77, 0, 0.97);
+    font-weight: 900;
 }

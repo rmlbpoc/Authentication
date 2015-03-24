@@ -136,7 +136,7 @@ module.exports = function(app,passport){
                 };
                 smtpTransport.sendMail(mailOptions, function(err) {
                     //req.flash('info', 'An e-mail has been sent to ' + user.local.email + ' with further instructions.');
-                    res.send({message:'An e-mail has been sent to ' + user.local.email + ' with further instructions.'});
+                    res.send({message:user.local.email});
                     //done(err, 'done');
                 });
             }
