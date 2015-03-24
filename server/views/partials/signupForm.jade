@@ -1,0 +1,41 @@
+aside.scol-sm-12.col-sm-height
+    h4.range-title
+        b Signup
+        // show any messages that come back with authentication
+    //if signupMessage.length > 0
+    //    .alert.alert-danger
+            div #{signupMessage}
+    // SIGNUP FORM
+
+    .range-list
+        form(id="signupForm" name="Signupform" ng-init="setForm(this)").range-list-div
+            .form-group(style='display:inline-block;')
+                input.form-control(type='text', name='fname', autofocus, placeholder='first name' ng-model="user.firstName")
+            br
+            .form-group(style='display:inline-block;')
+                input.form-control(type='text', name='lname', placeholder='last name' ng-model="user.lastName")
+            br
+            .form-group(style='display:inline-block;')
+                input.form-control(type='email', name='email', required="" oninvalid="setCustomValidity(' ')", placeholder='email address' ng-model="user.email")
+                .val-error-msg(ng-if="showValErrors && Signupform.email.$invalid" )
+                    h4  Please enter a valid email
+            br
+            .form-group(style='display:inline-block;')
+                input.form-control(type='password', name='password', oninvalid="setCustomValidity(' ')" required="" pattern='^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.{8,}).*$' placeholder='password' ng-model="user.password")
+                .val-error-msg(ng-if="showValErrors && Signupform.password.$invalid" )
+                    h4 Your password must be 8 characters long
+
+                    h4 and contain at least one number
+
+            br
+            .form-group(style='display:inline-block;')
+                input.form-control(type='password', name='confpassword', placeholder='verify password' ng-model="user.confPassword" password-match="user.password" )
+                .val-error-msg(ng-if="showValErrors && Signupform.confpassword.$invalid" )
+                    h4 Passwords do not match
+
+            br
+
+            button.btn.btn-primary.login-button(ng-click="signupUser()" style='display:inline-block;') Signup
+
+        a(ui-sref='login').btn#signupLink.btn-link
+            p Back to login

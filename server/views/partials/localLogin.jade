@@ -8,15 +8,15 @@ aside.scol-sm-6.col-sm-height
     .range-list
         form(name="Loginform" ng-init="setForm(this)" ).range-list-div
             .form-group(style='display:inline-block;')
-                input.form-control(type='email', name='email', autofocus,placeholder='email address' ng-model="user.email")
+                input.form-control(type='text', name='email', autofocus placeholder='email address' ng-model="user.email")
                 //.val-error-msg(ng-show='loginForm.email.$dirty && loginForm.email.$invalid') Invalid email:
             br
             .form-group(style='display:inline-block;')
-                input.form-control(type='password', name='password', placeholder='password' ng-model="user.password")
+                input.form-control(type='password', name='password', placeholder='password' ng-model="user.password" )
             br
-            button.formgroup.btn.btn-primary.login-button(ng-click="login()" style='display:inline-block;') Login
+            button.formgroup.btn.btn-primary.login-button(ng-click="login()"  style='display:inline-block;') Login
 
-        span.val-error-msg(ng-bind="message")
-        br
+        .val-error-msg
+            h4(ng-bind="message")
         a(ui-sref='forgot').btn.btn-link
             p.login-links Forgot Password?

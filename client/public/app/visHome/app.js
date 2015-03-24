@@ -29,3 +29,29 @@ visHome.config(['$stateProvider','$routeProvider',function($stateProvider,$route
 visHome.run(['$state', function ($state) {
     $state.transitionTo('home');
 }]);
+
+visHome.directive('passwordMatch',[function(){
+    return {
+        restrict : 'A',
+        scope : true,
+        require : 'ngModel',
+        link : function(scope,elem,attrs,control){
+            var checker = function(){
+                //get the value of the confirm password field
+                var pwdConf = scope.$eval(attrs.ngModel);
+                //get the value of the passowrd field
+                var pwd = scope.$eval(attrs.passwordMatch);
+
+                return pwdConf==pwd;
+            };
+
+            scope.$watch(checker,function(n){
+                //set the form control to valid if both
+                //passwords are the same, else invalid
+                console.log('inside directive')
+                control.$setValidity("unique", n);
+            })
+        }
+
+    }
+}])

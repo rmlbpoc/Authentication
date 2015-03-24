@@ -11,7 +11,14 @@ $(function(){
     //smooth scrolling
     $('#gallery').bind('click',function(){
         $('html body').stop().animate({
-            scrollTop: $("#nano").offset().top
+            scrollTop: $("#chkGallery").offset().top
+        },1500,'easeInOutExpo');
+        event.preventDefault();
+    });
+
+    $('#chChk').bind('click',function(){
+        $('html body').stop().animate({
+            scrollTop: $("#chkSlide").offset().top -100
         },1500,'easeInOutExpo');
         event.preventDefault();
     });

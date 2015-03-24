@@ -1,33 +1,3 @@
 .loginPanel( ng-controller="signupController" ng-init="init()").loginPanel-responsive.signup-panel
-    aside.scol-sm-12.col-sm-height
-        h4.range-title
-            b Signup
-            // show any messages that come back with authentication
-        //if signupMessage.length > 0
-        //    .alert.alert-danger
-                div #{signupMessage}
-        // SIGNUP FORM
-
-        .range-list
-            form.range-list-div
-                .form-group(style='display:inline-block;')
-                    input.form-control(type='text', name='fname', autofocus, placeholder='first name' ng-model="user.firstName")
-                br
-                .form-group(style='display:inline-block;')
-                    input.form-control(type='text', name='lname', placeholder='last name' ng-model="user.lastName")
-                br
-                .form-group(style='display:inline-block;')
-                    input.form-control(type='text', name='email', placeholder='email address' ng-model="user.email")
-                br
-                .form-group(style='display:inline-block;')
-                    input.form-control(type='password', name='password', placeholder='password' ng-model="user.password")
-                br
-                .form-group(style='display:inline-block;')
-                    input.form-control(type='password', name='confpassword', placeholder='verify password' )
-                br
-                button.btn.btn-primary.login-button(ng-click="signupUser()" style='display:inline-block;') Signup
-
-            span.val-error-msg(ng-bind="message")
-            br
-            a(ui-sref='login').btn#signupLink.btn-link
-                p Back to login
+    include aboutBrief
+    include signupForm

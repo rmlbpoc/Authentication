@@ -8,9 +8,11 @@ visHome.controller('signupController',['$scope','$log','adminService',function($
             firstName :"",
             lastName : "",
             email : "",
-            password : ""
+            password : "",
+            confPassword : ""
         };
         $scope.message = "";
+        $scope.showValErrors = false;
     };
 
     $scope.setForm = function (form) {
@@ -18,14 +20,20 @@ visHome.controller('signupController',['$scope','$log','adminService',function($
     };
 
     $scope.signupUser = function(){
-        console.log($scope.user);
-        adminService.signupUser($scope.user).then(function(data){
-            //console.log(data);
-            $scope.message = data;
-            if(data.redirect){
-                window.location = data.redirect
-            }
-        })
+        console.log($scope.myForm.Signupform.$valid);
+        if($scope.myForm.Signupform.$valid){
+            //console.log($scope.user);
+            adminService.signupUser($scope.user).then(function(data){
+                //console.log(data);
+                $scope.message = data;
+                if(data.redirect){
+                    window.location = data.redirect
+                }
+            })
+        }else{
+            $scope.showValErrors =true;
+        }
+
     };
 
 }]);

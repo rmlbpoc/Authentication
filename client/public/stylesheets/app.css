@@ -298,8 +298,10 @@ article p{
     height: 265px;
 }
 .signup-panel >aside{
-    padding: 20px 50px;
+    padding: 30px 50px;
 }
+
+
 .signup-bot{
     background-color: rgba(0, 0, 0, 1);
     height: 45px;
@@ -311,7 +313,9 @@ article p{
     font-size: 18px;
     font-weight: 800;
 }
-
+#signupForm > div >input{
+    width: 250px;
+}
 @media (min-width: 768px) {
     .loginPanel>aside:first-child{
         border-right: 2px groove rgba(224, 180, 153, 0.75);
@@ -348,7 +352,11 @@ article p{
         display: none;
     }
 }
-.val-error-msg{
-    color:red;
-    font-weight: bolder ;
+
+.val-error-msg > h4 {
+    text-align: left;
+    font-size:12px;
+    padding-bottom: 0px;
+    margin: 0px;
+    color: rgba(255, 77, 0, 0.97);
 }
