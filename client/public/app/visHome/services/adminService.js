@@ -52,7 +52,40 @@ visHome.factory('adminService',function($http,$log,$rootScope){
                 .then(function(response){
                     return response.data;
                 })
-        }
+        },
+        validateResetToken:function(token){
+            console.log('calling reset service - ',token);
+            return $http({
+                method : 'GET',
+                url : '/reset/'+token
+            })
+                .success(function(data,status,headers,config){
+                    console.log(data);
+                })
+                .error(function(){
+                    //
+                })
+                .then(function(response){
+                    return response.data;
+                })
+        },
+        resetPassword:function(password,token){
+            console.log('calling login service - ',password,token);
+            return $http({
+                method : 'POST',
+                url : '/reset',
+                data : {password:password,token:token}
+            })
+                .success(function(data,status,headers,config){
+                    console.log(data);
+                })
+                .error(function(){
+                    //
+                })
+                .then(function(response){
+                    return response.data;
+                })
+        },
     };
 
     return adminService

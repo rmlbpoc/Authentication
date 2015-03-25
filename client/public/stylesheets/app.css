@@ -308,10 +308,12 @@ article p{
     text-align: center;
     font-size: 29px;
     border-top: 1px ridge rgba(224, 180, 153, 0.75);
+
 }
 .signup-bot p{
     font-size: 18px;
     font-weight: 800;
+    color: rgb(22, 198, 221)
 }
 #signupForm > div >input{
     width: 250px;
@@ -345,6 +347,7 @@ article p{
 }
 .login-links{
     font-weight: 800;
+    color: rgb(22, 198, 221)
 }
 
 @media (max-width: 768px) {
@@ -354,14 +357,16 @@ article p{
 }
 
 .val-error-msg{
-    width: 250px;
+    widows: inherit;
+    max-width: 250px;
 }
 .val-error-msg > h4 {
     text-align: left;
-    font-size:12px;
+    font-size:14px;
     padding-bottom: 0px;
     padding-top: 5px;
+    padding-left: inherit;
     margin: 0px;
-    color: rgba(255, 77, 0, 0.97);
+    color: rgba(253, 199, 203, 1);
     font-weight: 900;
 }

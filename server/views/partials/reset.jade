@@ -1,0 +1,30 @@
+.loginPanel( ng-controller="resetController" ng-init="init()").loginPanel-responsive.signup-panel
+    aside.col-sm-12.col-sm-height(ng-show="!successfulUpdate")
+        h4.range-title
+            b Reset Password
+
+        .range-list
+            form(id="resetForm" name="resetForm" ng-init="setForm(this)").range-list-div
+                .form-group(style='display:inline-block;')
+                    input.form-control(type='password', name='password', oninvalid="setCustomValidity(' ')" required="" pattern='^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.{8,}).*$' placeholder='password' ng-model="user.password")
+                    .val-error-msg(ng-if="showValErrors && resetForm.password.$invalid" )
+                        h4 Your password must be 8 characters long and contain at least one number
+
+                br
+                .form-group(style='display:inline-block;')
+                    input.form-control(type='password', name='confpassword', placeholder='verify password' ng-model="user.confPassword" password-match="user.password" )
+                    .val-error-msg(ng-if="showValErrors && resetForm.confpassword.$invalid" )
+                        h4 Passwords do not match
+
+                .val-error-msg
+                    h4( ng-show="TokenCheck.valid==false" ng-bind="TokenCheck.message")
+                br
+                button.btn.btn-primary.login-button(ng-click="resetPassword()" style='display:inline-block;') Update Password
+
+    aside.col-sm-12.col-sm-height(ng-show="successfulUpdate" style="height:auto;")
+        h4.val-error-msg.range-title
+            b Your password has been updated successfully.
+            br
+            a(ui-sref='login').btn.btn-link
+                h4.login-links
+                    b Please log back in.

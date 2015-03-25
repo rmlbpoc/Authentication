@@ -25,6 +25,10 @@ visHome.config(['$stateProvider','$routeProvider',function($stateProvider,$route
             url: '/forgot',
             templateUrl: '../partials/forgot.jade'
         })
+        .state('reset', {
+            url: '/reset/:token',
+            templateUrl: '../partials/reset.jade'
+        })
 }]);
 visHome.run(['$state', function ($state) {
     $state.transitionTo('home');

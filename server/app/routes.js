@@ -131,7 +131,7 @@ module.exports = function(app,passport){
                     subject: 'Node.js Password Reset',
                     text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
                     'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
-                    'http://' + req.headers.host + '/reset/' + token + '\n\n' +
+                    'http://' + req.headers.host + '/#/reset/' + token + '\n\n' +
                     'If you did not request this, please ignore this email and your password will remain unchanged.\n'
                 };
                 smtpTransport.sendMail(mailOptions, function(err) {
@@ -153,30 +153,37 @@ module.exports = function(app,passport){
         console.log('calling reset with token ', req.params.token);
         User.findOne({'local.resetPasswordToken':req.params.token,'local.resetPasswordExpires':{$gt:Date.now()}},function(err,user){
             if(!user){
-
-                req.flash('info', 'Password reset token is invalid or has expired.');
-                res.redirect('/forgot')
+                console.log('user not found');
+                //req.flash('info', 'Password reset token is invalid or has expired.');
+                res.send({valid:false,message:'Password reset token is invalid or has expired.'})
+            }else{
+                res.send({valid:true});
             }
-            res.render('reset.jade');
         })
     });
-    app.post('/reset/:token',function(req,res,next){
+    app.post('/reset',function(req,res,next){
+        var password = req.body.password;
+        var token = req.body.token;
+        console.log(token);
+        console.log(password);
         async.waterfall([
             function(done){
-                User.findOne({'local.resetPasswordToken':req.params.token,'local.resetPasswordExpires':{$gt:Date.now()}},function(err,user){
+                User.findOne({'local.resetPasswordToken':token,'local.resetPasswordExpires':{$gt:Date.now()}},function(err,user){
                     if(!user){
-
-                        req.flash('info', 'Password reset token is invalid or has expired.');
-                        res.redirect('back')
+                        console.log('no user found')
+                        //req.flash('info', 'Password reset token is invalid or has expired.');
+                        res.send({valid:false,message:'Password reset token is invalid or has expired.'})
                     }
-                    user.local.password = user.generateHash(req.body.password);
+                    console.log(user);
+                    user.local.password = user.generateHash(password);
                     user.local.resetPasswordExpires =null;
                     user.local.resetPasswordToken = null;
 
                     user.save(function(err) {
-                        req.logIn(user, function(err) {
-                            done(err, user);
-                        });
+                        res.send({updated:true})
+                        //req.logIn(user, function(err) {
+                        //    res.send({redirect:'/'})
+                        //});
                     });
                 })
             },
