@@ -24,14 +24,13 @@ visHome.controller('resetController',['$scope','$stateParams','$log','adminServi
     $scope.resetPassword = function(){
         console.log($scope.myForm.resetForm.$valid);
         if($scope.myForm.resetForm.$valid){
-            console.log($scope.pwd);
+            //console.log($scope.pwd);
             adminService.resetPassword($scope.pwd.password,$stateParams.token).then(function(data){
-                console.log(data);
+                //console.log(data);
                 $scope.successfulUpdate = data;
                 if(data.redirect){
                     window.location = data.redirect
                 }
-
             })
         }else{
             $scope.showValErrors =true;

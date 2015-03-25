@@ -13,15 +13,15 @@ header#top.container-fluid
             #bs-example-navbar-collapse-1.collapse.navbar-collapse
                 ul.nav.navbar-nav.navbar-right
                     li
-                        a(id="home" href="/") Home
+                        a(id="home" ui-sref="home") Home
                     li
                         a(id='gallery') Gallery
                     li
-                        a(id="login" ui-sref="moods" ) Moods
+                        a(id="moods" ui-sref="moods" ) Moods
                     li
                         a(id="signup" ui-sref='tracker') My Journal
                     li
-                        a(href='/profile') Profile
+                        a(id="profile" ui-sref='profile') Profile
                     li
                         a(href='/logout') Logout
             // /.navbar-collapse

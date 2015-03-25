@@ -13,6 +13,12 @@ module.exports = function(app,passport){
         res.render("partials/" + filename );
     });
 
+    app.get('/partials/subs/:filename', function(req,res){
+        var filename = req.params.filename;
+        if(!filename) return;  // might want to change this
+        res.render("partials/subs/" + filename );
+    });
+
     app.get('/layoutNew',function(req,res){
         res.render('layoutNew.jade');
     });
@@ -265,9 +271,10 @@ module.exports = function(app,passport){
     //use route middleware to verify
     app.get('/profile',isLoggedIn,function(req,res){
         console.log('rendering profile');
-        res.render('profile.jade',{
-            user:req.user // get the user out of session and pass to template
-        })
+        //res.render('profile.jade',{
+        //    user:req.user // get the user out of session and pass to template
+        //})
+        res.send(req.user);
     });
 
 

@@ -1,7 +1,7 @@
 extends layoutSubs
 block content
-    .container
-        .page-header.text-center
-            h1
-                span.fa.fa-anchor
-                |  Subscribe Home
+    .container-fluid
+        section.row.title-row
+            .fill-screen.stellar-bg(data-stellar-background-ratio='0.2', style='background-image: url("")')
+                div(ui-view='')
+
