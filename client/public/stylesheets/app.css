@@ -295,7 +295,7 @@ article p{
 }
 .loginPanel>aside{
     background-color: rgba(0, 0, 0, 0.85);
-    height: 265px;
+    /*height: 265px;*/
 }
 .signup-panel >aside{
     padding: 30px 50px;

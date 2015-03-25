@@ -149,6 +149,8 @@ module.exports = function(app,passport){
     //========================================
     //RESET PASSWORD PAGE ====================
     //========================================
+
+
     app.get('/reset/:token',function(req,res,next){
         console.log('calling reset with token ', req.params.token);
         User.findOne({'local.resetPasswordToken':req.params.token,'local.resetPasswordExpires':{$gt:Date.now()}},function(err,user){
@@ -164,25 +166,25 @@ module.exports = function(app,passport){
     app.post('/reset',function(req,res,next){
         var password = req.body.password;
         var token = req.body.token;
-        console.log(token);
-        console.log(password);
+        //console.log(token);
+        //console.log(password);
         async.waterfall([
             function(done){
                 User.findOne({'local.resetPasswordToken':token,'local.resetPasswordExpires':{$gt:Date.now()}},function(err,user){
                     if(!user){
-                        console.log('no user found')
+                        console.log('no user found');
                         //req.flash('info', 'Password reset token is invalid or has expired.');
                         res.send({valid:false,message:'Password reset token is invalid or has expired.'})
                     }
-                    console.log(user);
+                    //console.log('user before updated password : ', user);
                     user.local.password = user.generateHash(password);
                     user.local.resetPasswordExpires =null;
                     user.local.resetPasswordToken = null;
-
+                    //console.log('user after updated password : ', user);
                     user.save(function(err) {
-                        res.send({updated:true})
+                        res.send({updated:true});
                         //req.logIn(user, function(err) {
-                        //    res.send({redirect:'/'})
+                        //    done(err, user);
                         //});
                     });
                 })
@@ -211,6 +213,9 @@ module.exports = function(app,passport){
             res.redirect('/')
         })
     });
+
+
+
     //========================================
     //SIGNUP PAGE ============================
     //========================================

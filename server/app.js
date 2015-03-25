@@ -40,6 +40,10 @@ app.use(cookieParser()); //read cookies - needed for auth
 app.use(express.static(path.join(__dirname, '../client/public')));
 app.use(session(
     {
+        cookie: {
+            maxAge: 36000000,
+            httpOnly: false // <- set httpOnly to false
+        },
         secret:'thisismysecretmessage',
         saveUninitialized: true,
         resave: true}))
@@ -49,6 +53,14 @@ app.use(bodyParser.json());
 app.use(passport.initialize());
 app.use(passport.session()); //persistent login sesisons
 app.use(flash()); //use connect-flash for flash messages stored in session
+
+
+app.use(function(req, res, next) {
+    res.header('Access-Control-Allow-Credentials', true);
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-  Override, Content-Type, Accept');
+    next();
+});
 
 //routes
 require('./app/routes.js')(app,passport);

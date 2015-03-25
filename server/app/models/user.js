@@ -43,6 +43,10 @@ userSchema.methods.generateHash = function(password) {
 
 // checking if password is valid
 userSchema.methods.validPassword = function(password) {
+    //console.log('calling validate with '+ password);
+    //console.log(bcrypt.hashSync(password, bcrypt.genSaltSync(8), null));
+    //console.log(this.local.password);
+    //console.log(bcrypt.compareSync(password, this.local.password));
     return bcrypt.compareSync(password, this.local.password);
 };
 

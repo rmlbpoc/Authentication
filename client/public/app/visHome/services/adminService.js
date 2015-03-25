@@ -54,7 +54,7 @@ visHome.factory('adminService',function($http,$log,$rootScope){
                 })
         },
         validateResetToken:function(token){
-            console.log('calling reset service - ',token);
+            console.log('calling validate token service - ',token);
             return $http({
                 method : 'GET',
                 url : '/reset/'+token
@@ -70,11 +70,12 @@ visHome.factory('adminService',function($http,$log,$rootScope){
                 })
         },
         resetPassword:function(password,token){
-            console.log('calling login service - ',password,token);
+            console.log('calling rest service - ',password,token);
             return $http({
                 method : 'POST',
                 url : '/reset',
-                data : {password:password,token:token}
+                data : {password:password,token:token},
+                xhrFields: {withCredentials: true}
             })
                 .success(function(data,status,headers,config){
                     console.log(data);

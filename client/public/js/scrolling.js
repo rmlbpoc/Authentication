@@ -25,7 +25,7 @@ $(function(){
 
     $("#login,#signup,#home").click(function() {
         $('html, body').animate({
-            scrollTop: $("#top").offset().top
+            scrollTop: $("#top").offset().top -80
         }, 1000);
     });
     //$("#signupLink").click(function() {
