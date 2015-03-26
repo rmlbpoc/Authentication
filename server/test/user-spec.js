@@ -5,9 +5,9 @@ var assert = require('assert');
 var request = require('supertest');
 var mongoose = require('mongoose');
 
-describe('Routing',function(){
+describe('Signup and Login routes',function(){
     var url="http://localhost:3000/";
-    var newUser = {email:"myemail25@myemail.com",password:"test1234"};
+    var newUser = {firstName:'fname',lastName:'lname',email:"myemail25@myemail.com",password:"test1234"};
     var badUser = {email:"mye@myemail.com",password:"test1"};
     var dbUser;
     var resetToken;
@@ -124,7 +124,7 @@ describe('Routing',function(){
                     res.body.auth.should.equal(true);
                     done();
                 })
-        })
+        });
 
         it('should delete user',function(done){
             request(url)
