@@ -59,10 +59,10 @@ module.exports = function(app,passport){
     app.post('/login',function(req,res,next){
         console.log('calling passport authenticate');
         passport.authenticate('local-login',function(err,user,info){
-            //console.log("err : " + err);
-            //console.log("user : " + user);
-            //console.log("info : " + info);
-            //console.log('inside custom callback');
+            console.log("err : " + err);
+            console.log("user : " + user);
+            console.log("info : " + info);
+            console.log('inside custom callback');
             if (err) {
                 console.log("Error: " + err);
                 return next(err);
@@ -74,7 +74,8 @@ module.exports = function(app,passport){
             req.logIn(user, function(err) {
                 //console.log(user);
                 if (err) { return next(err); }
-                res.send({redirect:'/'});
+                //console.log(req);
+                res.send({redirect:'/',auth:true});
             });
         })(req, res, next);
     });
@@ -142,7 +143,7 @@ module.exports = function(app,passport){
                 };
                 smtpTransport.sendMail(mailOptions, function(err) {
                     //req.flash('info', 'An e-mail has been sent to ' + user.local.email + ' with further instructions.');
-                    res.send({message:user.local.email});
+                    res.send({message:user.local.email,token:token});
                     //done(err, 'done');
                 });
             }
@@ -172,8 +173,8 @@ module.exports = function(app,passport){
     app.post('/reset',function(req,res,next){
         var password = req.body.password;
         var token = req.body.token;
-        //console.log(token);
-        //console.log(password);
+        console.log(token);
+        console.log(password);
         async.waterfall([
             function(done){
                 User.findOne({'local.resetPasswordToken':token,'local.resetPasswordExpires':{$gt:Date.now()}},function(err,user){
@@ -188,9 +189,10 @@ module.exports = function(app,passport){
                     user.local.resetPasswordToken = null;
                     //console.log('user after updated password : ', user);
                     user.save(function(err) {
-                        res.send({updated:true});
+                        console.log('user saved');
+
                         //req.logIn(user, function(err) {
-                        //    done(err, user);
+                            done(err, user);
                         //});
                     });
                 })
@@ -212,7 +214,8 @@ module.exports = function(app,passport){
                 };
                 smtpTransport.sendMail(mailOptions, function(err) {
                     //req.flash('info', 'Success! Your password has been changed.');
-                    done(err);
+                    console.log('sending email - ',user);
+                    res.send({updated:true,user:user});
                 });
             }
         ], function(err){
@@ -251,11 +254,28 @@ module.exports = function(app,passport){
             req.logIn(user, function(err) {
                 //console.log(user);
                 if (err) { return next(err); }
-                res.send({redirect:'/profile'});
+                res.send({redirect:'/profile',user:user});
             });
         })(req, res, next);
     });
 
+    //delete user
+    app.delete('/user/:id',function(req,res){
+        User.findByIdAndRemove(new Object(req.params.id), function(err, user) {
+            if (err) {
+                res.status(500);
+                res.json({
+                    type: false,
+                    data: "Error occured: " + err
+                })
+            } else {
+                res.json({
+                    type: true,
+                    data: "User: " + req.params.id + " deleted successfully"
+                })
+            }
+        })
+    });
     //app.post('/signup', passport.authenticate('local-signup', {
     //    successRedirect : '/profile', // redirect to the secure profile section
     //    failureRedirect : '/', // redirect back to the signup page if there is an error
@@ -277,6 +297,28 @@ module.exports = function(app,passport){
         res.send(req.user);
     });
 
+    //make profile updates
+    app.post('/profile',isLoggedIn,function(req,res){
+        var user = req.body;
+        User.findOne({"local.email":user.email},function(err,usr){
+            if(!usr){
+                console.log('no user found');
+                res.send({message:'No user found'});
+            }
+
+            usr.profile.DateOfBirth = user.profile.dateOfBirth;
+            usr.profile.gender = user.profile.gender;
+            usr.profile.height = user.profile.height;
+            usr.profile.mobileNumber = user.profile.mobileNumber;
+            //console.log('user after updated password : ', user);
+            usr.save(function(err) {
+                res.send({updated:true});
+                //req.logIn(user, function(err) {
+                //    done(err, user);
+                //});
+            });
+        })
+    });
 
     // =====================================
     // FACEBOOK ROUTES =====================

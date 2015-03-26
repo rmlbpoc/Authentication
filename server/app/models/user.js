@@ -1,3 +1,4 @@
+'use strict';
 // app/models/user.js
 // load the things we need
 var mongoose = require('mongoose');
@@ -31,6 +32,12 @@ var userSchema = mongoose.Schema({
         token        : String,
         email        : String,
         name         : String
+    },
+    profile          : {
+        dateOfBirth  : Date,
+        gender       : String,
+        height       : String,
+        mobileNumber : String
     }
 
 });

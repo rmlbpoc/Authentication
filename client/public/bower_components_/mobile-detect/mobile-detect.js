@@ -501,7 +501,7 @@ define(function () {
             t.is('Tizen') ||
 
             // Samsung Bada 2.0 - Tested on a Samsung Wave 3, Dolphin browser
-            // @todo: more tests here!
+            // @todo: more test here!
             t.is('Dolfin') && t.version('Bada')>=2.0 ||
 
             // UC Browser - Tested on Android 2.3 device
