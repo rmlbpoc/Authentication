@@ -276,13 +276,6 @@ module.exports = function(app,passport){
             }
         })
     });
-    //app.post('/signup', passport.authenticate('local-signup', {
-    //    successRedirect : '/profile', // redirect to the secure profile section
-    //    failureRedirect : '/', // redirect back to the signup page if there is an error
-    //    failureFlash : true // allow flash messages
-    //}));
-
-
 
     //========================================
     //PROFILE PAGE ===========================
@@ -307,7 +300,7 @@ module.exports = function(app,passport){
                 res.send({message:'No user found'});
             }
 
-            usr.profile.DateOfBirth = user.profile.dateOfBirth;
+            usr.profile.dateOfBirth = user.profile.dateOfBirth;
             usr.profile.gender = user.profile.gender;
             usr.profile.height = user.profile.height;
             usr.profile.mobileNumber = user.profile.mobileNumber;

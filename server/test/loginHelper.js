@@ -1,14 +1,11 @@
 var superagent = require('superagent');
 var agent = superagent.agent();
-var theAccount = {
-    "username": "nacho",
-    "password": "iamtheluchadore"
-};
+var url="http://localhost:3000/";
 
-exports.login = function (request, done) {
-    request
-        .post('/login')
-        .send(theAccount)
+exports.login = function (user,done) {
+    agent
+        .post(url+'login')
+        .send(user)
         .end(function (err, res) {
             if (err) {
                 throw err;
