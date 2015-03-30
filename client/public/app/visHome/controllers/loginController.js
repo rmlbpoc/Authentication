@@ -11,23 +11,25 @@ visHome.controller('loginController',['$scope','$log','adminService',function($s
             password : ""
         };
         $scope.message = "";
+
+
         $scope.a=[1,2,2,3,4];
         $scope.b=[2,2,3];
 
-        $scope.inters();
-        $scope.append();
-
-        doAsync(function(){
-            var dt = new Date;
-            console.log('The current time is : ' + dt.getHours() + ':' + dt.getMinutes() + ':' +dt.getSeconds());
-        });
-
-        doAsync2()
-            .done(function (data) {
-                console.log("Executed after a delay = " + data);
-            }).fail(function (data) {
-                console.log("Executed if the async work fails = " + data);
-            });
+        //$scope.inters();
+        //$scope.append();
+        //
+        //doAsync(function(){
+        //    var dt = new Date;
+        //    console.log('The current time is : ' + dt.getHours() + ':' + dt.getMinutes() + ':' +dt.getSeconds());
+        //});
+        //
+        //doAsync2()
+        //    .done(function (data) {
+        //        console.log("Executed after a delay = " + data);
+        //    }).fail(function (data) {
+        //        console.log("Executed if the async work fails = " + data);
+        //    });
     };
 
     $scope.setForm = function (form) {

@@ -86,7 +86,7 @@ visHome.factory('adminService',function($http,$log,$rootScope){
                 .then(function(response){
                     return response.data;
                 })
-        },
+        }
     };
 
     return adminService

@@ -3,20 +3,36 @@ var User = require('../app/models/user.js');
 var should = require('should');
 var assert = require('assert');
 var request = require('supertest');
+var server = require('../app.js');
+var agent = request.agent(server);
 var mongoose = require('mongoose');
 
-describe.skip('Signup and Login routes',function(){
+describe('Signup and Login routes',function(){
     var url="http://localhost:3000/";
-    var newUser = {firstName:'fname',lastName:'lname',email:"myemail001@myemail.com",password:"test1234"};
+    var newUser = {firstName:'fname',lastName:'lname',email:"myemail007@myemail.com",password:"test1234"};
     var badUser = {email:"mye@myemail.com",password:"test1"};
     var dbUser;
     var resetToken;
     var badResetToken;
     var newPassword = "Test4321";
+
+    //make sure that the test user is deleted incase it didnt get removed from previous run
+    before(function(done){
+            agent
+                .delete('/userByEmail/' + newUser.email)
+                .send()
+                .expect(200)
+                .end(function(err,res){
+                    console.log(res.body);
+                    done();
+                })
+    });
+
+
     describe('Signup New User',function(){
         it('should create a new user',function(done){
-            var endpoint = 'signup';
-            request(url)
+            var endpoint = '/signup';
+            agent
                 .post(endpoint)
                 .send(newUser)
                 .expect(200) //Status code
@@ -24,7 +40,7 @@ describe.skip('Signup and Login routes',function(){
                     if(err){
                         throw err;
                     }
-                    console.log(res.body);
+                    //console.log(res.body);
                     dbUser=res.body.user;
                     //res.should.have.status(200);
                     done();
@@ -32,12 +48,12 @@ describe.skip('Signup and Login routes',function(){
         });
 
         it('should login this user',function(done){
-            request(url)
-                .post('login')
+            agent
+                .post('/login')
                 .send(newUser)
                 .expect(200)
                 .end(function(err,res){
-                    console.log(res.body);
+                    //console.log(res.body);
                     res.body.should.have.property('auth');
                     res.body.auth.should.equal(true);
                     done();
@@ -46,8 +62,8 @@ describe.skip('Signup and Login routes',function(){
         });
 
         it('should fail login for bad user',function(done){
-            request(url)
-                .post('login')
+            agent
+                .post('/login')
                 .send(badUser)
                 .expect(200)
                 .end(function(err,res){
@@ -59,12 +75,12 @@ describe.skip('Signup and Login routes',function(){
         });
 
         it('should create a reset token for forgot password request',function(done){
-            request(url)
-                .post('forgot')
+            agent
+                .post('/forgot')
                 .send(newUser)
                 .expect(200)
                 .end(function(err,res){
-                    console.log(res.body.token);
+                    //console.log(res.body.token);
                     res.body.should.have.property('token');
                     resetToken = res.body.token;
                     //res.body.auth.should.equal(true);
@@ -73,8 +89,8 @@ describe.skip('Signup and Login routes',function(){
         });
 
         it('should validate reset token',function(done){
-            request(url)
-                .get('reset/' + resetToken)
+            agent
+                .get('/reset/' + resetToken)
                 .expect(200)
                 .end(function(err,res){
                     //console.log(res.body.token);
@@ -85,8 +101,8 @@ describe.skip('Signup and Login routes',function(){
         });
 
         it('should invalidate bad reset token',function(done){
-            request(url)
-                .get('reset/' + badResetToken )
+            agent
+                .get('/reset/' + badResetToken )
                 .expect(200)
                 .end(function(err,res){
                     //console.log(res.body.token);
@@ -97,9 +113,9 @@ describe.skip('Signup and Login routes',function(){
         });
 
         it('should reset passowrd with valid token',function(done){
-            console.log(resetToken);
-            request(url)
-                .post('reset')
+            //console.log(resetToken);
+            agent
+                .post('/reset')
                 .send({password:newPassword,token:resetToken})
                 .expect(200)
                 .end(function(err,res){
@@ -114,12 +130,12 @@ describe.skip('Signup and Login routes',function(){
         });
 
         it('should allow user to login with new pasword',function(done){
-            request(url)
-                .post('login')
+            agent
+                .post('/login')
                 .send({email:newUser.email,password:newPassword})
                 .expect(200)
                 .end(function(err,res){
-                    console.log(res.body);
+                    //console.log(res.body);
                     res.body.should.have.property('auth');
                     res.body.auth.should.equal(true);
                     done();
@@ -127,12 +143,12 @@ describe.skip('Signup and Login routes',function(){
         });
 
         it('should delete user',function(done){
-            request(url)
-                .delete('user/' + dbUser._id)
+            agent
+                .delete('/user/' + dbUser._id)
                 .send({email:newUser.email,password:newPassword})
                 .expect(200)
                 .end(function(err,res){
-                    console.log(res.body);
+                    //console.log(res.body);
 
                     done();
                 })

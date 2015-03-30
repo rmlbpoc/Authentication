@@ -261,6 +261,7 @@ module.exports = function(app,passport){
 
     //delete user
     app.delete('/user/:id',function(req,res){
+        console.log('delete by id');
         User.findByIdAndRemove(new Object(req.params.id), function(err, user) {
             if (err) {
                 res.status(500);
@@ -273,6 +274,34 @@ module.exports = function(app,passport){
                     type: true,
                     data: "User: " + req.params.id + " deleted successfully"
                 })
+            }
+        })
+    });
+
+    //delete user
+    app.delete('/userByEmail/:email',function(req,res){
+        console.log('delete by email');
+        User.findOne({'local.email':req.params.email}, function(err, user) {
+            if (err) {
+                res.status(500);
+                res.json({
+                    type: false,
+                    data: "Error occured: " + err
+                })
+            } else {
+                if (!user) {
+                    console.log('user not found');
+                    res.send({message:'user not found'});
+                }else{
+                    user.remove(function(){
+                        res.json({
+                            type: true,
+                            data: "User: " + req.params.email + " deleted successfully"
+                        })
+                    })
+                }
+
+
             }
         })
     });
