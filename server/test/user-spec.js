@@ -1,14 +1,13 @@
 var User = require('../app/models/user.js');
 
 var should = require('should');
-var assert = require('assert');
 var request = require('supertest');
 var server = require('../app.js');
 var agent = request.agent(server);
 var mongoose = require('mongoose');
 
 describe('Signup and Login routes',function(){
-    var url="http://localhost:3000/";
+    //var url="http://localhost:3000/";
     var newUser = {firstName:'fname',lastName:'lname',email:"myemail007@myemail.com",password:"test1234"};
     var badUser = {email:"mye@myemail.com",password:"test1"};
     var dbUser;

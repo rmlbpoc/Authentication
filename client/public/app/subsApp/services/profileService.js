@@ -16,6 +16,16 @@ subsApp.factory('profileService',function($http,$log,$rootScope){
                 .then(function(response){
                     return response.data;
                 })
+        },
+        updateProfile : function(user){
+            return $http({
+                method : 'POST',
+                url : '/profile',
+                data : user
+            })
+                .then(function(response){
+                    return response.data;
+                })
         }
     }
 

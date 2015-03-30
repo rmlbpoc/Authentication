@@ -2,8 +2,8 @@ subsApp.controller('profileController',['$scope','$log','profileService',functio
     $scope.init = function(){
         console.log('profile controller initialised');
         //$scope.showForgot = false;
-
-        $scope.profile = {};
+        $scope.user = {};
+        $scope.user.profile = {};
         $scope.getProfile();
     };
 
@@ -11,8 +11,13 @@ subsApp.controller('profileController',['$scope','$log','profileService',functio
     $scope.getProfile = function(){
         profileService.getProfile().then(function(profile){
             console.log(profile);
-            $scope.profile = profile;
+            $scope.user.profile = profile;
         })
     };
 
+    $scope.updateProfile = function(){
+        profileService.updateProfile($scope.user).then(function(data){
+
+        })
+    }
 }]);
