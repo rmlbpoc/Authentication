@@ -294,12 +294,13 @@ module.exports = function(app,passport){
         //res.render('profile.jade',{
         //    user:req.user // get the user out of session and pass to template
         //})
-        res.send(req.user);
+        res.send({user:req.user});
     });
 
     //make profile updates
     app.post('/profile',isLoggedIn,function(req,res){
         var user = req.body;
+        console.log(user);
         User.findOne({"local.email":user.email},function(err,usr){
             if(!usr){
                 console.log('no user found');
@@ -310,9 +311,9 @@ module.exports = function(app,passport){
             usr.profile.gender = user.profile.gender;
             usr.profile.height = user.profile.height;
             usr.profile.mobileNumber = user.profile.mobileNumber;
-            //console.log('user after updated password : ', user);
+            console.log('user after updated profile : ', usr);
             usr.save(function(err) {
-                res.send({updated:true});
+                res.send({user:usr,updated:true});
                 //req.logIn(user, function(err) {
                 //    done(err, user);
                 //});

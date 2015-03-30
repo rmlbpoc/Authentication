@@ -5,9 +5,9 @@ var assert = require('assert');
 var request = require('supertest');
 var mongoose = require('mongoose');
 
-describe('Signup and Login routes',function(){
+describe.skip('Signup and Login routes',function(){
     var url="http://localhost:3000/";
-    var newUser = {firstName:'fname',lastName:'lname',email:"myemail25@myemail.com",password:"test1234"};
+    var newUser = {firstName:'fname',lastName:'lname',email:"myemail001@myemail.com",password:"test1234"};
     var badUser = {email:"mye@myemail.com",password:"test1"};
     var dbUser;
     var resetToken;

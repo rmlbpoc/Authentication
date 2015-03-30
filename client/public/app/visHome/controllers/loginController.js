@@ -16,6 +16,18 @@ visHome.controller('loginController',['$scope','$log','adminService',function($s
 
         $scope.inters();
         $scope.append();
+
+        doAsync(function(){
+            var dt = new Date;
+            console.log('The current time is : ' + dt.getHours() + ':' + dt.getMinutes() + ':' +dt.getSeconds());
+        });
+
+        doAsync2()
+            .done(function (data) {
+                console.log("Executed after a delay = " + data);
+            }).fail(function (data) {
+                console.log("Executed if the async work fails = " + data);
+            });
     };
 
     $scope.setForm = function (form) {
@@ -42,6 +54,11 @@ visHome.controller('loginController',['$scope','$log','adminService',function($s
         return valid;
     };
 
+
+
+    /*---------------------------------------------------------------------------------------------*
+     *-----------  ALL THE CODE BELOW IS RANDOM PRACTICE CODE -------------------------------------*
+     *---------------------------------------------------------------------------------------------*/
     //intersection of 2 arrays
     $scope.inters = function(){
         var res = [];  // final result will be here
@@ -73,5 +90,31 @@ visHome.controller('loginController',['$scope','$log','adminService',function($s
         var b = [3,4,5];
         a.push.apply(a,b);
         console.log(a)
+    };
+
+    //using callbacks
+    var doAsync = function(cb){
+        var dt1 = new Date;
+        console.log('calling callback at ' + dt1.getHours() + ':' + dt1.getMinutes() + ':' +dt1.getSeconds());
+        //cb();
+        setTimeout(function(){
+            cb();
+        },2000)
+    };
+
+    //using
+    var doAsync2 = function(){
+        var deferredObject = $.Deferred();
+        setTimeout(function(){
+            var randomValue = Math.random();
+            if(randomValue < 0.5) {
+                deferredObject.resolve(randomValue);
+            } else {
+                deferredObject.reject(randomValue);
+            }
+        },2000);
+
+        return deferredObject.promise();
     }
+
 }]);
