@@ -10,7 +10,7 @@ var passport = require('passport');
 var session = require('express-session');
 var flash = require('express-flash');
 var morgan = require('morgan');
-var configDB = require('./config/database.js');
+
 
 var app = express();
 
@@ -24,6 +24,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 // ======= database
+var configDB = require('./config/database.js');
 mongoose.connect(configDB.url); // connect to our database
 
 // ======= Passport Authentication
