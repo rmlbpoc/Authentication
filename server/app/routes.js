@@ -254,7 +254,7 @@ module.exports = function(app,passport){
             req.logIn(user, function(err) {
                 //console.log(user);
                 if (err) { return next(err); }
-                res.send({redirect:'/profile',user:user});
+                res.send({redirect:'/',user:user});
             });
         })(req, res, next);
     });
