@@ -173,7 +173,7 @@ module.exports = function(grunt){
                 }
             },
             "production": {
-                "<%= yeoman.dist %>/server/config/authConfig.json": function(fs, fd, done) {
+                "server/config/authConfig.json": function(fs, fd, done) {
                     var openIdAuth = {
                         openIdAuth: {
                             'facebookAuth': {
@@ -254,6 +254,13 @@ module.exports = function(grunt){
             'express:dev' ,
             'open',
             'watch'
+        ])
+    });
+
+    grunt.registerTask('createAuthConfig',function(target){
+
+        return grunt.task.run([
+            'file-creator:' + target
         ])
     });
 

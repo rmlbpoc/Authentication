@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node server/bin/www",
-    "test": "NODE_ENV=test mocha server/test"
+    "test": "NODE_ENV=test mocha server/test",
+    "postinstall": "grunt createAuthConfig:production"
   },
   "dependencies": {
     "async": "^0.9.0",
