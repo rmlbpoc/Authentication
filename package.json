@@ -31,7 +31,8 @@
     "passport-google-oauth": "^0.1.5",
     "passport-local": "^1.0.0",
     "passport-twitter": "^1.0.2",
-    "serve-favicon": "~2.2.0"
+    "serve-favicon": "~2.2.0",
+    "time-grunt": "^1.1.0"
   },
   "devDependencies": {
     "chai": "^2.1.2",
