@@ -21,6 +21,7 @@
     "grunt-cli": "^0.1.13",
     "grunt-express-server": "~0.4.17",
     "jade": "~1.9.1",
+    "jit-grunt": "^0.9.1",
     "method-override": "^2.3.1",
     "mongoose": "^3.8.23",
     "morgan": "~1.5.1",
