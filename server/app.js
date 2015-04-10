@@ -24,8 +24,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 // ======= database
-var configDB = require('./config/database.js');
-mongoose.connect(configDB.url); // connect to our database
+var configDB = require('./config/config.js');
+mongoose.connect(configDB.db); // connect to our database
 
 // ======= Passport Authentication
 require('./config/passport')(passport,app); // pass passport for configuration
