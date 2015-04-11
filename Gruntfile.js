@@ -125,6 +125,12 @@ module.exports = function(grunt){
             }
         },
 
+        mochaTest:{
+            options: {
+                node_env:'test'
+            },
+            src: ['server/test/*.js']
+        },
         "file-creator": {//use this to generate the authConfig file at runtime
             "development": {
                 "server/config/authConfig.json": function(fs, fd, done) {
@@ -206,6 +212,7 @@ module.exports = function(grunt){
             dev: {
                 options: {
                     script: 'server/bin/www',
+                    node_env: 'development',
                     serverreload: true
                 }
             },
@@ -223,7 +230,7 @@ module.exports = function(grunt){
         watch: {
 
             express: {
-                files:  [ 'server/**/*.{js,json}' ],
+                files:  [ 'server/**/*.{js,json}','server/*.{js,json}' ],
                 tasks:  [ 'express:dev' ],
                 options: {
                     spawn: false
@@ -251,12 +258,14 @@ module.exports = function(grunt){
 
         return grunt.task.run([
             'file-creator:' + target ,
+            'mochaTest',
             'express:dev' ,
             'open',
             'watch'
         ])
     });
 
+    //grunt.registerTask( 'watch', [ 'mochaTest','express:dev','open'] );
     grunt.registerTask('createAuthConfig',function(target){
 
         return grunt.task.run([
