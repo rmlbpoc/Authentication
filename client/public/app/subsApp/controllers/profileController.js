@@ -7,6 +7,9 @@ subsApp.controller('profileController',['$scope','$log','profileService',functio
         $scope.getProfile();
     };
 
+    $scope.setForm = function (form) {
+        $scope.myForm = form;
+    };
 
     $scope.getProfile = function(){
         profileService.getProfile().then(function(profile){

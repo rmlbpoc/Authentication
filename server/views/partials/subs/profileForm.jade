@@ -1,0 +1,24 @@
+aside.scol-sm-12.col-sm-height
+    h4.range-title
+        b My Profile
+
+    .range-list
+        form(id="profileForm" name="profileForm" ng-init="setForm(this)").range-list-div
+            .form-group(style='display:inline-block;')
+                input.form-control.input-wide(type='text', name='fender', autofocus, placeholder='Gender' ng-model="user.gender")
+            br
+            .form-group(style='display:inline-block;')
+                input.form-control.input-wide(type='text', name='dateofbirth', placeholder='birthday' ng-model="user.dateOfBirth")
+            br
+            .form-group
+                input.form-control.input-small(type='text', name='heightFt',  oninvalid="setCustomValidity(' ')", placeholder='height ft' ng-model="user.heightFt")
+                input.form-control.input-small(type='text', name='heightIn',  oninvalid="setCustomValidity(' ')", placeholder='height in' ng-model="user.heightIn")
+
+            .form-group(style='display:inline-block;')
+                input.form-control.input-wide(type='text', name='mobile', oninvalid="setCustomValidity(' ')" required="" pattern='^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.{8,}).*$' placeholder='mobile' ng-model="user.mobileNumber")
+                .val-error-msg(ng-if="showValErrors && profileForm.mobile.$invalid" )
+                    h4 Your password must be 8 characters long and contain at least one number
+
+            br
+
+            button.btn.btn-primary.login-button(ng-click="updateProfile()" style='display:inline-block;') Save

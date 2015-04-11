@@ -36,7 +36,8 @@ var userSchema = mongoose.Schema({
     profile          : {
         dateOfBirth  : Date,
         gender       : String,
-        height       : String,
+        heightFt     : String,
+        heightIn     : String,
         mobileNumber : String
     }
 

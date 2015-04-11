@@ -13,7 +13,7 @@ describe('Profile routes',function(){
 
     var dob = new Date('12/03/1983');
     var newUser = {firstName:'fname',lastName:'lname',email:"profile@myemail.com",password:"test1234"};
-    var profile = {dateOfBirth: dob, gender: 'M',height: '69', mobileNumber : "1211211212"};
+    var profile = {dateOfBirth: dob, gender: 'M',heightFt: '5',heightIn: '7', mobileNumber : "1211211212"};
     newUser.profile = profile;
     var dbUser;
     var newPassword = "Test4321";
@@ -80,7 +80,8 @@ describe('Profile routes',function(){
 
                     usrProfile.gender.should.equal(profile.gender);
                     usrProfile.dateOfBirth.should.equal(profile.dateOfBirth.toISOString());
-                    usrProfile.height.should.equal(profile.height);
+                    usrProfile.heightFt.should.equal(profile.heightFt);
+                    usrProfile.heightIn.should.equal(profile.heightIn);
                     usrProfile.mobileNumber.should.equal(profile.mobileNumber);
                     done();
                 })

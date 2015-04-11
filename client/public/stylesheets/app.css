@@ -318,6 +318,16 @@ article p{
 #signupForm > div >input{
     width: 250px;
 }
+.input-wide{
+    width: 250px;
+}
+
+.input-small{
+    width: 110px;
+    display:inline;
+    margin-left: 12px;
+    margin-right: 12px;
+}
 @media (min-width: 768px) {
     .loginPanel>aside:first-child{
         border-right: 2px groove rgba(224, 180, 153, 0.75);

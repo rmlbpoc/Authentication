@@ -331,7 +331,8 @@ module.exports = function(app,passport){
 
             usr.profile.dateOfBirth = user.profile.dateOfBirth;
             usr.profile.gender = user.profile.gender;
-            usr.profile.height = user.profile.height;
+            usr.profile.heightFt = user.profile.heightFt;
+            usr.profile.heightIn = user.profile.heightIn;
             usr.profile.mobileNumber = user.profile.mobileNumber;
             console.log('user after updated profile : ', usr);
             usr.save(function(err) {
