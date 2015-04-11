@@ -3,7 +3,7 @@ var expect = require('chai').expect;
 
 describe.skip('Math', function () {
     describe('#max', function () {
-        xit('random', function () {
+        it('random', function () {
             var countCircle  = 0;
             var pointsCount = 100;
             for(j=1;j<=10;j++){

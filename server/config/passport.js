@@ -9,8 +9,7 @@ var User = require('../app/models/user.js');
 
 // load the auth variables
 //var configAuth = require('./auth');
-var authData = require('./authConfig.json');
-
+var config = require('./config.js');
 
 // expose this function to our app using module.exports
 module.exports = function(passport,app) {
@@ -131,9 +130,9 @@ module.exports = function(passport,app) {
      */
     passport.use('facebook',new FacebookStrategy({
         // pull in our app id and secret from our auth.js file
-        clientID        : authData.openIdAuth.facebookAuth.clientID,
-        clientSecret    : authData.openIdAuth.facebookAuth.clientSecret,
-        callbackURL     : authData.openIdAuth.facebookAuth.callbackURL
+        clientID        : config.openIdAuth.facebookAuth.clientID,
+        clientSecret    : config.openIdAuth.facebookAuth.clientSecret,
+        callbackURL     : config.openIdAuth.facebookAuth.callbackURL
     },
         // facebook will send back the token and profile
         function(token, refreshToken, profile, done) {
@@ -178,9 +177,9 @@ module.exports = function(passport,app) {
      */
     passport.use(new TwitterStrategy({
 
-            consumerKey     : authData.openIdAuth.twitterAuth.consumerKey,
-            consumerSecret  : authData.openIdAuth.twitterAuth.consumerSecret,
-            callbackURL     : authData.openIdAuth.twitterAuth.callbackURL
+            consumerKey     : config.openIdAuth.twitterAuth.consumerKey,
+            consumerSecret  : config.openIdAuth.twitterAuth.consumerSecret,
+            callbackURL     : config.openIdAuth.twitterAuth.callbackURL
 
         },
         function(token, tokenSecret, profile, done) {
@@ -232,9 +231,9 @@ module.exports = function(passport,app) {
      */
     passport.use(new GoogleStrategy({
 
-            clientID        : authData.openIdAuth.googleAuth.clientID,
-            clientSecret    : authData.openIdAuth.googleAuth.clientSecret,
-            callbackURL     : authData.openIdAuth.googleAuth.callbackURL
+            clientID        : config.openIdAuth.googleAuth.clientID,
+            clientSecret    : config.openIdAuth.googleAuth.clientSecret,
+            callbackURL     : config.openIdAuth.googleAuth.callbackURL
 
         },
         function(token, refreshToken, profile, done) {
