@@ -426,16 +426,10 @@ article p{
     display: inline-block;
 }
 
-.dateclass{
-}
 
-.dateclass.placeholderclass::before{
+
+.placeholderclass::before{
     width:100%;
     content:attr(placeholder);
     background-color:#FFFFFF;
-}
-
-.dateclass.placeholderclass:hover::before{
-    width:0%;
-    content:"";
 }
