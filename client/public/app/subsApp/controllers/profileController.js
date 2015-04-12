@@ -3,24 +3,30 @@ subsApp.controller('profileController',['$scope','$log','profileService',functio
         console.log('profile controller initialised');
         //$scope.showForgot = false;
         $scope.user = {};
-        $scope.user.profile = {};
+        $scope.profile = {};
+        $scope.dateOfBirth ='';
         $scope.getProfile();
     };
 
+    $scope.genders=['male','female'];
     $scope.setForm = function (form) {
         $scope.myForm = form;
     };
 
     $scope.getProfile = function(){
-        profileService.getProfile().then(function(profile){
-            console.log(profile);
-            $scope.user.profile = profile;
+        profileService.getProfile().then(function(user){
+            $scope.user = user;
+            $scope.profile = user.profile;
+            console.log($scope.user);
         })
     };
 
     $scope.updateProfile = function(){
-        profileService.updateProfile($scope.user).then(function(data){
+        console.log($scope.user);
+        console.log($scope.dateOfBirth);
 
-        })
+        //profileService.updateProfile($scope.user).then(function(data){
+        //
+        //})
     }
 }]);

@@ -6,6 +6,7 @@ var should = require('should');
 var request = require('supertest');
 var server = require('../app.js');
 var agent = request.agent(server);
+var newUserId;
 
 var mongoose = require('mongoose');
 
@@ -18,6 +19,23 @@ describe('Profile routes',function(){
     var dbUser;
     var newPassword = "Test4321";
 
+  function loginUser(user) {
+    return function(done) {
+      agent
+        .post('/login')
+        .send(user)
+        .expect(200)
+        //.expect('Location', '/')
+        .end(onResponse);
+
+      function onResponse(err, res) {
+        //profileObj._Id = res.body.user._id;
+        //console.log('After login',newUserId);
+        if (err) return done(err);
+        return done();
+      }
+    };
+  }
     //make sure that the test user is deleted incase it didnt get removed from previous run
     before(function(done){
         agent
@@ -55,13 +73,13 @@ describe('Profile routes',function(){
             //console.log(newUser.profile);
             agent
                 .post('/profile')
-                .send(newUser)
+                .send(profile)
                 .expect(200)
                 .end(function (err, res) {
                     if (err) {
                         throw err;
                     }
-                    //console.log(res.body);
+                    //console.log('after update - inside test',res.body);
                     res.body.should.have.property('user');
                     done();
                 })
@@ -76,7 +94,7 @@ describe('Profile routes',function(){
                     //console.log(res.body.user);
                     res.body.should.have.property('user');
                     var usrProfile = res.body.user.profile;
-                    //console.log(usrProfile);
+                    console.log('getting user profile ',usrProfile);
 
                     usrProfile.gender.should.equal(profile.gender);
                     usrProfile.dateOfBirth.should.equal(profile.dateOfBirth.toISOString());
@@ -101,18 +119,3 @@ describe('Profile routes',function(){
     });
 });
 
-function loginUser(user) {
-    return function(done) {
-        agent
-            .post('/login')
-            .send(user)
-            .expect(200)
-            //.expect('Location', '/')
-            .end(onResponse);
-
-        function onResponse(err, res) {
-            if (err) return done(err);
-            return done();
-        }
-    };
-}

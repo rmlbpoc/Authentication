@@ -74,8 +74,8 @@ module.exports = function(app,passport){
             req.logIn(user, function(err) {
                 //console.log(user);
                 if (err) { return next(err); }
-                //console.log(req);
-                res.send({redirect:'/',auth:true});
+                console.log('userid = ',res.cookies);
+                res.send({redirect:'/',auth:true,user:user});
             });
         })(req, res, next);
     });
@@ -313,28 +313,33 @@ module.exports = function(app,passport){
     //use route middleware to verify
     app.get('/profile',isLoggedIn,function(req,res){
         console.log('rendering profile');
-        //res.render('profile.jade',{
-        //    user:req.user // get the user out of session and pass to template
-        //})
-        res.send({user:req.user});
+        var userId = req.session.passport.user;
+        User.findOne({"_id":userId},function(err,usr) {
+          if (!usr) {
+            console.log('no user found');
+            res.send({message: 'No user found'});
+          }
+          res.send({user: usr});
+        })
     });
 
     //make profile updates
     app.post('/profile',isLoggedIn,function(req,res){
-        var user = req.body;
-        console.log(user);
-        User.findOne({"local.email":user.email},function(err,usr){
+        var profileObj = req.body;
+        console.log(profileObj);
+        var userId = req.session.passport.user;
+        User.findOne({"_id":userId},function(err,usr){
             if(!usr){
                 console.log('no user found');
                 res.send({message:'No user found'});
             }
 
-            usr.profile.dateOfBirth = user.profile.dateOfBirth;
-            usr.profile.gender = user.profile.gender;
-            usr.profile.heightFt = user.profile.heightFt;
-            usr.profile.heightIn = user.profile.heightIn;
-            usr.profile.mobileNumber = user.profile.mobileNumber;
-            console.log('user after updated profile : ', usr);
+            usr.profile.dateOfBirth = profileObj.dateOfBirth;
+            usr.profile.gender = profileObj.gender;
+            usr.profile.heightFt = profileObj.heightFt;
+            usr.profile.heightIn = profileObj.heightIn;
+            usr.profile.mobileNumber = profileObj.mobileNumber;
+            //console.log('user after updated profile : ', usr);
             usr.save(function(err) {
                 res.send({user:usr,updated:true});
                 //req.logIn(user, function(err) {

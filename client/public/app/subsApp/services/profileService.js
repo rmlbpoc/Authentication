@@ -8,7 +8,7 @@ subsApp.factory('profileService',function($http,$log,$rootScope){
                 url : '/profile'
             })
                 .success(function(data,status,headers,config){
-                    console.log(data);
+                    //console.log(data);
                 })
                 .error(function(){
                     //

@@ -40,7 +40,7 @@ visHome.controller('loginController',['$scope','$log','adminService',function($s
         console.log($scope.myForm.Loginform.$valid);
         console.log('calling login with : ', $scope.user);
         adminService.login($scope.user).then(function(data){
-            //console.log(data);
+            console.log(data);
             $scope.message = data;
             if(data.redirect){
                 window.location = data.redirect
