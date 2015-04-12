@@ -17,11 +17,11 @@ subsApp.factory('profileService',function($http,$log,$rootScope){
                     return response.data;
                 })
         },
-        updateProfile : function(user){
+        updateProfile : function(profile){
             return $http({
                 method : 'POST',
                 url : '/profile',
-                data : user
+                data : profile
             })
                 .then(function(response){
                     return response.data;

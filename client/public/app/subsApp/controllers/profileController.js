@@ -19,18 +19,18 @@ subsApp.controller('profileController',['$scope','$log','profileService',functio
     };
 
     $scope.getProfile = function(){
-        profileService.getProfile().then(function(user){
-            $scope.user = user;
-            $scope.profile = user.profile;
-            console.log($scope.user);
+        profileService.getProfile().then(function(data){
+            $scope.user = data.user;
+            $scope.profile = $scope.user.profile;
+            console.log($scope.profile);
         })
     };
 
     $scope.updateProfile = function(){
         console.log($scope.user);
         console.log($scope.profile);
-        //profileService.updateProfile($scope.user).then(function(data){
-        //
-        //})
+        profileService.updateProfile($scope.profile).then(function(data){
+            console.log(data);
+        })
     };
 }]);
