@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0ad46b56-dd5b-4760-ac8a-bce0f357ba71" name="Default" comment="start of adding env specific configs">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/bower_components_/eonasdan-bootstrap-datetimepicker/build/nuget/Bootstrap.v3.Datetimepicker.4.0.0.nupkg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/bower_components_/eonasdan-bootstrap-datetimepicker/build/nuget/Bootstrap.v3.Datetimepicker.CSS.4.0.0.nupkg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/bower_components_/eonasdan-bootstrap-datetimepicker/src/nuget/NuGet.exe" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/bower_components_/eonasdan-bootstrap-datetimepicker/.bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/bower_components_/eonasdan-bootstrap-datetimepicker/src/nuget/Bootstrap.v3.Datetimepicker.CSS.nuspec" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/bower_components_/eonasdan-bootstrap-datetimepicker/src/nuget/Bootstrap.v3.Datetimepicker.nuspec" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/bower_components_/eonasdan-bootstrap-datetimepicker/CONTRIBUTING.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/bower_components_/eonasdan-bootstrap-datetimepicker/Gruntfile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/bower_components_/eonasdan-bootstrap-datetimepicker/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/bower_components_/eonasdan-bootstrap-datetimepicker/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/bower_components_/eonasdan-bootstrap-datetimepicker/src/less/_bootstrap-datetimepicker.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/bower_components_/eonasdan-bootstrap-datetimepicker/src/less/bootstrap-datetimepicker-build.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/bower_components_/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/bower_components_/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/bower_components_/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/bower_components_/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/bower_components_/eonasdan-bootstrap-datetimepicker/bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/bower_components_/eonasdan-bootstrap-datetimepicker/tasks/bump_version.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/bower_components_/eonasdan-bootstrap-datetimepicker/component.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/bower_components_/eonasdan-bootstrap-datetimepicker/composer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/bower_components_/eonasdan-bootstrap-datetimepicker/src/nuget/install.ps1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/bower_components_/eonasdan-bootstrap-datetimepicker/package.json" />
+    <list default="true" id="0ad46b56-dd5b-4760-ac8a-bce0f357ba71" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="NodeAuthentication.iws" />
@@ -751,12 +729,6 @@
       <option name="number" value="Default" />
       <updated>1424698981212</updated>
     </task>
-    <task id="LOCAL-00049" summary="added images back">
-      <created>1426865428962</created>
-      <option name="number" value="00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1426865428962</updated>
-    </task>
     <task id="LOCAL-00050" summary="added images back">
       <created>1426865741905</created>
       <option name="number" value="00050" />
@@ -1045,7 +1017,13 @@
       <option name="project" value="LOCAL" />
       <updated>1428814728129</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="bootstrap datepicker added to git">
+      <created>1428844928559</created>
+      <option name="number" value="00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1428844928559</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1073,7 +1051,7 @@
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34206897" sideWeight="0.49964765" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34206897" sideWeight="0.49964765" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3337931" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32596686" sideWeight="0.5003524" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1083,7 +1061,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32827586" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24947146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24876674" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24876674" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27448276" sideWeight="0.49964765" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1109,7 +1087,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="updates to fix big  bug with reset password" />
     <MESSAGE value="Created subscriber angular app with controllers and get service for profile" />
     <MESSAGE value="created tests for all routes for login, signup, reset. pending tests for profile" />
     <MESSAGE value="updated passport signup to save firs and last name&#10;created shell for profile tests" />
@@ -1134,7 +1111,8 @@
     <MESSAGE value="start of adding env specific configs" />
     <MESSAGE value="updates to :&#10;1. profile tests&#10;2. profile get and post to use user id from passport  session&#10;3. login to return user info&#10;4. added datepicker for profile birthday" />
     <MESSAGE value="profile page fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="profile page fixes" />
+    <MESSAGE value="bootstrap datepicker added to git" />
+    <option name="LAST_COMMIT_MESSAGE" value="bootstrap datepicker added to git" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
