@@ -418,8 +418,24 @@ article p{
     background-color: rgba(0, 0, 0, 0.85);
     /*height: 265px;*/
 }
-
+.profilePanel>aside>div{
+    padding: 0px 0px;
+}
 /* Form group*/
 .form-group{
     display: inline-block;
+}
+
+.dateclass{
+}
+
+.dateclass.placeholderclass::before{
+    width:100%;
+    content:attr(placeholder);
+    background-color:#FFFFFF;
+}
+
+.dateclass.placeholderclass:hover::before{
+    width:0%;
+    content:"";
 }

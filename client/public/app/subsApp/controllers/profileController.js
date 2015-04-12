@@ -22,7 +22,7 @@ subsApp.controller('profileController',['$scope','$log','profileService',functio
 
     $scope.updateProfile = function(){
         console.log($scope.user);
-
+        console.log($scope.profile);
         //profileService.updateProfile($scope.user).then(function(data){
         //
         //})

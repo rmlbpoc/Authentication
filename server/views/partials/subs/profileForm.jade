@@ -9,7 +9,7 @@ aside.scol-sm-12.col-sm-height
                     option(value='')  gender
             br
             .form-group
-                input.form-control.input-med(type='text' id='datetimepicker1' name='dateofbirth', placeholder='birthday' ng-model="$parent.dateOfBirth")
+                input.form-control.input-med.dateclass.placeholderclass(type='date', placeholder='birthday', onclick="$(this).removeClass('placeholderclass')" ng-model='profile.dateOfBirth')
             .form-group
                 input.form-control.input-small(type='text', name='heightFt',  oninvalid="setCustomValidity(' ')", placeholder='height ft' ng-model="profile.heightFt")
                 input.form-control.input-small(type='text', name='heightIn',  oninvalid="setCustomValidity(' ')", placeholder='height in' ng-model="profile.heightIn")
