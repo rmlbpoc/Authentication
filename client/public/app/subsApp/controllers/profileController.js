@@ -4,7 +4,6 @@ subsApp.controller('profileController',['$scope','$log','profileService',functio
         //$scope.showForgot = false;
         $scope.user = {};
         $scope.profile = {};
-        $scope.dateOfBirth ='';
         $scope.getProfile();
     };
 
@@ -23,7 +22,6 @@ subsApp.controller('profileController',['$scope','$log','profileService',functio
 
     $scope.updateProfile = function(){
         console.log($scope.user);
-        console.log($scope.dateOfBirth);
 
         //profileService.updateProfile($scope.user).then(function(data){
         //

@@ -10,7 +10,6 @@ aside.scol-sm-12.col-sm-height
             br
             .form-group
                 input.form-control.input-med(type='text' id='datetimepicker1' name='dateofbirth', placeholder='birthday' ng-model="$parent.dateOfBirth")
-                span {{parent.dateOfBirth}}
             .form-group
                 input.form-control.input-small(type='text', name='heightFt',  oninvalid="setCustomValidity(' ')", placeholder='height ft' ng-model="profile.heightFt")
                 input.form-control.input-small(type='text', name='heightIn',  oninvalid="setCustomValidity(' ')", placeholder='height in' ng-model="profile.heightIn")
@@ -18,7 +17,6 @@ aside.scol-sm-12.col-sm-height
             .form-group
                 input.form-control.input-med(type='text', name='mobile', placeholder='mobile' ng-model="profile.mobileNumber")
                 .val-error-msg(ng-if="showValErrors && profileForm.mobile.$invalid" )
-                    h4 Your password must be 8 characters long and contain at least one number
 
             br
 
