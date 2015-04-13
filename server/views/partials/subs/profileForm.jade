@@ -8,8 +8,13 @@
         .form-group
             input.form-control.input-med.placeholderclass(type='date',  ng-model='profile.dateOfBirth')
         .form-group
-            input.form-control.input-small(type='text', name='heightFt',  oninvalid="setCustomValidity(' ')", placeholder='height ft' ng-model="profile.heightFt")
-            input.form-control.input-small(type='text', name='heightIn',  oninvalid="setCustomValidity(' ')", placeholder='height in' ng-model="profile.heightIn")
+
+            select.form-control.input-small(ng-model='profile.heightFt', ng-options='ft + " feet" for ft in feet', name='feet')
+                option(value='')  feet
+            select.form-control.input-small(ng-model='profile.heightIn', ng-options='inc + " inches" for inc in inches', name='inches')
+                option(value='')  inches
+            //input.form-control.input-small(type='text', name='heightFt',  oninvalid="setCustomValidity(' ')", placeholder='height ft' ng-model="profile.heightFt")
+            //input.form-control.input-small(type='text', name='heightIn',  oninvalid="setCustomValidity(' ')", placeholder='height in' ng-model="profile.heightIn")
 
         .form-group
             input.form-control.input-med(type='text', name='mobile', placeholder='mobile' ng-model="profile.mobileNumber")
