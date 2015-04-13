@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 var visHome = angular.module('visHome', ['ui.router','ngRoute']);
 visHome.config(['$stateProvider','$routeProvider',function($stateProvider,$routeProvider){
@@ -9,25 +9,25 @@ visHome.config(['$stateProvider','$routeProvider',function($stateProvider,$route
         // HOME STATES AND NESTED VIEWS ========================================
         .state('home', {
             url: '/',
-            templateUrl: '../partials/login'
+            templateUrl: '../partials/vis/login'
         })
 
         // nested list with custom controller
         .state('login', {
             url: '/login',
-            templateUrl: '../partials/login.jade'
+            templateUrl: '../partials/vis/login.jade'
         })
         .state('signup', {
             url: '/signup',
-            templateUrl: '../partials/signup.jade'
+            templateUrl: '../partials/vis/signup.jade'
         })
         .state('forgot', {
             url: '/forgot',
-            templateUrl: '../partials/forgot.jade'
+            templateUrl: '../partials/vis/forgot.jade'
         })
         .state('reset', {
             url: '/reset/:token',
-            templateUrl: '../partials/reset.jade'
+            templateUrl: '../partials/vis/reset.jade'
         })
 }]);
 visHome.run(['$state', function ($state) {

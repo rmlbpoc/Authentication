@@ -13,6 +13,11 @@ module.exports = function(app,passport){
         res.render("partials/" + filename );
     });
 
+    app.get('/partials/vis/:filename', function(req,res){
+      var filename = req.params.filename;
+      if(!filename) return;  // might want to change this
+      res.render("partials/vis/" + filename );
+    });
     app.get('/partials/subs/:filename', function(req,res){
         var filename = req.params.filename;
         if(!filename) return;  // might want to change this
