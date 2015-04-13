@@ -430,6 +430,6 @@ article p{
 
 .placeholderclass::before{
     /*width:100%;*/
-    content:'';
+    content:'B\'day - ';
     background-color:#FFFFFF;
 }
