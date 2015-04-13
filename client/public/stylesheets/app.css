@@ -429,7 +429,7 @@ article p{
 
 
 .placeholderclass::before{
-    width:100%;
-    content:attr(placeholder);
+    /*width:100%;*/
+    content:'';
     background-color:#FFFFFF;
 }

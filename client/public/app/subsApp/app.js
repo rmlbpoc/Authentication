@@ -17,6 +17,21 @@ subsApp.config(['$stateProvider','$routeProvider',function($stateProvider,$route
             url: '/profile',
             templateUrl: '../partials/subs/profile.jade'
         })
+
+        .state('profile.pers', {
+          url: '/pers',
+          templateUrl: '../partials/subs/profileForm.jade'
+        })
+        .state('profile.assm', {
+          url: '/assm',
+          templateUrl: '../partials/subs/profileAssm.jade'
+        })
+        .state('profile.other', {
+          url: '/other',
+          templateUrl: '../partials/subs/profileOther.jade'
+        })
+
+
         .state('signup', {
             url: '/signup',
             templateUrl: '../partials/signup.jade'

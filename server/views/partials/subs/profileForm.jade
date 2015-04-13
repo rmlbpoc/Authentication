@@ -1,30 +1,27 @@
-aside.scol-sm-12.col-sm-height
-    h4.range-title
-        b My Profile
-
-    .range-list(style="width:250px;")
-        form(id="profileForm" name="profileForm" ng-init="setForm(this)").range-list-div
-            .form-group
+.range-list(style="width:250px;")
+    form(id="profileForm" name="profileForm" ng-init="setForm(this)").range-list-div
+        .form-group
+            label(for="gender") Gender
                 select.form-control.input-med(ng-model='profile.gender', ng-options='gender for gender in genders', name='gender')
                     option(value='')  gender
-            br
-            .form-group
-                input.form-control.input-med.placeholderclass(type='date', placeholder="{{placeholderVal}}", onClick="$(this).removeClass('placeholderclass')" ng-model='profile.dateOfBirth')
-            .form-group
-                input.form-control.input-small(type='text', name='heightFt',  oninvalid="setCustomValidity(' ')", placeholder='height ft' ng-model="profile.heightFt")
-                input.form-control.input-small(type='text', name='heightIn',  oninvalid="setCustomValidity(' ')", placeholder='height in' ng-model="profile.heightIn")
+        br
+        .form-group
+            input.form-control.input-med.placeholderclass(type='date', onClick="$(this).removeClass('placeholderclass')" ng-model='profile.dateOfBirth')
+        .form-group
+            input.form-control.input-small(type='text', name='heightFt',  oninvalid="setCustomValidity(' ')", placeholder='height ft' ng-model="profile.heightFt")
+            input.form-control.input-small(type='text', name='heightIn',  oninvalid="setCustomValidity(' ')", placeholder='height in' ng-model="profile.heightIn")
 
-            .form-group
-                input.form-control.input-med(type='text', name='mobile', placeholder='mobile' ng-model="profile.mobileNumber")
-                .val-error-msg(ng-if="showValErrors && profileForm.mobile.$invalid" )
+        .form-group
+            input.form-control.input-med(type='text', name='mobile', placeholder='mobile' ng-model="profile.mobileNumber")
+            .val-error-msg(ng-if="showValErrors && profileForm.mobile.$invalid" )
 
-            br
+        br
 
-            button.btn.btn-primary.login-button(ng-click="updateProfile()" style='display:inline-block;') Save
-            script(type='text/javascript').
-                $(function(){
-                    $('#datetimepicker1').datetimepicker({
-                        format: 'DD-MMM-YYYY',
-                        maxDate: '1/1/1997'
-                    });
+        button.btn.btn-primary.login-button(ng-click="updateProfile()" style='display:inline-block;') Save
+        script(type='text/javascript').
+            $(function(){
+                $('#datetimepicker1').datetimepicker({
+                    format: 'DD-MMM-YYYY',
+                    maxDate: '1/1/1997'
                 });
+            });
