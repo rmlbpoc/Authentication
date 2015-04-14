@@ -284,15 +284,25 @@ article p{
     margin:0px auto;
     box-shadow: rgba(0,0,0,0.5) 10px 10px 10px;
 }
-.loginPanel{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    opacity: .8;
-    margin-right: -50%;
-    transform: translate(-50%,-50%);
-    -webkit-transform: translate(-50%,-50%);
+@media (min-width: 768px) {
+    .loginPanel,.profilePanel {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        opacity: .8;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+    }
 }
+@media (max-width: 768px) {
+    .loginPanel,.profilePanel {
+        width: 100%;;
+        opacity: .8;
+
+    }
+}
+
 .loginPanel>aside{
     background-color: rgba(0, 0, 0, 0.85);
     /*height: 265px;*/
