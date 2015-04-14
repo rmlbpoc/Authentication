@@ -17,8 +17,9 @@
             //input.form-control.input-small(type='text', name='heightIn',  oninvalid="setCustomValidity(' ')", placeholder='height in' ng-model="profile.heightIn")
 
         .form-group
-            input.form-control.input-med(type='text', name='mobile', placeholder='mobile' ng-model="profile.mobileNumber")
+            input.form-control.input-med(type='text', name='mobile', oninvalid="setCustomValidity(' ')" placeholder='mobile' ng-model="profile.mobileNumber" required="" pattern='^[0-9]{10,12}$')
             .val-error-msg(ng-if="showValErrors && profileForm.mobile.$invalid" )
+                h4 Your mobile number must be 10 digits
 
         br
 
