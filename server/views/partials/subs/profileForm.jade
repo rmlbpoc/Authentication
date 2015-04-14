@@ -1,9 +1,9 @@
-.range-list(style="width:250px;")
+.profilePanelRange-list
+    h4.range-title Personal Info
     form(id="profileForm" name="profileForm" ng-init="setForm(this)").range-list-div
         .form-group
-            label(for="gender") Gender
-                select.form-control.input-med(ng-model='profile.gender', ng-options='gender for gender in genders', name='gender')
-                    option(value='')  gender
+            select.form-control.input-med(ng-model='profile.gender', ng-options='gender for gender in genders', name='gender')
+                option(value='')  gender
         br
         .form-group
             input.form-control.input-med.placeholderclass(type='date',  ng-model='profile.dateOfBirth')

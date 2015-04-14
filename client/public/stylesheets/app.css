@@ -328,32 +328,31 @@ article p{
 
 @media (max-width: 768px){
     .input-small{
-        width: 90px;
+        width: 91px;
         display:inline;
-        margin-left: 5px;
-        margin-right: 5px;
+        margin-left: 2px;
+        margin-right: 2px;
     }
 }
 @media (min-width: 768px){
     .input-small{
         width: 90px;
         display:inline;
-        margin-left: 12px;
-        margin-right: 12px;
+        margin-left: 5px;
+        margin-right: 5px;
     }
 }
 
 @media (min-width: 768px) {
-    .loginPanel>aside:first-child{
+    .loginPanel,.profilePanel>aside:first-child{
         border-right: 2px groove rgba(224, 180, 153, 0.75);
     }
 }
 
 @media (max-width: 768px) {
-    .loginPanel>aside:first-child{
+    .loginPanel,.profilePanel>aside:first-child{
         border-bottom: 2px groove rgba(224, 180, 153, 0.75);
     }
-
 }
 
 .loginPanel>aside>div{
@@ -407,17 +406,38 @@ article p{
     transform: translate(-50%,-50%);
     -webkit-transform: translate(-50%,-50%);
 }
-.profilePanel.range-list{
-    widows: 250px;;
-}
+
 .profilePanel-responsive{
-    margin:0px auto;
     box-shadow: rgba(0,0,0,0.5) 10px 10px 10px;
 }
-.profilePanel>aside{
-    background-color: rgba(0, 0, 0, 0.85);
-    /*height: 265px;*/
+
+@media (max-width: 768px) {
+    .profilePanel>aside{
+        background-color: rgba(0, 0, 0, 0.85);
+        height: 400px;
+        width: auto;
+    }
+    .profilePanelRange-list{
+        position: relative;
+        top: 35%;
+
+    }
 }
+
+@media (min-width: 768px) {
+    .profilePanel>aside{
+        background-color: rgba(0, 0, 0, 0.85);
+        height: 400px;
+        width: 250px;
+    }
+    .profilePanelRange-list{
+        position: relative;
+        top: 50%;
+
+    }
+}
+
+
 .profilePanel>aside>div{
     padding: 0px 0px;
 }
@@ -425,8 +445,6 @@ article p{
 .form-group{
     display: inline-block;
 }
-
-
 
 .placeholderclass::before{
     /*width:100%;*/
