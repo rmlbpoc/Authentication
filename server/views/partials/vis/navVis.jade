@@ -13,14 +13,14 @@ header#top.container-fluid
             #bs-example-navbar-collapse-1.collapse.navbar-collapse
                 ul.nav.navbar-nav.navbar-right
                     li
-                        a(id="home" ui-sref="home") Home
+                        a(data-toggle="collapse" data-target=".navbar-collapse" id="home" ui-sref="home") Home
                     li
-                        a(href='#about') About
+                        a(data-toggle="collapse" data-target=".navbar-collapse" href='#about') About
                     li
-                        a(id='gallery') Gallery
+                        a(data-toggle="collapse" data-target=".navbar-collapse" id='gallery') Gallery
                     li
-                        a(id="login" ui-sref="login" ) Login
+                        a(data-toggle="collapse" data-target=".navbar-collapse" id="login" ui-sref="login" ) Login
                     li
-                        a(id="signup" ui-sref='signup') Signup
+                        a(data-toggle="collapse" data-target=".navbar-collapse" id="signup" ui-sref='signup') Signup
             // /.navbar-collapse
         // /.container-fluid

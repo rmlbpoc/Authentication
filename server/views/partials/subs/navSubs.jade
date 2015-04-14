@@ -13,16 +13,16 @@ header#top.container-fluid
             #bs-example-navbar-collapse-1.collapse.navbar-collapse
                 ul.nav.navbar-nav.navbar-right
                     li
-                        a(id="home" ui-sref="home") Home
+                        a(data-toggle="collapse" data-target=".navbar-collapse" id="home" ui-sref="home") Home
                     li
-                        a(id='gallery') Gallery
+                        a(data-toggle="collapse" data-target=".navbar-collapse" id='gallery') Gallery
                     li
-                        a(id="moods" ui-sref="moods" ) Moods
+                        a(data-toggle="collapse" data-target=".navbar-collapse" id="moods" ui-sref="moods" ) Moods
                     li
-                        a(id="signup" ui-sref='tracker') My Journal
+                        a(data-toggle="collapse" data-target=".navbar-collapse" id="signup" ui-sref='tracker') My Journal
                     li
-                        a(id="profile" ui-sref='profile') Profile
+                        a(data-toggle="collapse" data-target=".navbar-collapse" id="profile" ui-sref='profile') Profile
                     li
-                        a(href='/logout') Logout
+                        a(data-toggle="collapse" data-target=".navbar-collapse"  href='/logout') Logout
             // /.navbar-collapse
         // /.container-fluid
