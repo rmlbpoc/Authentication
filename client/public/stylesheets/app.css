@@ -468,7 +468,7 @@ article p{
 .homePanel{
     position: absolute;
     width: 100%;
-    opacity: .6;
+    opacity: .5;
     transform: translate(-50%,-50%);
     -webkit-transform: translate(-50%,-50%);
 }

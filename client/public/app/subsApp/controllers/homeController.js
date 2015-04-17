@@ -11,14 +11,16 @@ subsApp.controller('homeController',['$scope','$log','profileService','utilitySe
     $scope.showValErrors = false;
     $scope.showTabs = true;
     $scope.greeting = '';
-    $scope.images = [];
+    $scope.images = utilityService.images;
+    console.log($scope.images);
+    $scope.morningImage = $scope.getRandomImage($scope.images,greeting);
   };
 
   $scope.getProfile = function(){
     profileService.getProfile().then(function(data){
       $scope.user = data.user;
       $scope.profile = $scope.user.profile;
-      $scope.greeting = greeting + ' ' + $scope.user.local.firstName;
+      $scope.greeting = 'Good ' + greeting + ' ' + $scope.user.local.firstName;
       console.log($scope.profile);
       if($scope.profile && $scope.profile.dateOfBirth){
         var dt = new Date($scope.profile.dateOfBirth);
@@ -29,4 +31,19 @@ subsApp.controller('homeController',['$scope','$log','profileService','utilitySe
       console.log($scope.user);
     })
   };
+
+  $scope.getRandomImage = function(images,greeting){
+    var rand = Math.floor(Math.random()*(6));
+    console.log(greeting);
+    console.log(rand);
+    switch(greeting){
+      case 'morning' :
+        return images.morning[rand];
+      case 'evening' :
+        return images.evening[rand];
+      case 'afternoon' :
+        return images.afternoon[rand];
+    }
+
+  }
 }]);
