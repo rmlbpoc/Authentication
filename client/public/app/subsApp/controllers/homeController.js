@@ -13,7 +13,8 @@ subsApp.controller('homeController',['$scope','$log','profileService','utilitySe
     $scope.greeting = '';
     $scope.images = utilityService.images;
     console.log($scope.images);
-    $scope.morningImage = $scope.getRandomImage($scope.images,greeting);
+    $scope.bgImage = '';
+    $scope.bgImage = $scope.getRandomImage($scope.images,greeting);
   };
 
   $scope.getProfile = function(){
