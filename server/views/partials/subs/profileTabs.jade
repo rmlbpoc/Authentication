@@ -1,7 +1,7 @@
-aside.col-sm-6.col-sm-height
+aside.col-sm-6.col-sm-height(ng-show="showTabs")
     .profilePanelRange-list
         .range-list-div
-            a.btn.btn-primary.login-button-ext(ui-sref='.pers') Personal Info
+            a.btn.btn-primary.login-button-ext(ui-sref='.pers' ng-click="alert('aaahhh!');") Personal Info
         .range-list-div
             a.btn.btn-info.login-button-ext(ui-sref='.assm') My Assessment
         .range-list-div

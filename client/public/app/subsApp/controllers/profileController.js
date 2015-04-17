@@ -7,6 +7,7 @@ subsApp.controller('profileController',['$scope','$log','profileService',functio
         $scope.getProfile();
         $scope.placeholderVal = 'birthday';
         $scope.showValErrors = false;
+        $scope.showTabs = true;
     };
 
     $scope.genders=['male','female'];

@@ -1,6 +1,6 @@
 extends layoutSubs
 block content
-    .container-fluid
+    .container-fluid(ng-controller="homeController" ng-init="init()")
         section.row.title-row
             .fill-screen.stellar-bg(data-stellar-background-ratio='0.2', style='background-image: url("./images/SurajKund.JPG")')
                 div(ui-view='')

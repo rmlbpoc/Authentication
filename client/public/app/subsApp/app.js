@@ -1,6 +1,6 @@
 'use strict'
 
-var subsApp = angular.module('subsApp', ['ui.router','ngRoute']);
+var subsApp = angular.module('subsApp', ['commonApp','ui.router','ngRoute']);
 subsApp.config(['$stateProvider','$routeProvider',function($stateProvider,$routeProvider){
     //$routeProvider.otherwise('/home');
 
@@ -32,9 +32,9 @@ subsApp.config(['$stateProvider','$routeProvider',function($stateProvider,$route
         })
 
 
-        .state('signup', {
-            url: '/signup',
-            templateUrl: '../partials/signup.jade'
+        .state('about', {
+            url: '/about',
+            templateUrl: '../partials/responsiveTabs.jade'
         })
         .state('forgot', {
             url: '/forgot',

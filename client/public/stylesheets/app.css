@@ -131,6 +131,7 @@ aside{
 }
 .range-title {
     color : #ffffff;
+    margin-top: 30px;
 }
 .sports-icon-list {
     background-color: #333;
@@ -338,10 +339,10 @@ article p{
 
 @media (max-width: 768px){
     .input-small{
-        width: 91px;
+        width: 95px;
         display:inline;
-        margin-left: 2px;
-        margin-right: 2px;
+        margin-left: 5px;
+        margin-right: 5px;
     }
 }
 @media (min-width: 768px){
@@ -417,7 +418,7 @@ article p{
     -webkit-transform: translate(-50%,-50%);
 }
 
-.profilePanel-responsive{
+.profilePanel-responsive, .homePanel-responsive{
     box-shadow: rgba(0,0,0,0.5) 10px 10px 10px;
 }
 
@@ -438,7 +439,7 @@ article p{
     .profilePanel>aside{
         background-color: rgba(0, 0, 0, 0.85);
         height: 400px;
-        width: 250px;
+        width: 300px;
     }
     .profilePanelRange-list{
         position: relative;
@@ -460,4 +461,46 @@ article p{
     /*width:100%;*/
     content:'B\'day - ';
     background-color:#FFFFFF;
+}
+
+/* Home page*/
+
+.homePanel{
+    position: absolute;
+    width: 100%;
+    opacity: .6;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+}
+@media (max-width: 768px) {
+
+    .homePanel>aside{
+        position: absolute;
+        height: 600px;
+        width: 100%;
+        top: 55%;
+        left: 50%;
+        background-color: rgba(0, 0, 0, 0.85);
+    }
+    .homePanelRange-list{
+        position: relative;
+        top: 35%;
+    }
+}
+
+@media (min-width: 768px) {
+
+    .homePanel>aside{
+        position: absolute;
+        height: 800px;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        background-color: rgba(0, 0, 0, 0.85);
+    }
+    .homePanelRange-list{
+        position: relative;
+        top: 50%;
+
+    }
 }

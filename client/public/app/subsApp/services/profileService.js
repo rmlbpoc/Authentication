@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 subsApp.factory('profileService',function($http,$log,$rootScope){
     var profileService = {
