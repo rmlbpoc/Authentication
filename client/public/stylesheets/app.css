@@ -460,7 +460,7 @@ article p{
 
 @media (min-width: 768px) {
     .profilePanel>aside{
-        background-color: rgba(0, 0, 0, 0.85);
+        background-color: rgba(0, 0, 0, 0.55);
         height: 400px;
         width: 300px;
     }
