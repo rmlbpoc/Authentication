@@ -2,39 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ad46b56-dd5b-4760-ac8a-bce0f357ba71" name="Default" comment="•&#9;See a background image appropriate to the time of day.">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/images/afternoon1.jpg" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/stylesheets/easy-responsive-tabs.css" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/js/easyResponsiveTabs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/views/partials/subs/responsiveTabs.jade" />
-    </list>
-    <list id="b4f9a2b5-008e-43b0-8a4c-6e6b99daf761" name="Failed commit: Default" comment="•&#9;See a background image appropriate to the time of day.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/images/afternoon2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/images/afternoon3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/images/afternoon4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/images/afternoon5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/images/afternoon6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/images/evening1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/images/evening2.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/images/evening3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/images/evening4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/images/evening5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/images/evening6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/images/morning1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/images/morning2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/images/morning3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/images/morning4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/images/morning5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/images/morning6.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/public/stylesheets/app.css" afterPath="$PROJECT_DIR$/client/public/stylesheets/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/public/app/subsApp/controllers/homeController.js" afterPath="$PROJECT_DIR$/client/public/app/subsApp/controllers/homeController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/views/indexSubs.jade" afterPath="$PROJECT_DIR$/server/views/indexSubs.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/views/layoutSubs.jade" afterPath="$PROJECT_DIR$/server/views/layoutSubs.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/public/app/common/services/utilitySvcs.js" afterPath="$PROJECT_DIR$/client/public/app/common/services/utilitySvcs.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
+    <list id="d6a9b1ea-293c-4585-be2d-01cceeffa3bd" name="Failed commit: Default" comment="•&#9;See a background image appropriate to the time of day." />
     <ignored path="NodeAuthentication.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,21 +31,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="layoutSubs.jade" pinned="false" current-in-tab="false">
+      <file leaf-file-name="layoutSubs.jade" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/views/layoutSubs.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.28" vertical-offset="0" max-vertical-offset="720">
-              <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
+            <state vertical-scroll-proportion="0.42004773" vertical-offset="80" max-vertical-offset="752">
+              <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/public/stylesheets/app.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.5135136" vertical-offset="6404" max-vertical-offset="8176">
-              <caret line="470" column="15" selection-start-line="470" selection-start-column="15" selection-end-line="470" selection-end-column="15" />
+            <state vertical-scroll-proportion="-56.333332" vertical-offset="559" max-vertical-offset="8592">
+              <caret line="130" column="1" selection-start-line="130" selection-start-column="1" selection-end-line="130" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="scrolling.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/public/js/scrolling.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="356" max-vertical-offset="800">
+              <caret line="27" column="29" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -77,8 +64,28 @@
       <file leaf-file-name="indexSubs.jade" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/views/indexSubs.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.56" vertical-offset="0" max-vertical-offset="208">
-              <caret line="4" column="121" selection-start-line="4" selection-start-column="121" selection-end-line="4" selection-end-column="121" />
+            <state vertical-scroll-proportion="-3.84" vertical-offset="0" max-vertical-offset="192">
+              <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="navBot.jade" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/views/partials/subs/navBot.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.64" vertical-offset="0" max-vertical-offset="320">
+              <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="navSubs.jade" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/views/partials/subs/navSubs.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.32" vertical-offset="96" max-vertical-offset="528">
+              <caret line="19" column="111" selection-start-line="19" selection-start-column="111" selection-end-line="19" selection-end-column="111" />
               <folding />
             </state>
           </provider>
@@ -87,8 +94,28 @@
       <file leaf-file-name="homeController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/public/app/subsApp/controllers/homeController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="436" max-vertical-offset="880">
-              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="16" max-vertical-offset="896">
+              <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/public/app/subsApp/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="912">
+              <caret line="2" column="53" selection-start-line="2" selection-start-column="53" selection-end-line="2" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="profileController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/public/app/subsApp/controllers/profileController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="64" max-vertical-offset="864">
+              <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -97,18 +124,8 @@
       <file leaf-file-name="utilitySvcs.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/public/app/common/services/utilitySvcs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.740741" vertical-offset="2453" max-vertical-offset="3136">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2453" max-vertical-offset="3136">
               <caret line="163" column="67" selection-start-line="163" selection-start-column="67" selection-end-line="163" selection-end-column="67" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.jade" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/views/partials/subs/home.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.64" vertical-offset="0" max-vertical-offset="144">
-              <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -122,7 +139,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/server/views/layout.jade" />
         <option value="$PROJECT_DIR$/server/views/layoutVis.jade" />
         <option value="$PROJECT_DIR$/server/views/reset_.jade" />
         <option value="$PROJECT_DIR$/server/views/layoutReset.jade" />
@@ -157,7 +173,6 @@
         <option value="$PROJECT_DIR$/server/views/partials/subs/profileAssm.jade" />
         <option value="$PROJECT_DIR$/server/views/partials/subs/profileForm.jade" />
         <option value="$PROJECT_DIR$/server/views/partials/vis/navVis.jade" />
-        <option value="$PROJECT_DIR$/server/views/partials/subs/navSubs.jade" />
         <option value="$PROJECT_DIR$/server/views/partials/subs/profileTabs.jade" />
         <option value="$PROJECT_DIR$/server/views/partials/subs/responsiveTabs.jade" />
         <option value="$PROJECT_DIR$/server/config/env/development.js" />
@@ -168,11 +183,13 @@
         <option value="$PROJECT_DIR$/rundev.sh" />
         <option value="$PROJECT_DIR$/server/views/partials/subs/profile.jade" />
         <option value="$PROJECT_DIR$/server/views/partials/subs/home.jade" />
-        <option value="$PROJECT_DIR$/server/views/layoutSubs.jade" />
-        <option value="$PROJECT_DIR$/server/views/indexSubs.jade" />
         <option value="$PROJECT_DIR$/client/public/app/subsApp/controllers/homeController.js" />
         <option value="$PROJECT_DIR$/client/public/app/common/services/utilitySvcs.js" />
+        <option value="$PROJECT_DIR$/server/views/indexSubs.jade" />
+        <option value="$PROJECT_DIR$/server/views/partials/subs/navSubs.jade" />
+        <option value="$PROJECT_DIR$/server/views/partials/subs/navBot.jade" />
         <option value="$PROJECT_DIR$/client/public/stylesheets/app.css" />
+        <option value="$PROJECT_DIR$/server/views/layoutSubs.jade" />
       </list>
     </option>
   </component>
@@ -385,7 +402,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -620,30 +637,6 @@
       <created>1424698981212</created>
       <option name="number" value="Default" />
       <updated>1424698981212</updated>
-    </task>
-    <task id="LOCAL-00066" summary="reorganized and modularized templates and ui-routes">
-      <created>1427030569648</created>
-      <option name="number" value="00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1427030569648</updated>
-    </task>
-    <task id="LOCAL-00067" summary="Updates for subscriber site:&#10;modularised layouts&#10;added new nav for subs&#10;updated routes to render index page for subscriber on login&#10;">
-      <created>1427033226597</created>
-      <option name="number" value="00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1427033226597</updated>
-    </task>
-    <task id="LOCAL-00068" summary="removed extra logout link from profile page">
-      <created>1427033436803</created>
-      <option name="number" value="00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1427033436803</updated>
-    </task>
-    <task id="LOCAL-00069" summary="removed old and unused files">
-      <created>1427033813089</created>
-      <option name="number" value="00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1427033813089</updated>
     </task>
     <task id="LOCAL-00070" summary="start of validation">
       <created>1427073901809</created>
@@ -915,7 +908,31 @@
       <option name="project" value="LOCAL" />
       <updated>1429237172010</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="•&#9;See a background image appropriate to the time of day.">
+      <created>1429240893955</created>
+      <option name="number" value="00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1429240893955</updated>
+    </task>
+    <task id="LOCAL-00116" summary="•&#9;See a background image appropriate to the time of day.">
+      <created>1429241803490</created>
+      <option name="number" value="00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1429241803490</updated>
+    </task>
+    <task id="LOCAL-00117" summary="•&#9;See a background image appropriate to the time of day.">
+      <created>1429242423247</created>
+      <option name="number" value="00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1429242423247</updated>
+    </task>
+    <task id="LOCAL-00118" summary="Bottom navigation for small screens">
+      <created>1429317790606</created>
+      <option name="number" value="00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1429317790609</updated>
+    </task>
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -940,28 +957,28 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="810" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34261838" sideWeight="0.49964765" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32451254" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3337931" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32596686" sideWeight="0.5003524" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32827586" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32827586" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3259053" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32872927" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34261838" sideWeight="0.49964765" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32827586" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24947146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24876674" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27448276" sideWeight="0.49964765" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24876674" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32596686" sideWeight="0.5003524" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32827586" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32451254" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3337931" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27448276" sideWeight="0.49964765" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -979,7 +996,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="start of adding env specific configs&#10;start using it for db connections" />
     <MESSAGE value="updated production.js with db config entry" />
     <MESSAGE value="move openId auth configs to env specific configs" />
     <MESSAGE value="updated grunt config to include tests &#10;removed postinstall grunt task from package.json" />
@@ -1004,7 +1020,8 @@
     <MESSAGE value="updated login/profile panel style to fill screen on mobile devices" />
     <MESSAGE value="•&#9;See a greeting – “Good morning/afternoon/evening &lt;first name&gt;" />
     <MESSAGE value="•&#9;See a background image appropriate to the time of day." />
-    <option name="LAST_COMMIT_MESSAGE" value="•&#9;See a background image appropriate to the time of day." />
+    <MESSAGE value="Bottom navigation for small screens" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bottom navigation for small screens" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1164,25 +1181,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/views/partials/subs/responsiveTabs.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="256" max-vertical-offset="368">
-          <caret line="16" column="47" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/config/config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="256">
           <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/views/partials/subs/navSubs.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="400" max-vertical-offset="528">
-          <caret line="25" column="81" selection-start-line="25" selection-start-column="81" selection-end-line="25" selection-end-column="81" />
         </state>
       </provider>
     </entry>
@@ -1204,7 +1206,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.072072074" vertical-offset="0" max-vertical-offset="444">
           <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1212,15 +1213,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="608">
           <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/public/app/common/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="144">
-          <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1235,7 +1227,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="419">
           <caret line="0" column="48" selection-start-line="0" selection-start-column="48" selection-end-line="0" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1243,7 +1234,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="336" max-vertical-offset="624">
           <caret line="21" column="18" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1251,7 +1241,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.045045" vertical-offset="3940" max-vertical-offset="4592">
           <caret line="134" column="24" selection-start-line="134" selection-start-column="13" selection-end-line="134" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1259,15 +1248,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.036036037" vertical-offset="0" max-vertical-offset="444">
           <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/public/app/subsApp/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="912">
-          <caret line="2" column="53" selection-start-line="2" selection-start-column="53" selection-end-line="2" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1275,7 +1255,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.56" vertical-offset="0" max-vertical-offset="160">
           <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1283,23 +1262,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.64" vertical-offset="0" max-vertical-offset="144">
           <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/views/layoutSubs.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.28" vertical-offset="0" max-vertical-offset="720">
-          <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/public/app/subsApp/controllers/profileController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="176" max-vertical-offset="912">
-          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1328,38 +1290,9 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/views/indexSubs.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.56" vertical-offset="0" max-vertical-offset="208">
-          <caret line="4" column="121" selection-start-line="4" selection-start-column="121" selection-end-line="4" selection-end-column="121" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/public/images/evening2.JPG">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/public/images/evening1.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/public/app/subsApp/controllers/homeController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="436" max-vertical-offset="880">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/public/app/common/services/utilitySvcs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.740741" vertical-offset="2453" max-vertical-offset="3136">
-          <caret line="163" column="67" selection-start-line="163" selection-start-column="67" selection-end-line="163" selection-end-column="67" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/public/images/afternoon1.jpg">
@@ -1367,10 +1300,89 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/public/app/subsApp/controllers/homeController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="16" max-vertical-offset="896">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/public/app/subsApp/controllers/profileController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="64" max-vertical-offset="864">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/public/app/subsApp/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="912">
+          <caret line="2" column="53" selection-start-line="2" selection-start-column="53" selection-end-line="2" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/public/app/common/services/utilitySvcs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2453" max-vertical-offset="3136">
+          <caret line="163" column="67" selection-start-line="163" selection-start-column="67" selection-end-line="163" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/public/app/common/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.072072074" vertical-offset="0" max-vertical-offset="444">
+          <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/public/js/scrolling.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="356" max-vertical-offset="800">
+          <caret line="27" column="29" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/views/indexSubs.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.84" vertical-offset="0" max-vertical-offset="192">
+          <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/views/partials/subs/navSubs.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.32" vertical-offset="96" max-vertical-offset="528">
+          <caret line="19" column="111" selection-start-line="19" selection-start-column="111" selection-end-line="19" selection-end-column="111" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/views/partials/subs/navBot.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.64" vertical-offset="0" max-vertical-offset="320">
+          <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/public/stylesheets/app.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.5135136" vertical-offset="6404" max-vertical-offset="8176">
-          <caret line="470" column="15" selection-start-line="470" selection-start-column="15" selection-end-line="470" selection-end-column="15" />
+        <state vertical-scroll-proportion="-56.333332" vertical-offset="559" max-vertical-offset="8592">
+          <caret line="130" column="1" selection-start-line="130" selection-start-column="1" selection-end-line="130" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/views/layoutSubs.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42004773" vertical-offset="80" max-vertical-offset="752">
+          <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
           <folding />
         </state>
       </provider>
