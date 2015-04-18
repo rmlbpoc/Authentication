@@ -5,7 +5,7 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/images/afternoon1.jpg" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/stylesheets/easy-responsive-tabs.css" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/js/easyResponsiveTabs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/views/layoutSubs.jade" afterPath="$PROJECT_DIR$/server/views/layoutSubs.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/public/stylesheets/app.css" afterPath="$PROJECT_DIR$/client/public/stylesheets/app.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="d6a9b1ea-293c-4585-be2d-01cceeffa3bd" name="Failed commit: Default" comment="•&#9;See a background image appropriate to the time of day." />
@@ -31,21 +31,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="layoutSubs.jade" pinned="false" current-in-tab="true">
+      <file leaf-file-name="layoutSubs.jade" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/views/layoutSubs.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42004773" vertical-offset="80" max-vertical-offset="752">
+            <state vertical-scroll-proportion="-7.04" vertical-offset="80" max-vertical-offset="752">
               <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/public/stylesheets/app.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-56.333332" vertical-offset="559" max-vertical-offset="8592">
-              <caret line="130" column="1" selection-start-line="130" selection-start-column="1" selection-end-line="130" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.7117117" vertical-offset="6868" max-vertical-offset="8656">
+              <caret line="449" column="43" selection-start-line="449" selection-start-column="43" selection-end-line="449" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -84,7 +84,7 @@
       <file leaf-file-name="navSubs.jade" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/views/partials/subs/navSubs.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.32" vertical-offset="96" max-vertical-offset="528">
+            <state vertical-scroll-proportion="-12.16" vertical-offset="0" max-vertical-offset="528">
               <caret line="19" column="111" selection-start-line="19" selection-start-column="111" selection-end-line="19" selection-end-column="111" />
               <folding />
             </state>
@@ -188,8 +188,8 @@
         <option value="$PROJECT_DIR$/server/views/indexSubs.jade" />
         <option value="$PROJECT_DIR$/server/views/partials/subs/navSubs.jade" />
         <option value="$PROJECT_DIR$/server/views/partials/subs/navBot.jade" />
-        <option value="$PROJECT_DIR$/client/public/stylesheets/app.css" />
         <option value="$PROJECT_DIR$/server/views/layoutSubs.jade" />
+        <option value="$PROJECT_DIR$/client/public/stylesheets/app.css" />
       </list>
     </option>
   </component>
@@ -638,12 +638,6 @@
       <option name="number" value="Default" />
       <updated>1424698981212</updated>
     </task>
-    <task id="LOCAL-00070" summary="start of validation">
-      <created>1427073901809</created>
-      <option name="number" value="00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1427073901809</updated>
-    </task>
     <task id="LOCAL-00071" summary="updates to login and signup validation &#10;ui enhancements&#10;">
       <created>1427222782997</created>
       <option name="number" value="00071" />
@@ -932,7 +926,13 @@
       <option name="project" value="LOCAL" />
       <updated>1429317790609</updated>
     </task>
-    <option name="localTasksCounter" value="119" />
+    <task id="LOCAL-00119" summary="name update for navBot reference - heroku is case sensetive for everything">
+      <created>1429362305883</created>
+      <option name="number" value="00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1429362305883</updated>
+    </task>
+    <option name="localTasksCounter" value="120" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -996,7 +996,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="updated production.js with db config entry" />
     <MESSAGE value="move openId auth configs to env specific configs" />
     <MESSAGE value="updated grunt config to include tests &#10;removed postinstall grunt task from package.json" />
     <MESSAGE value="start updating the profile page" />
@@ -1021,7 +1020,8 @@
     <MESSAGE value="•&#9;See a greeting – “Good morning/afternoon/evening &lt;first name&gt;" />
     <MESSAGE value="•&#9;See a background image appropriate to the time of day." />
     <MESSAGE value="Bottom navigation for small screens" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bottom navigation for small screens" />
+    <MESSAGE value="name update for navBot reference - heroku is case sensetive for everything" />
+    <option name="LAST_COMMIT_MESSAGE" value="name update for navBot reference - heroku is case sensetive for everything" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1355,10 +1355,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/views/partials/subs/navSubs.jade">
+    <entry file="file://$PROJECT_DIR$/server/views/layoutSubs.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.32" vertical-offset="96" max-vertical-offset="528">
-          <caret line="19" column="111" selection-start-line="19" selection-start-column="111" selection-end-line="19" selection-end-column="111" />
+        <state vertical-scroll-proportion="-7.04" vertical-offset="80" max-vertical-offset="752">
+          <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -1371,18 +1371,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/public/stylesheets/app.css">
+    <entry file="file://$PROJECT_DIR$/server/views/partials/subs/navSubs.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-56.333332" vertical-offset="559" max-vertical-offset="8592">
-          <caret line="130" column="1" selection-start-line="130" selection-start-column="1" selection-end-line="130" selection-end-column="1" />
+        <state vertical-scroll-proportion="-12.16" vertical-offset="0" max-vertical-offset="528">
+          <caret line="19" column="111" selection-start-line="19" selection-start-column="111" selection-end-line="19" selection-end-column="111" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/views/layoutSubs.jade">
+    <entry file="file://$PROJECT_DIR$/client/public/stylesheets/app.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42004773" vertical-offset="80" max-vertical-offset="752">
-          <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.7117117" vertical-offset="6868" max-vertical-offset="8656">
+          <caret line="449" column="43" selection-start-line="449" selection-start-column="43" selection-end-line="449" selection-end-column="43" />
           <folding />
         </state>
       </provider>

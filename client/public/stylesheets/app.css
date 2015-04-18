@@ -55,7 +55,11 @@ body {
         border-color: #080808;
     }
     .navbar-nav>li>a{
-        color: #bbb;;
+        color: #bbb;
+    }
+    .nav>li>a:focus{
+        background-color: inherit;
+        color: #006399;
     }
 }
 @media (min-width:768px) {
@@ -443,7 +447,7 @@ article p{
 
 @media (max-width: 768px) {
     .profilePanel>aside{
-        background-color: rgba(0, 0, 0, 0.85);
+        background-color: rgba(0, 0, 0, 0.55);
         height: 400px;
         width: auto;
     }
