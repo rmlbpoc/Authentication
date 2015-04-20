@@ -498,6 +498,7 @@ article p{
 @media (max-width: 768px) {
 
     .homePanel>aside{
+        padding-top: 50px;
         position: absolute;
         height: 600px;
         width: 100%;
@@ -514,6 +515,7 @@ article p{
 @media (min-width: 768px) {
 
     .homePanel>aside{
+        padding-top: 50px;
         position: absolute;
         height: 800px;
         width: 100%;

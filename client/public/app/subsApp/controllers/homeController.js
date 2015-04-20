@@ -22,6 +22,7 @@ subsApp.controller('homeController',['$scope','$log','profileService','utilitySe
       $scope.user = data.user;
       $scope.profile = $scope.user.profile;
       $scope.greeting = 'Good ' + greeting + ' ' + $scope.user.local.firstName;
+      console.log($scope.greeting);
       console.log($scope.profile);
       if($scope.profile && $scope.profile.dateOfBirth){
         var dt = new Date($scope.profile.dateOfBirth);

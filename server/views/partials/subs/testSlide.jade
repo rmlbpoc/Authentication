@@ -1,0 +1,11 @@
+.homePanel
+    aside.col-sm-6.col-sm-height
+        h4.range-title {{greeting}}
+
+            div(ng-controller="navController")
+                a.tiny.button(href='', ng-click='toggle()') Up up and above
+                    div(pageslide='', ps-open='checked', ps-side='bottom'  )
+                        #demo-right(style='padding:20px;background-color:grey;')
+                            h2 Hello Pageslide
+                            p Put here whatever you want
+                            a.button(ng-click='toggle()') Close

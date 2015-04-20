@@ -1,0 +1,44 @@
+nav
+            ul.list-unstyled.main-menu
+                li.text-right
+                    a#nav-close(href='#') X
+                li
+                    a(class="navLink" data-toggle="collapse" data-target=".navbar-collapse" id="home" ui-sref="home") Home
+                        span.icon
+                li
+                    a(class="navLink" data-toggle="collapse" data-target=".navbar-collapse" id="moods" ui-sref="social" ) Social
+                        span.icon
+                li
+                    a(href='#')
+                        | Menu Three
+                        span.icon
+                li
+                    a(href="") Profile
+                    ul.list-unstyled
+                        li.sub-nav
+                            a(class="navLink" data-toggle="collapse" data-target=".navbar-collapse" id="prof" ui-sref='profile') Personal
+                                span.icon
+                        li.sub-nav
+                            a(class="navLink" data-toggle="collapse" data-target=".navbar-collapse" id="" ui-sref='profile.assm') Assessment
+                                span.icon
+                        li.sub-nav
+                            a(class="navLink" data-toggle="collapse" data-target=".navbar-collapse" id="" ui-sref='profile.other') Other
+                                span.icon
+                li
+                    a(href="") Menu Four
+                        span.icon
+                li
+                    a(href='#')
+                        | Menu Five
+                        span.icon
+        .navbar.navbar-inverse.navbar-fixed-top
+            // Include your brand here
+            .navbar-header.pull-right
+                a#nav-expander.nav-expander.fixed
+                    | MENU  
+                    i.fa.fa-bars.fa-lg.white
+            a.navbar-brand(href='#') Fun Project
+
+
+
+             

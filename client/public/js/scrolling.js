@@ -23,11 +23,11 @@ $(function(){
         event.preventDefault();
     });
 
-    $("#login,#signup,#home").click(function() {
-        $('html, body').animate({
-            scrollTop: $("#top").offset().top -80
-        }, 1000);
-    });
+    //$("#login,#signup,#home").click(function() {
+    //    $('html, body').animate({
+    //        scrollTop: $("").offset().top -80
+    //    }, 1000);
+    //});
     //$("#signupLink").click(function() {
     //    $("#login" ).hide( );
     //});
