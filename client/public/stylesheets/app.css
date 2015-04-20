@@ -378,13 +378,13 @@ article p{
 }
 
 @media (min-width: 768px) {
-    .loginPanel,.profilePanel>aside:first-child{
+    .loginPanel>aside:first-child{
         border-right: 2px groove rgba(224, 180, 153, 0.75);
     }
 }
 
 @media (max-width: 768px) {
-    .loginPanel,.profilePanel>aside:first-child{
+    .loginPanel>aside:first-child{
         border-bottom: 2px groove rgba(224, 180, 153, 0.75);
     }
 }

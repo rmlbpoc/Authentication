@@ -34,7 +34,7 @@ subsApp.config(['$stateProvider','$routeProvider',function($stateProvider,$route
 
         .state('social', {
             url: '/social',
-            templateUrl: '../partials/testSlide.jade'
+            templateUrl: '../partials/subs/social.jade'
         })
         .state('forgot', {
             url: '/forgot',
