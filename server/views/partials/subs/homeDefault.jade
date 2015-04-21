@@ -1,0 +1,7 @@
+.homePanel.homePanel-responsive
+    //include profileTabs
+    aside.col-sm-6.col-sm-height
+        div(ui-view='')
+            h3.range-title Good {{greeting}} {{user.local.firstName}}
+            h4.range-title Tell us how u feel
+            include feelingTabs

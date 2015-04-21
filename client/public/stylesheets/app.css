@@ -453,7 +453,7 @@ article p{
     }
     .profilePanelRange-list{
         position: relative;
-        top: 35%;
+        top: 5%;
 
     }
 }
@@ -491,7 +491,7 @@ article p{
 .homePanel{
     position: absolute;
     width: 100%;
-    opacity: .3;
+    /*opacity: .3;*/
     transform: translate(-50%,-50%);
     -webkit-transform: translate(-50%,-50%);
 }
@@ -504,7 +504,7 @@ article p{
         width: 100%;
         top: 55%;
         left: 50%;
-        background-color: rgba(0, 0, 0, 0.85);
+        /*background-color: rgba(0, 0, 0, 0.85);*/
     }
     .homePanelRange-list{
         position: relative;
@@ -521,7 +521,7 @@ article p{
         width: 100%;
         top: 50%;
         left: 50%;
-        background-color: rgba(0, 0, 0, 0.85);
+        /*background-color: rgba(0, 0, 0, 0.85);*/
     }
     .homePanelRange-list{
         position: relative;

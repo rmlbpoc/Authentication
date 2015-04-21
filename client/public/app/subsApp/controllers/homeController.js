@@ -21,7 +21,7 @@ subsApp.controller('homeController',['$scope','$log','profileService','utilitySe
     profileService.getProfile().then(function(data){
       $scope.user = data.user;
       $scope.profile = $scope.user.profile;
-      $scope.greeting = 'Good ' + greeting + ' ' + $scope.user.local.firstName;
+      $scope.greeting = greeting ;
       console.log($scope.greeting);
       console.log($scope.profile);
       if($scope.profile && $scope.profile.dateOfBirth){

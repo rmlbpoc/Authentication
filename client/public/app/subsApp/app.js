@@ -9,7 +9,19 @@ subsApp.config(['$stateProvider','$routeProvider',function($stateProvider,$route
         // HOME STATES AND NESTED VIEWS ========================================
         .state('home', {
             url: '/',
-            templateUrl: '../partials/subs/home.jade'
+            templateUrl: '../partials/subs/homeDefault.jade'
+        })
+        .state('home.great', {
+          url: 'feeling/great',
+          templateUrl: '../partials/subs/feelingGreat.jade'
+        })
+        .state('home.full', {
+          url: 'feeling/full',
+          templateUrl: '../partials/subs/feelingFull.jade'
+        })
+        .state('home.tired', {
+          url: 'feeling/tired',
+          templateUrl: '../partials/subs/feelingTired.jade'
         })
 
         // nested list with custom controller
@@ -17,7 +29,6 @@ subsApp.config(['$stateProvider','$routeProvider',function($stateProvider,$route
             url: '/profile',
             templateUrl: '../partials/subs/profile.jade'
         })
-
         .state('profile.pers', {
           url: '/pers',
           templateUrl: '../partials/subs/profileForm.jade'
