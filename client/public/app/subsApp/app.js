@@ -13,43 +13,43 @@ subsApp.config(['$stateProvider','$routeProvider',function($stateProvider,$route
         })
         .state('home.great', {
           url: 'feeling/great',
-          templateUrl: '../partials/subs/feelingGreat.jade'
+          templateUrl: '../partials/subs/feeling/feelingGreat.jade'
         })
         .state('home.full', {
           url: 'feeling/full',
-          templateUrl: '../partials/subs/feelingFull.jade'
+          templateUrl: '../partials/subs/feeling/feelingFull.jade'
         })
         .state('home.tired', {
           url: 'feeling/tired',
-          templateUrl: '../partials/subs/feelingTired.jade'
+          templateUrl: '../partials/subs/feeling/feelingTired.jade'
         })
 
         // nested list with custom controller
         .state('profile', {
             url: '/profile',
-            templateUrl: '../partials/subs/profile.jade'
+            templateUrl: '../partials/subs/profile/profile.jade'
         })
         .state('profile.pers', {
           url: '/pers',
-          templateUrl: '../partials/subs/profileForm.jade'
+          templateUrl: '../partials/subs/profile/profileForm.jade'
         })
         .state('profile.assm', {
           url: '/assm',
-          templateUrl: '../partials/subs/profileAssm.jade'
+          templateUrl: '../partials/subs/profile/profileAssm.jade'
         })
         .state('profile.other', {
           url: '/other',
-          templateUrl: '../partials/subs/profileOther.jade'
+          templateUrl: '../partials/subs/profile/profileOther.jade'
         })
 
 
         .state('social', {
             url: '/social',
-            templateUrl: '../partials/subs/social.jade'
+            templateUrl: '../partials/subs/social/social.jade'
         })
-        .state('forgot', {
-            url: '/forgot',
-            templateUrl: '../partials/forgot.jade'
+        .state('diary', {
+            url: '/diary',
+            templateUrl: '../partials/subs/diary/diary.jade'
         })
         .state('reset', {
             url: '/reset/:token',

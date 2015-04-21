@@ -23,6 +23,12 @@ module.exports = function(app,passport){
         if(!filename) return;  // might want to change this
         res.render("partials/subs/" + filename );
     });
+    app.get('/partials/subs/:dir/:filename', function(req,res){
+      var filename = req.params.filename;
+      var dir = req.params.dir;
+      if(!filename) return;  // might want to change this
+      res.render("partials/subs/" + dir + '/' + filename );
+    });
 
     app.get('/layoutNew',function(req,res){
         res.render('layoutNew.jade');
