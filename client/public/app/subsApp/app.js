@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 var subsApp = angular.module('subsApp', ['commonApp','pageslide-directive','ui.router','ngRoute']);
 subsApp.config(['$stateProvider','$routeProvider',function($stateProvider,$routeProvider){
@@ -11,19 +11,65 @@ subsApp.config(['$stateProvider','$routeProvider',function($stateProvider,$route
             url: '/',
             templateUrl: '../partials/subs/homeDefault.jade'
         })
-        .state('home.great', {
-          url: 'feeling/great',
-          templateUrl: '../partials/subs/feeling/feelingGreat.jade'
-        })
-        .state('home.full', {
-          url: 'feeling/full',
-          templateUrl: '../partials/subs/feeling/feelingFull.jade'
-        })
-        .state('home.tired', {
-          url: 'feeling/tired',
-          templateUrl: '../partials/subs/feeling/feelingTired.jade'
+      // Once user has done entering data for the current time, send them to a different view
+        .state('home.done', {
+          url: '/done',
+          templateUrl: '../partials/subs/homeDone.jade'
         })
 
+        // Feeling Great route and sub routes
+        .state('home.great', {
+          url: 'feelingGreat/',
+          templateUrl: '../partials/subs/feeling/feelingGreat.jade'
+        })
+        .state('home.great.food', {
+          url: 'food/:date',
+          templateUrl: '../partials/subs/diary/foodEntry.jade'
+        })
+        .state('home.great.activity', {
+          url: 'activity/:date',
+          templateUrl: '../partials/subs/diary/activityEntry.jade'
+        })
+        .state('home.great.other', {
+          url: 'other/:date',
+          templateUrl: '../partials/subs/diary/addMore.jade'
+        })
+
+        // Feeling Full route and sub routes
+        .state('home.full', {
+          url: 'feelingFull/',
+          templateUrl: '../partials/subs/feeling/feelingFull.jade'
+        })
+        .state('home.full.food', {
+          url: 'food/:date',
+          templateUrl: '../partials/subs/diary/foodEntry.jade'
+        })
+        .state('home.full.activity', {
+          url: 'activity/:date',
+          templateUrl: '../partials/subs/diary/activityEntry.jade'
+        })
+        .state('home.full.other', {
+          url: 'other/:date',
+          templateUrl: '../partials/subs/diary/addMore.jade'
+        })
+
+        // Feeling Tired route and sub routes
+        .state('home.tired', {
+          url: 'feelingTired/',
+          templateUrl: '../partials/subs/feeling/feelingTired.jade'
+        })
+        .state('home.tired.food', {
+          url: 'food/:date',
+          templateUrl: '../partials/subs/diary/foodEntry.jade'
+        })
+        .state('home.tired.activity', {
+          url: 'activity/:date',
+          templateUrl: '../partials/subs/diary/activityEntry.jade'
+        })
+        .state('home.tired.other', {
+          url: 'other/:date',
+          templateUrl: '../partials/subs/diary/addMore.jade'
+        })
         // nested list with custom controller
         .state('profile', {
             url: '/profile',
