@@ -9,12 +9,7 @@ subsApp.config(['$stateProvider','$routeProvider',function($stateProvider,$route
         // HOME STATES AND NESTED VIEWS ========================================
         .state('home', {
             url: '/',
-            templateUrl: '../partials/subs/homeDefault.jade'
-        })
-      // Once user has done entering data for the current time, send them to a different view
-        .state('home.done', {
-          url: 'done',
-          templateUrl: '../partials/subs/homeDone.jade'
+            templateUrl: '../partials/subs/home.jade'
         })
 
         // Feeling Great route and sub routes

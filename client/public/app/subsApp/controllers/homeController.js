@@ -15,6 +15,7 @@ subsApp.controller('homeController',['$scope','$log','profileService','utilitySe
     console.log($scope.images);
     $scope.bgImage = '';
     $scope.bgImage = $scope.getRandomImage($scope.images,greeting);
+      $scope.done = false;
   };
 
   $scope.getProfile = function(){
@@ -46,6 +47,10 @@ subsApp.controller('homeController',['$scope','$log','profileService','utilitySe
       case 'afternoon' :
         return images.afternoon[rand];
     }
+  }
 
+  $scope.setDone = function(val){
+    console.log('setting done state');
+    $scope.done = val;
   }
 }]);

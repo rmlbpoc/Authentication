@@ -9,5 +9,14 @@
         .range-list-div
             a(ui-sref='home.tired').btn.btn-danger.login-button-ext Tired and Sleepy
         .down-button
-            a.btn(id='chChk')
+            a.btn(id='homeTop' scroll-to="socialTop")
                 i.fa.fa-arrow-circle-down.fa-4x
+
+script.
+  $('.down-button a').click(function(){
+    console.log(this.getAttribute('scroll-to'));
+    var scrollTo = this.getAttribute('scroll-to');
+    $('html body').stop().animate({
+      scrollTop: $("#"+scrollTo).offset().top -100
+    },1500,'easeInOutExpo');
+  });

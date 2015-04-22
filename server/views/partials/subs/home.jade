@@ -1,4 +1,9 @@
-.homePanel
+.homePanel.homePanel-responsive
     aside.col-sm-6.col-sm-height
-            h4.range-title Tell us how u feel
-            include feeling/feelingTabs
+
+        div(ng-if="done")
+            include homeTopDone
+        div(ng-if="!done")
+            include homeTopDef
+        include social/social
+        include wellnessNews/wellness
