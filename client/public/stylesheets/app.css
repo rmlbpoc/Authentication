@@ -408,11 +408,11 @@ article p{
     color: rgb(22, 198, 221)
 }
 
-@media (max-width: 768px) {
-    .down-button{
-        display: none;
-    }
-}
+/*@media (max-width: 768px) {*/
+    /*.down-button{*/
+        /*display: none;*/
+    /*}*/
+/*}*/
 
 .val-error-msg{
     widows: inherit;

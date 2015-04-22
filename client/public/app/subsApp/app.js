@@ -13,24 +13,24 @@ subsApp.config(['$stateProvider','$routeProvider',function($stateProvider,$route
         })
       // Once user has done entering data for the current time, send them to a different view
         .state('home.done', {
-          url: '/done',
+          url: 'done',
           templateUrl: '../partials/subs/homeDone.jade'
         })
 
         // Feeling Great route and sub routes
-        .state('home.great', {
+        .state('feelingGreat', {
           url: 'feelingGreat/',
           templateUrl: '../partials/subs/feeling/feelingGreat.jade'
         })
-        .state('home.great.food', {
+        .state('feelingGreat.food', {
           url: 'food/:date',
           templateUrl: '../partials/subs/diary/foodEntry.jade'
         })
-        .state('home.great.activity', {
+        .state('feelingGreat.activity', {
           url: 'activity/:date',
           templateUrl: '../partials/subs/diary/activityEntry.jade'
         })
-        .state('home.great.other', {
+        .state('feelingGreat.other', {
           url: 'other/:date',
           templateUrl: '../partials/subs/diary/addMore.jade'
         })
