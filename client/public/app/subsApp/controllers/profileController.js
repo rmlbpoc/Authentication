@@ -22,7 +22,9 @@ subsApp.controller('profileController',['$scope','$log','profileService',functio
     $scope.getProfile = function(){
         profileService.getProfile().then(function(data){
             $scope.user = data.user;
-            $scope.profile = $scope.user.profile;
+            if($scope.user.profile){
+              $scope.profile = $scope.user.profile;
+            }
             console.log($scope.profile);
             if($scope.profile && $scope.profile.dateOfBirth){
               var dt = new Date($scope.profile.dateOfBirth);
@@ -35,7 +37,6 @@ subsApp.controller('profileController',['$scope','$log','profileService',functio
     };
 
     $scope.updateProfile = function(){
-
         console.log($scope.user);
         console.log($scope.profile);
         if($scope.myForm.profileForm.$valid) {

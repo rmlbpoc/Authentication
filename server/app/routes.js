@@ -323,11 +323,13 @@ module.exports = function(app,passport){
     app.get('/profile',isLoggedIn,function(req,res){
         console.log('rendering profile');
         var userId = req.session.passport.user;
+        console.log('#### userId : ',userId  );
         User.findOne({"_id":userId},function(err,usr) {
           if (!usr) {
             console.log('no user found');
             res.send({message: 'No user found'});
           }
+          console.log(usr);
           res.send({user: usr});
         })
     });
@@ -337,6 +339,7 @@ module.exports = function(app,passport){
         var profileObj = req.body;
         console.log(profileObj);
         var userId = req.session.passport.user;
+        console.log('#### userId : ',userId  );
         User.findOne({"_id":userId},function(err,usr){
             if(!usr){
                 console.log('no user found');
