@@ -12,23 +12,21 @@ module.exports = function(app,passport){
         if(!filename) return;  // might want to change this
         res.render("partials/" + filename );
     });
-
-    app.get('/partials/vis/:filename', function(req,res){
-      var filename = req.params.filename;
-      if(!filename) return;  // might want to change this
-      res.render("partials/vis/" + filename );
-    });
-    app.get('/partials/subs/:filename', function(req,res){
-        var filename = req.params.filename;
-        if(!filename) return;  // might want to change this
-        res.render("partials/subs/" + filename );
-    });
-    app.get('/partials/subs/:dir/:filename', function(req,res){
+    app.get('/partials/:dir/:filename', function(req,res){
       var filename = req.params.filename;
       var dir = req.params.dir;
       if(!filename) return;  // might want to change this
-      res.render("partials/subs/" + dir + '/' + filename );
+      res.render("partials/" + dir + '/' + filename );
     });
+    app.get('/partials/:dir1/:dir2/:filename', function(req,res){
+      var filename = req.params.filename;
+      var dir1 = req.params.dir1;
+      var dir2 = req.params.dir2;
+      console.log(req.params);
+      if(!filename) return;  // might want to change this
+      res.render("partials/" + dir1 + '/' + dir2 + '/' + filename );
+    });
+
 
     app.get('/layoutNew',function(req,res){
         res.render('layoutNew.jade');
