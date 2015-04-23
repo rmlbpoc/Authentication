@@ -415,17 +415,31 @@ article p{
 /*}*/
 
 .val-error-msg{
-    widows: inherit;
+    width: inherit;
     max-width: 250px;
 }
 .val-error-msg > h4 {
-    text-align: left;
+    text-align: center;
     font-size:14px;
     padding-bottom: 0px;
     padding-top: 5px;
     padding-left: inherit;
     margin: 0px;
     color: rgba(253, 199, 203, 1);
+    font-weight: 900;
+}
+.thanks-msg{
+    width: inherit;
+    max-width: 250px;
+}
+.thanks-msg > h4 {
+    text-align: center;
+    font-size:14px;
+    padding-bottom: 0px;
+    padding-top: 5px;
+    padding-left: inherit;
+    margin: 0px;
+    color: rgba(177, 252, 189, 1);
     font-weight: 900;
 }
 

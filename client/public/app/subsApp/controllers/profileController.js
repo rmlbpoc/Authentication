@@ -8,6 +8,7 @@ subsApp.controller('profileController',['$scope','$log','profileService',functio
         $scope.placeholderVal = 'birthday';
         $scope.showValErrors = false;
         $scope.showTabs = true;
+        $scope.updated = false;
     };
 
     $scope.genders=['male','female'];
@@ -42,6 +43,7 @@ subsApp.controller('profileController',['$scope','$log','profileService',functio
         if($scope.myForm.profileForm.$valid) {
             profileService.updateProfile($scope.profile).then(function (data) {
               console.log(data);
+              $scope.updated = data.updated;
             })
         }else{
             $scope.showValErrors =true;

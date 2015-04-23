@@ -26,7 +26,10 @@
           br
 
           button.btn.btn-primary.login-button(ng-click="updateProfile()" style='display:inline-block;') Save
-          script(type='text/javascript').
+        .thanks-msg
+            h4(ng-show="updated" ng-bind="'Thanks! Your Profile is updated'")
+
+        script(type='text/javascript').
               $(function(){
                   $('#datetimepicker1').datetimepicker({
                       format: 'DD-MMM-YYYY',
