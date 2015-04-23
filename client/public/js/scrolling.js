@@ -16,21 +16,12 @@ $(function(){
         event.preventDefault();
     });
 
-  $('#homeTop').click(function(){
-    console.log('called scroller');
-    $('html body').stop().animate({
-      scrollTop: $("#socialTop").offset().top -100
-    },1500,'easeInOutExpo');
-    event.preventDefault();
-  });
-
-    //$('#homeTop').bind('click',function(){
-    //    console.log('called scroller');
-    //    $('html body').stop().animate({
-    //        scrollTop: $("#socialTop").offset().top -100
-    //    },1500,'easeInOutExpo');
-    //    event.preventDefault();
-    //});
+    $('#chChk').bind('click',function(){
+        $('html body').stop().animate({
+            scrollTop: $("#chkSlide").offset().top -100
+        },1500,'easeInOutExpo');
+        event.preventDefault();
+    });
 
     //$("#login,#signup,#home").click(function() {
     //    $('html, body').animate({

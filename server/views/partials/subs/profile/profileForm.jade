@@ -1,33 +1,35 @@
-.profilePanelRange-list
-    h4.range-title Personal Info
-    form(id="profileForm" name="profileForm" ng-init="setForm(this)").range-list-div
-        .form-group
-            select.form-control.input-med(ng-model='profile.gender', ng-options='gender for gender in genders', name='gender')
-                option(value='')  gender
-        br
-        .form-group
-            input.form-control.input-med.placeholderclass(type='date',  ng-model='profile.dateOfBirth')
-        .form-group
+.fill-screen.stellar-bg(data-stellar-background-ratio='0.2', style='background-image: url("{{bgImage}}"); width:100%;')
+  .profilePanelRange-list
+    aside
+      h4.range-title Personal Info
+      form(id="profileForm" name="profileForm" ng-init="setForm(this)").range-list-div
+          .form-group
+              select.form-control.input-med(ng-model='profile.gender', ng-options='gender for gender in genders', name='gender')
+                  option(value='')  gender
+          br
+          .form-group
+              input.form-control.input-med.placeholderclass(type='date',  ng-model='profile.dateOfBirth')
+          .form-group
 
-            select.form-control.input-small(ng-model='profile.heightFt', ng-options='ft + " feet" for ft in feet', name='feet')
-                option(value='')  feet
-            select.form-control.input-small(ng-model='profile.heightIn', ng-options='inc + " inches" for inc in inches', name='inches')
-                option(value='')  inches
-            //input.form-control.input-small(type='text', name='heightFt',  oninvalid="setCustomValidity(' ')", placeholder='height ft' ng-model="profile.heightFt")
-            //input.form-control.input-small(type='text', name='heightIn',  oninvalid="setCustomValidity(' ')", placeholder='height in' ng-model="profile.heightIn")
+              select.form-control.input-small(ng-model='profile.heightFt', ng-options='ft + " feet" for ft in feet', name='feet')
+                  option(value='')  feet
+              select.form-control.input-small(ng-model='profile.heightIn', ng-options='inc + " inches" for inc in inches', name='inches')
+                  option(value='')  inches
+              //input.form-control.input-small(type='text', name='heightFt',  oninvalid="setCustomValidity(' ')", placeholder='height ft' ng-model="profile.heightFt")
+              //input.form-control.input-small(type='text', name='heightIn',  oninvalid="setCustomValidity(' ')", placeholder='height in' ng-model="profile.heightIn")
 
-        .form-group
-            input.form-control.input-med(type='text', name='mobile', oninvalid="setCustomValidity(' ')" placeholder='mobile' ng-model="profile.mobileNumber" required="" pattern='^[0-9]{10,12}$')
-            .val-error-msg(ng-if="showValErrors && profileForm.mobile.$invalid" )
-                h4 Your mobile number must be 10 digits
+          .form-group
+              input.form-control.input-med(type='text', name='mobile', oninvalid="setCustomValidity(' ')" placeholder='mobile' ng-model="profile.mobileNumber" required="" pattern='^[0-9]{10,12}$')
+              .val-error-msg(ng-if="showValErrors && profileForm.mobile.$invalid" )
+                  h4 Your mobile number must be 10 digits
 
-        br
+          br
 
-        button.btn.btn-primary.login-button(ng-click="updateProfile()" style='display:inline-block;') Save
-        script(type='text/javascript').
-            $(function(){
-                $('#datetimepicker1').datetimepicker({
-                    format: 'DD-MMM-YYYY',
-                    maxDate: '1/1/1997'
-                });
-            });
+          button.btn.btn-primary.login-button(ng-click="updateProfile()" style='display:inline-block;') Save
+          script(type='text/javascript').
+              $(function(){
+                  $('#datetimepicker1').datetimepicker({
+                      format: 'DD-MMM-YYYY',
+                      maxDate: '1/1/1997'
+                  });
+              });

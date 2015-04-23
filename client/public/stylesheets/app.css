@@ -454,9 +454,8 @@ article p{
     .profilePanelRange-list{
         position: relative;
         top: 5%;
-
-    }
-}
+        height: 400px;
+    }}
 
 @media (min-width: 768px) {
     .profilePanel>aside{
@@ -467,7 +466,12 @@ article p{
     .profilePanelRange-list{
         position: relative;
         top: 50%;
-
+        height: 400px;
+    }
+    .profilePanelRange-list>aside{
+        width:400px;
+        position: absolute;
+        left: 50%;
     }
 }
 

@@ -1,5 +1,4 @@
-.profilePanel(ng-controller="profileController" ng-init="init()").profilePanel-responsive
-    //include profileTabs
-    aside.col-sm-6.col-sm-height
-        div(ui-view='')
-            include profileForm
+.homePanel.homePanel-responsive(ng-controller="profileController" ng-init="init()")
+  aside.col-sm-6.col-sm-height
+    div(ui-view='')
+      include profileForm
