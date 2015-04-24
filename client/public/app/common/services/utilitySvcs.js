@@ -161,7 +161,7 @@ commonApp.factory('utilityService', function($log,$filter,$q,$location ){
     errors: {},
     images: {
       morning:['./images/morning1.jpg','./images/morning2.png','./images/morning3.jpg','./images/morning4.jpg','./images/morning5.jpg','./images/morning6.jpg'],
-      afternoon:['./images/afternoon1.jpg','./images/afternoon2.jpg','./images/afternoon3.jpg','./images/afternoon4.jpg','./images/afternoon5.jpg','./images/afternoon6.jpg'],
+      afternoon:['./images/afternoon1_.jpg','./images/afternoon2.jpg','./images/afternoon3.jpg','./images/afternoon4.jpg','./images/afternoon5.jpg','./images/afternoon6.jpg'],
       evening:['./images/evening1.jpg','./images/evening2_.jpg','./images/evening3.jpg','./images/evening4.jpg','./images/evening5.jpg','./images/evening6.jpg']
     },
     weekDaysAdapter: function (day, type) {
