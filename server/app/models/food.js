@@ -2,21 +2,16 @@
 
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var tags = require('tags.js');
 
-var MeasureSchema = new Schema({
-  measureId: Number,
-  measureName: String
-});
+var measure = require('../models/measure.js');
+
 
 var FoodSchema = new Schema({
     foodId: Number,
     foodName: String,
     foodType: String, //food or recipe
     foodCategory: String,
-    tags: [tags.TagSchema],
-    defaultMeasure: MeasureSchema,
-    foodMeasures:[MeasureSchema]
+    foodMeasures:[measure.MeasureSchema]
   }
 );
 
