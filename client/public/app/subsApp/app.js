@@ -65,7 +65,7 @@ subsApp.config(['$stateProvider','$routeProvider',function($stateProvider,$route
           url: 'other/:date',
           templateUrl: '../partials/subs/diary/addMore.jade'
         })
-        // nested list with custom controller
+        // profile views
         .state('profile', {
             url: '/profile',
             templateUrl: '../partials/subs/profile/profile.jade'

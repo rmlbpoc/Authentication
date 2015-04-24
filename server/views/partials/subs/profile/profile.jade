@@ -1,4 +1,5 @@
 .homePanel.homePanel-responsive(ng-controller="profileController" ng-init="init()")
   aside.col-sm-6.col-sm-height
-    div(ui-view='')
-      include profileForm
+    .fill-screen.stellar-bg(data-stellar-background-ratio='0.2', style='background-image: url("{{bgImage}}"); width:100%;')
+      div(ui-view='')
+        include profileForm

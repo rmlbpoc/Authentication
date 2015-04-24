@@ -1,5 +1,7 @@
-.profilePanel.profilePanel-responsive
-
-    aside.col-sm-6.col-sm-height
-        h4
+.homePanel.homePanel-responsive
+  aside.col-sm-6.col-sm-height
+    .fill-screen.stellar-bg(data-stellar-background-ratio='0.2', style='background-image: url("{{bgImage}}"); width:100%;')
+      div(ui-view='')
+        .profilePanelRange-list
+          aside
             h3.range-title Journal related stuff goes here
