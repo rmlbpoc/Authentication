@@ -28,9 +28,12 @@ describe('create update get and delete food', function(){
             throw err;
           }
 
-          resp.body.should.have.property('newFood');
-          resp.body.newFood.should.have.property('_id');
-          newFoodId = resp.body.newFood._id;
+          resp.body.should.have.property('food');
+          resp.body.food.should.have.property('_id');
+          resp.body.food.should.have.property('foodMeasures');
+          resp.body.food.foodMeasures.length.should.equal(2);
+          newFoodId = resp.body.food._id;
+          food=resp.body.food;
           done();
         })
     });
@@ -50,6 +53,67 @@ describe('create update get and delete food', function(){
           resp.body.food._id.should.equal(newFoodId);
           done();
         })
-    })
+    });
+
+    it('should update a food - add a new measure', function(done){
+      var measure = new Measure({measureId:3,measureName:'test measure3'});
+      food.foodMeasures.push(measure);
+      console.log(food);
+
+      agent
+        .post('/food')
+        .send(food)
+        .expect(200)
+        .end(function(err,resp){
+          if(err){
+            throw(err);
+          }
+          resp.body.should.have.property('food');
+          resp.body.food._id.should.equal(newFoodId);
+          resp.body.food.foodMeasures.length.should.equal(3);
+          done();
+        })
+    });
+
+    it('should update a food - remove a measure', function(done){
+
+      food.foodMeasures.pop();
+      console.log(food);
+
+      agent
+        .post('/food')
+        .send(food)
+        .expect(200)
+        .end(function(err,resp){
+          if(err){
+            throw(err);
+          }
+          resp.body.should.have.property('food');
+          resp.body.food._id.should.equal(newFoodId);
+          resp.body.food.foodMeasures.length.should.equal(2);
+          done();
+        })
+    });
+
+    it('should update the name of the food',function(done){
+      //var measure = new Measure({measureId:3,measureName:'test measure3'});
+      var newName = 'Updated food name';
+      food.foodName = newName;
+      console.log(food);
+
+      agent
+        .post('/food')
+        .send(food)
+        .expect(200)
+        .end(function(err,resp){
+          if(err){
+            throw(err);
+          }
+          resp.body.should.have.property('food');
+          resp.body.food._id.should.equal(newFoodId);
+          resp.body.food.foodName.should.equal(newName);
+          done();
+        })
+    });
   })
 });
