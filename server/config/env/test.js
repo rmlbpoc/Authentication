@@ -1,6 +1,6 @@
 
 module.exports = {
-    db: "mongodb://localhost:27017/test",
+    db: "mongodb://localhost:27001/test",
   openIdAuth : {
     'facebookAuth': {
       'clientID': '911617848888518', // your App ID

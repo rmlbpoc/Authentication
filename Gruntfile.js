@@ -127,7 +127,7 @@ module.exports = function(grunt){
 
         mochaTest:{
             options: {
-                node_env:'test'
+                NODE_ENV:'test'
             },
             src: ['server/test/*.js']
         },
@@ -257,13 +257,19 @@ module.exports = function(grunt){
     grunt.registerTask('serve',function(target){
 
         return grunt.task.run([
-            'file-creator:' + target ,
+            //'file-creator:' + target ,
             'mochaTest',
             'express:dev' ,
             'open',
             'watch'
         ])
     });
+  grunt.registerTask('mochatests',function(target){
+
+    return grunt.task.run([
+      'mochaTest'
+    ])
+  });
 
     //grunt.registerTask( 'watch', [ 'mochaTest','express:dev','open'] );
     grunt.registerTask('createAuthConfig',function(target){
