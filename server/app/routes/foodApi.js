@@ -3,6 +3,7 @@ var Food = require('../../app/models/food.js');
 module.exports = function(app) {
   app.post('/food', createUpdateFood);
   app.get('/food/:id',getFoodById);
+  app.delete('/food/:id',deleteFood);
 
   function createUpdateFood(req, res) {
     var food = req.body;
@@ -53,5 +54,20 @@ module.exports = function(app) {
     })
   }
 
+  function deleteFood(req,res){
+    Food.findByIdAndRemove(new Object(req.params.id),function(err,food){
+      if (err) {
+        res.status(500);
+        res.json({
+          data: "Error occured: " + err
+        })
+      } else {
+        res.json({
+          deleted: true,
+          message: "Food: " + req.params.id + " deleted successfully"
+        })
+      }
+    })
+  }
 
 };

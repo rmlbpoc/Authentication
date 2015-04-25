@@ -4,13 +4,13 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var measure = require('../models/measure.js');
-
+var category = require('../models/category.js');
 
 var FoodSchema = new Schema({
     foodId: Number,
     foodName: String,
     foodType: String, //food or recipe
-    foodCategory: String,
+    foodCategories: [category.CategorySchema],
     foodMeasures:[measure.MeasureSchema]
   }
 );
