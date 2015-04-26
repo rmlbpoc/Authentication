@@ -10,18 +10,19 @@ module.exports = function(app){
       console.log('******** feeling entry exists ********');
       FeelingEntry.findOne(feelingEntry._id,function(err,fe){
         if(err){
-          throw err;
+          res.status(500);
+          res.send({error:err});
         }
 
-        //console.log('******* f before : ',f);
+        //console.log('******* f before : ',fe);
         fe = feelingEntry;
-        //console.log('******* f after ', f);
+        //console.log('******* f after ', fe);
 
         FeelingEntry(fe).update({upsert:true},function(err,fdEn){
           if(err){
-            throw err;
+            res.status(500);
+            res.send({error:err});
           }
-
         });
         res.send({feeling:fe});
       })
@@ -29,7 +30,9 @@ module.exports = function(app){
       var newFeelingEntry = new FeelingEntry(feelingEntry);
       newFeelingEntry.save(function(err){
         if(err){
-          console.log("****   Error saving feeling entry *** : " + err)
+          console.log("****   Error creating feeling entry *** : " + err);
+          res.status(500);
+          res.send({error:err});
         }else{
           res.send({feeling:newFeelingEntry});
         }

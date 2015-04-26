@@ -11,6 +11,7 @@ describe('create update delete feeling', function(){
 
   var newUser = {firstName:'fname',lastName:'lname',email:"myemail007@myemail.com",password:"test1234"};
   var newFeeling = {userId:'', feelingDate:new Date(),feelingTimeOfDay:'morning',feelingValue:'great'};
+  var badFeeling = {userId:'', feelingDate:new Date(),feelingTimeOfDay:'morning',feelingValue:'not great'};
   function loginUser(user) {
     return function(done) {
       agent
@@ -40,7 +41,7 @@ describe('create update delete feeling', function(){
           if(err){
             throw err;
           }
-          console.log('*********   response after signup ****** ',res.body);
+          //console.log('*********   response after signup ****** ',res.body);
           newUser=res.body.user;
           //res.should.have.status(200);
           done();
@@ -64,7 +65,7 @@ describe('create update delete feeling', function(){
           resp.body.should.have.property('feeling');
           resp.body.feeling.feelingValue.should.equal('great');
           newFeeling = resp.body.feeling;
-          console.log(newFeeling);
+          //console.log(newFeeling);
           done();
         })
     });
@@ -82,6 +83,23 @@ describe('create update delete feeling', function(){
           }
           resp.body.should.have.property('feeling');
           resp.body.feeling.feelingValue.should.equal('tired');
+          done();
+        })
+    });
+
+    //Now enter invalid value for feelings for the user
+    it('should not allow entering an invalid value for feeling',function(done){
+      newFeeling.feelingValue = 'tired';
+      agent
+        .post('/feeling')
+        .send(badFeeling)
+        .expect(500)
+        .end(function(err,resp){
+          if(err){
+            throw err;
+          }
+          resp.body.should.have.property('error');
+          //resp.body.feeling.feelingValue.should.equal('tired');
           done();
         })
     });

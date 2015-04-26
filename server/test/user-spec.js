@@ -15,7 +15,7 @@ describe('Signup and Login routes',function(){
     var badResetToken;
     var newPassword = "Test4321";
 
-    //make sure that the test user is deleted incase it didnt get removed from previous run
+    //make sure that the test user is deleted in case it didnt get removed from previous run
     before(function(done){
             agent
                 .delete('/userByEmail/' + newUser.email)
@@ -79,11 +79,14 @@ describe('Signup and Login routes',function(){
                 .send(newUser)
                 .expect(200)
                 .end(function(err,res){
-                    //console.log(res.body.token);
-                    res.body.should.have.property('token');
-                    resetToken = res.body.token;
-                    //res.body.auth.should.equal(true);
-                    done();
+                  if(err){
+                    throw err;
+                  }
+                //console.log(res.body.token);
+                res.body.should.have.property('token');
+                resetToken = res.body.token;
+                //res.body.auth.should.equal(true);
+                done();
                 })
         });
 
