@@ -2,14 +2,17 @@
     h3.range-title Good {{greeting}} {{user.local.firstName}}
     h4.range-title Tell us how u feel
     .homePanelRange-list
-        .range-list-div
-            a(ui-sref='feelingGreat').btn.btn-primary.login-button-ext Great
-        .range-list-div
-            a(ui-sref='home.full').btn.btn-info.login-button-ext Too full
-        .range-list-div
-            a(ui-sref='home.tired').btn.btn-danger.login-button-ext Tired and Sleepy
+        .range-list-div.feelingIcon
+            a.fa.fa-thumbs-up.feelingGreat.mdGlobalBtn(ui-sref='feelingGreat')(style="left:20%")
+            //a(ui-sref='feelingGreat').btn.btn-primary.login-button-ext Great
+        .range-list-div.feelingIcon
+            a.fa.fa-beer.feelingFull.mdGlobalBtn(ui-sref='home.full')(style="left:90%")
+            //a(ui-sref='home.full').btn.btn-info.login-button-ext Too full
+        .range-list-div.feelingIcon
+            a.fa.fa-coffee.feelingTired.mdGlobalBtn(ui-sref='home.tired')(style="left:10%")
+            //a(ui-sref='home.tired').btn.btn-danger.login-button-ext Tired and Sleepy
         .down-button
-            a.btn(id='homeTop' scroll-to="socialTop")
+            a.btn(id='homeTop' scroll-to="socialTop" )
                 i.fa.fa-arrow-circle-down.fa-4x
 
 script.

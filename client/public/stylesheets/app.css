@@ -303,7 +303,13 @@ article p{
     padding-top: 10px;
     padding-bottom: 10px;
 }
+.range-list-div.feelingIcon{
+    width:50%;
+}
+.range-list-div.feelingIconRight{
+    width:50%;
 
+}
 .loginPanel-responsive{
     margin:0px auto;
     box-shadow: rgba(0,0,0,0.5) 10px 10px 10px;
@@ -558,4 +564,94 @@ article p{
         width:50%;
         height:50%;
     }
+}
+
+/*Circular icon buttons*/
+/*@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'");*/
+
+#social {
+    margin: 20px 10px;
+    text-align: center;
+}
+
+.smGlobalBtn{ /* global button class */
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 2px 2px #999;
+    padding: 0px;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    font-size: 25px;
+    font-weight: normal;
+    line-height: 2em;
+    border-radius: 25px;
+    -moz-border-radius:25px;
+    -webkit-border-radius:25px;
+}
+
+.mdGlobalBtn{ /* global button class */
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    box-shadow: 1px 1px #999;
+    padding: 0px;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    font-size: 40px;
+    font-weight: normal;
+    line-height: 2em;
+    border-radius: 40px;
+    -moz-border-radius:40px;
+    -webkit-border-radius:40px;
+}
+/* facebook button class*/
+.facebookBtn{
+    background: #4060A5;
+}
+
+.facebookBtn:before{ /* use :before to add the relevant icons */
+    font-family: "FontAwesome";
+    content: "\f09a"; /* add facebook icon */
+}
+
+.facebookBtn:hover{
+    color: #4060A5;
+    background: #fff;
+}
+
+
+.feelingGreat{
+    background: #35B01A;
+}
+.feelingGreat:hover {
+    color: #35B01A;
+    background: #fff;
+    content:"Awesome";
+}
+
+.feelingFull{
+    background: #00ABE3;
+}
+.feelingFull:hover {
+    color: #e88845;
+    background: #fff;
+}
+
+.feelingTired{
+    background: #D74D06;
+}
+/*.feelingTired:before{*/
+    /*font-family: "FontAwesome";*/
+    /*content:"\f236";*/
+/*}*/
+.feelingTired:hover {
+    color: #D74D06;
+    background: #fff;
 }
