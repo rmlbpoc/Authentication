@@ -13,11 +13,7 @@ subsApp.controller('homeTopDefController',['$scope','$log','feelingService','uti
   });
 
   $scope.saveFeeling = function(feeling){
-    var dt = new Date();
-    dt.setHours(0);
-    dt.setMinutes(0);
-    dt.setSeconds(0);
-    dt.setMilliseconds(0);
+    var dt = utilityService.dateOnly(new Date);
     $scope.feelingEntry = {userId: $scope.user._id, feelingDate:dt,feelingTimeOfDay:$scope.timeOfDay,feelingValue: feeling};
 
     feelingService.saveFeelingEntry($scope.feelingEntry ).then(function(data){

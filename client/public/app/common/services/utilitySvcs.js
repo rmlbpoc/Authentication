@@ -176,6 +176,14 @@ commonApp.factory('utilityService', function($log,$filter,$q,$location ){
       }
       return day;
     },
+    dateOnly : function(date){
+      var dt = new Date(date);
+      dt.setHours(0);
+      dt.setMinutes(0);
+      dt.setSeconds(0);
+      dt.setMilliseconds(0);
+      return dt;
+    },
     kgtolb: function (w) {
       return Math.round(w / .45)
     },
