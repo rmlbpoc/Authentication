@@ -1,6 +1,16 @@
 .fill-screen.stellar-bg(data-stellar-background-ratio='0.2', style='background-image: url("{{bgImage}}"); width:100%;')
     h3.range-title Good {{greeting}} {{user.local.firstName}}
+    h4.range-title what do u want to do next
     .homePanelRange-list
         .down-button
-            a.btn(id='homeTop')
+            a.btn(id='homeTop' scroll-to="socialTop" )
                 i.fa.fa-arrow-circle-down.fa-4x
+
+script.
+  $('.down-button a').click(function(){
+    console.log(this.getAttribute('scroll-to'));
+    var scrollTo = this.getAttribute('scroll-to');
+    $('html body').stop().animate({
+      scrollTop: $("#"+scrollTo).offset().top -100
+    },1500,'easeInOutExpo');
+  });
