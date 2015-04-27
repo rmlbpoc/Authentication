@@ -3,7 +3,12 @@ var FeelingEntry = require('../../app/models/feelingEntry.js');
 module.exports = function(app){
   app.post('/feeling',createUpdateFeeling);
   app.get('/feeling/:userId/:date/:timeOfDay',getFeelingEntry);
+  app.get('/feelinghistory/:userId/:days',getFeelingHistory);
 
+
+  //*************************************************//
+  //********* REQUEST HANDLERS *********************//
+  //*************************************************//
 
   function createUpdateFeeling(req,res){
     var feelingEntry = req.body;
@@ -62,5 +67,34 @@ module.exports = function(app){
         res.send({msg:'feelingEntry not found'});
       }
     })
+  }
+
+  function getFeelingHistory(req,res){
+    //res.send('OK');
+    var usrId = req.params['userId'];
+    var numDays = req.params['days'];
+    var dt = new Date();
+    dt.setHours(0);
+    dt.setMinutes(0);
+    dt.setSeconds(0);
+    dt.setMilliseconds(0);
+    dt.setDate(dt.getDate()-numDays);
+
+    console.log(req.params['userId']);
+    console.log(req.params['days']);
+
+    res.send("ok");
+    //FeelingEntry.findOne({userId:usrId,feelingDate:{$lt:dt},feelingTimeOfDay:tod},function(err,feelingEntry){
+    //  if(err){
+    //    res.status(500);
+    //    res.send({error:err});
+    //  }
+    //
+    //  if(feelingEntry){
+    //    res.send({fe:feelingEntry});
+    //  }else{
+    //    res.send({msg:'feelingEntry not found'});
+    //  }
+    //})
   }
 };

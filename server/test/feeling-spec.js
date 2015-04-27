@@ -120,10 +120,24 @@ describe('create update delete feeling', function(){
             throw err;
           }
           console.log('******** feeling entry found',resp.body);
+          resp.body.should.have.property('fe');
           done();
         });
+    });
 
-
+    it('should get all feeling Entries for user for past N days',function(done){
+      var numDays = 2;
+      agent
+        .get('/feelinghistory/'+ newUser._id +'/'+numDays )
+        .expect(200)
+        .end(function(err,resp){
+          if(err){
+            throw err;
+          }
+          console.log('******** feeling history found',resp.body);
+          resp.body.should.have.property('feHist');
+          done();
+        });
     });
 
     it('should delete user',function(done){
