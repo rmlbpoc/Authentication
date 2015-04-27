@@ -1,9 +1,9 @@
 .fill-screen.stellar-bg(data-stellar-background-ratio='0.2', style='background-image: url("{{bgImage}}"); width:100%;')
     h3.range-title Good {{greeting}} {{user.local.firstName}}
     h4.range-title Tell us how u feel
-    .homePanelRange-list
+    .homePanelRange-list(ng-controller="homeTopDefController" ng-init="init()")
         .range-list-div.feelingIcon
-            a.fa.fa-thumbs-up.feelingGreat.mdGlobalBtn(ui-sref='feelingGreat')(style="left:20%")
+            a.fa.fa-thumbs-up.feelingGreat.mdGlobalBtn(ui-sref='feelingGreat')(style="left:20%" ng-click="saveFeeling('great')")
             //a(ui-sref='feelingGreat').btn.btn-primary.login-button-ext Great
         .range-list-div.feelingIcon
             a.fa.fa-beer.feelingFull.mdGlobalBtn(ui-sref='home.full')(style="left:90%")
