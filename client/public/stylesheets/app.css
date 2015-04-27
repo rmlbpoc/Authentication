@@ -77,7 +77,7 @@ body {
 }
 .fill-screen{
     background-size: cover;
-    padding: 0px;
+    padding: 10px 0px;
     background-position: center;
 }
 .title-row{
@@ -102,6 +102,7 @@ body {
 }
 .down-button i {
     color: #ffffff;
+    /*background: #35B01A;*/
 }
 .content-filler{
     min-height: 350px;
@@ -537,7 +538,7 @@ article p{
     .homePanelRange-list{
         position: relative;
         top: 35%;
-        height: 400px;
+        height: 450px;
     }
 }
 
