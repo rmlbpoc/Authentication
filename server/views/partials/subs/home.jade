@@ -1,9 +1,9 @@
 .homePanel.homePanel-responsive
     aside.col-sm-6.col-sm-height
 
-        div(ng-if="done")
+        div(ng-if="feelingEntry.fe")
           include homeTopDone
-        div(ng-if="!done")
+        div(ng-if="feelingEntry.msg")
           include homeTopDef
         include social/socialHome
         include wellnessNews/wellnessHome

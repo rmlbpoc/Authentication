@@ -69,9 +69,9 @@ describe('create update delete feeling', function(){
           if(err){
             throw err;
           }
-          resp.body.should.have.property('feeling');
-          resp.body.feeling.feelingValue.should.equal('great');
-          newFeeling = resp.body.feeling;
+          resp.body.should.have.property('fe');
+          resp.body.fe.feelingValue.should.equal('great');
+          newFeeling = resp.body.fe;
           //console.log(newFeeling);
           done();
         })
@@ -88,8 +88,8 @@ describe('create update delete feeling', function(){
           if(err){
             throw err;
           }
-          resp.body.should.have.property('feeling');
-          resp.body.feeling.feelingValue.should.equal('tired');
+          resp.body.should.have.property('fe');
+          resp.body.fe.feelingValue.should.equal('tired');
           done();
         })
     });

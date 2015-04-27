@@ -25,7 +25,7 @@ module.exports = function(app){
             res.send({error:err});
           }
         });
-        res.send({feeling:fe});
+        res.send({fe:fe});
       })
     }else{
       var newFeelingEntry = new FeelingEntry(feelingEntry);
@@ -35,7 +35,7 @@ module.exports = function(app){
           res.status(500);
           res.send({error:err});
         }else{
-          res.send({feeling:newFeelingEntry});
+          res.send({fe:newFeelingEntry});
         }
       })
     }

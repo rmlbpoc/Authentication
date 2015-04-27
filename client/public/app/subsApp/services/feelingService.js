@@ -15,6 +15,18 @@ subsApp.factory('feelingService', function($http,$log,$rootScope){
           .catch(function(error){
             console.log('****  Error:',error);
           });
+    },
+    getFeeling : function(userId,date,timeOfDay){
+      return $http({
+          method:'GET',
+          url:'/feeling/'+userId+'/'+date+'/'+timeOfDay
+        })
+        .then(function(response){
+          return response.data;
+        })
+        .catch(function(err){
+          console.log('****  Error:',error);
+        })
     }
   };
 
