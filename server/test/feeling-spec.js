@@ -112,10 +112,17 @@ describe('create update delete feeling', function(){
     });
 
     it('should get feeling value based on user id, date and timeOfDay',function(done){
+      agent
+        .get('/feeling/'+ newUser._id +'/'+dt+'/' + 'morning')
+        .expect(200)
+        .end(function(err,resp){
+          if(err){
+            throw err;
+          }
+          console.log('******** feeling entry found',resp.body);
+          done();
+        });
 
-      //agent
-      //  .get('/feeling/'+ newUser._id +'/')
-      done();
 
     });
 

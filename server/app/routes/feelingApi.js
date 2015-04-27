@@ -2,6 +2,7 @@ var FeelingEntry = require('../../app/models/feelingEntry.js');
 
 module.exports = function(app){
   app.post('/feeling',createUpdateFeeling);
+  app.get('/feeling/:userId/:date/:timeOfDay',getFeelingEntry);
 
 
   function createUpdateFeeling(req,res){
@@ -38,5 +39,28 @@ module.exports = function(app){
         }
       })
     }
+  }
+
+  function getFeelingEntry(req,res){
+    //res.send('OK');
+    var usrId = req.params['userId'];
+    var entryDt = req.params['date'];
+    var tod = req.params['timeOfDay'];
+    console.log(req.params['userId']);
+    console.log(req.params['date']);
+    console.log(req.params['timeOfDay']);
+
+    FeelingEntry.findOne({userId:usrId,feelingDate:entryDt,feelingTimeOfDay:tod},function(err,feelingEntry){
+      if(err){
+        res.status(500);
+        res.send({error:err});
+      }
+
+      if(feelingEntry){
+        res.send({fe:feelingEntry});
+      }else{
+        res.send({msg:'feelingEntry not found'});
+      }
+    })
   }
 };
