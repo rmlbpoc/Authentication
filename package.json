@@ -25,6 +25,7 @@
     "jit-grunt": "^0.9.1",
     "lodash": "^3.6.0",
     "method-override": "^2.3.1",
+    "moment": "^2.10.2",
     "mongoose": "^3.8.23",
     "morgan": "~1.5.1",
     "nodemailer": "^0.7.1",

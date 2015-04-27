@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var moment = require('moment');
 var User = require('../app/models/user.js');
 var Feeling = require('../app/models/feelingEntry.js');
 
@@ -9,9 +10,14 @@ var agent = request.agent(server);
 
 describe('create update delete feeling', function(){
 
+  var dt = new Date();
+  dt.setHours(0);
+  dt.setMinutes(0);
+  dt.setSeconds(0);
+  dt.setMilliseconds(0);
   var newUser = {firstName:'fname',lastName:'lname',email:"myemail007@myemail.com",password:"test1234"};
-  var newFeeling = {userId:'', feelingDate:new Date(),feelingTimeOfDay:'morning',feelingValue:'great'};
-  var badFeeling = {userId:'', feelingDate:new Date(),feelingTimeOfDay:'morning',feelingValue:'not great'};
+  var newFeeling = {userId:'', feelingDate:dt,feelingTimeOfDay:'morning',feelingValue:'great'};
+  var badFeeling = {userId:'', feelingDate:dt,feelingTimeOfDay:'morning',feelingValue:'not great'};
   function loginUser(user) {
     return function(done) {
       agent
@@ -30,7 +36,7 @@ describe('create update delete feeling', function(){
     };
   }
 
-  describe('Signup New User',function(){
+  describe('Create new feeling entry',function(){
     it('should create a new user',function(done){
       var endpoint = '/signup';
       agent
@@ -53,6 +59,7 @@ describe('create update delete feeling', function(){
 
     //Now enter feelings for the user
     it('should enter a value for feeling',function(done){
+      console.log('############  ',newFeeling);
       newFeeling.userId = newUser._id;
       agent
         .post('/feeling')
@@ -102,6 +109,14 @@ describe('create update delete feeling', function(){
           //resp.body.feeling.feelingValue.should.equal('tired');
           done();
         })
+    });
+
+    it('should get feeling value based on user id, date and timeOfDay',function(done){
+
+      //agent
+      //  .get('/feeling/'+ newUser._id +'/')
+      done();
+
     });
 
     it('should delete user',function(done){
