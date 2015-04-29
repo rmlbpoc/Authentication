@@ -16,7 +16,6 @@ subsApp.controller('homeController',['$scope','$log','profileService','utilitySe
     console.log($scope.images);
     $scope.bgImage = '';
     $scope.bgImage = $scope.getRandomImage($scope.images,$scope.greeting);
-
   };
 
   $scope.$on('gotUser',function(event,data){
@@ -32,19 +31,23 @@ subsApp.controller('homeController',['$scope','$log','profileService','utilitySe
     profileService.getProfile().then(function(data){
       $scope.user = data.user;
       $scope.profile = $scope.user.profile;
-      console.log($scope.profile);
-      if($scope.profile && $scope.profile.dateOfBirth){
-        var dt = new Date($scope.profile.dateOfBirth);
-        console.log(dt);
-        $scope.profile.dateOfBirth = dt;
-        $scope.placeholderVal = $scope.profile.dateOfBirth;
-        console.log($scope.user);
 
-        $scope.$broadcast('gotUser',{
-          user:$scope.user
-        })
+      $scope.$broadcast('gotUser',{
+        user:$scope.user
+      });
+
+      if($scope.profile){
+        console.log($scope.profile);
+
+        //update date of birth field
+        if($scope.profile.dateOfBirth){
+          var dt = new Date($scope.profile.dateOfBirth);
+          console.log(dt);
+          $scope.profile.dateOfBirth = dt;
+          $scope.placeholderVal = $scope.profile.dateOfBirth;
+          console.log($scope.user);
+        }
       }
-
     })
   };
 

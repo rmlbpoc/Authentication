@@ -83,18 +83,16 @@ module.exports = function(app){
     console.log(req.params['userId']);
     console.log(req.params['days']);
 
-    res.send("ok");
-    //FeelingEntry.findOne({userId:usrId,feelingDate:{$lt:dt},feelingTimeOfDay:tod},function(err,feelingEntry){
-    //  if(err){
-    //    res.status(500);
-    //    res.send({error:err});
-    //  }
-    //
-    //  if(feelingEntry){
-    //    res.send({fe:feelingEntry});
-    //  }else{
-    //    res.send({msg:'feelingEntry not found'});
-    //  }
-    //})
+    FeelingEntry.find({userId:usrId,feelingDate:{$lt:dt}},function(err,feelingEntry){
+      if(err){
+        res.status(500);
+        res.send({error:err});
+      }
+      if(feelingEntry){
+        res.send({feHist:feelingEntry});
+      }else{
+        res.send({msg:'feelingEntry not found'});
+      }
+    })
   }
 };
