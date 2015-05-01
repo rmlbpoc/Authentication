@@ -69,6 +69,7 @@ require('./app/routes/uiRoutes.js')(app);
 require('./app/routes/apiRoutes.js')(app,passport);
 require('./app/routes/foodApi.js')(app);
 require('./app/routes/feelingApi.js')(app);
+require('./app/routes/foodEntryApi.js')(app,passport);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');

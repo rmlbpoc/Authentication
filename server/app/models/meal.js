@@ -3,14 +3,10 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var foods = require('food.js');
-var tags = require('tags.js');
-
 var MealSchema = new Schema({
     mealId: Number,
     mealName: String,
-    mealItems:[{"food": foods.FoodSchema, "amount": Number}],
-    mealTags: [tags.TagSchema]
+    mealItems:[{type: Schema.ObjectId, ref: 'Food'}]
   }
 );
 
